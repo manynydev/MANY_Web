@@ -14,6 +14,7 @@ const StyledGlyph = styled.img`{
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
   -webkit-user-drag: none;
+  draggable:none
 }`
 
 
