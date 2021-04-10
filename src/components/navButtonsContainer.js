@@ -5,7 +5,7 @@ const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { retu
 
 const NavButtonContainer = (props) => {
     return(
-        <div style={{display: 'flex', flexDirection: 'row', position: 'fixed',width:'308px',top:'712px', gap: '60px'}}>
+        <div style={{display: 'flex', flexDirection: 'row', position: 'absolute',width:'308px',top:'490px', gap: '60px'}}>
             {props.children}
         </div>
         )

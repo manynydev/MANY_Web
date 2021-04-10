@@ -9,7 +9,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #eaeaea
+  background-color: #eaeaea;
+  position: fixed;
 }
 `
 
