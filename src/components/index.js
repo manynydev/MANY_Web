@@ -15,6 +15,8 @@ import ManyHomeButton from "./manyHomeButton";
 import TextBaseManySans from "./textBaseManySans";
 import RightWhiteButton from "./rightWhiteButton";
 import NavButtonsContainer from "./navButtonsContainer";
+import SnapItemContainer from "./snapItemContainer";
+import Logo from "./logo"
 
 export {
     NavigationButton,
@@ -33,5 +35,7 @@ export {
     RightWhiteButton,
     ManyHomeButton,
     TextBaseManySans,
-    NavButtonsContainer
+    NavButtonsContainer,
+    SnapItemContainer,
+    Logo
 }

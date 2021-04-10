@@ -5,8 +5,8 @@ import {
     IphoneScreen,
     Glyph,
     TextBaseManySans,
-    LeftBlackButton,
-    ManyHomeButton, RightBlackButton
+    Logo,
+    ManyHomeButton, RightBlackButton, SnapItemContainer
 } from "../components";
 import {
     SnapItem, SnapList, useDragToScroll, useScroll,
@@ -379,14 +379,7 @@ const createUsers = (usersDict) => {
     usersDict.forEach((user => {
         users.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
+             <SnapItemContainer>
                     <img style={{
                         objectFit: 'contain',
                         height: '105px',
@@ -395,57 +388,24 @@ const createUsers = (usersDict) => {
                         top: 65,
                     }}
                          src={user.location} alt={'User location'}/>
-
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '65px',
-                        width: '100px',
-                        position: 'relative',
-                        right: 70,
-                        bottom:75,
-                    }}
-                         src={user.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',right:80,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '40%',
-                        width: '50%',
-                        position: 'relative',
-                        bottom:40,
-                        // backgroundColor:'green'
-                    }}
-                         src={user.glyph} alt={'User glyph'}/>
-                    {/*<Glyph path={user.glyph}/>*/}
-                </div>
+                         <Logo right={'80px'} bottom={'75px'} src={user.logo} alt={'User logo'}/>
+                    <TextBaseManySans style={{position:'relative',right:90,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
+                    <Glyph bottom={'45px'}  src={user.glyph} alt={'User glyph'}/>
+             </SnapItemContainer>
             </SnapItem>
         )
     }))
     return users
 }
-// TODO: Remove all inline styling where possible
+
 const createMatches = (userId) => {
     let matchesData = allMatches[userId];
     let matchesRenderReady = []
     matchesData.forEach((match => {
         matchesRenderReady.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '40%',
-                        width: '50%',
-                        position: 'relative',
-                        top:45,
-                        // backgroundColor:'green'
-                    }}
-                         src={match.glyph} alt={'User glyph'}/>
+              <SnapItemContainer>
+                    <Glyph top={'45px'} src={match.glyph} alt={'User glyph'}/>
                     <img style={{
                         objectFit: 'contain',
                         height: '95px',
@@ -454,20 +414,9 @@ const createMatches = (userId) => {
                         top: 85,
                     }}
                          src={match.location} alt={'User location'}/>
-
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '55px',
-                        width: '80px',
-                        position: 'relative',
-                        right: 110,
-                        bottom:75,
-                    }}
-                         src={match.logo} alt={'User logo'}/>
+                    <Logo right={'110px'} src={match.logo} alt={'User logo'}/>
                     <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'80px'} >{match.month}</TextBaseManySans>
-
-                    {/*<Glyph path={user.glyph}/>*/}
-                </div>
+              </SnapItemContainer>
             </SnapItem>
         )
     }))
