@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 
-const StyledLogo = styled.img`{
+const StyledLocation = styled.img`{
   object-fit: scale-down;
-  height: 20%;
-  width: 40%;
+  width: 45%;
   position: relative;
   top: ${props => props.top ? props.top : 'auto'};
   bottom: ${props => props.bottom ? props.bottom : 'auto'};
@@ -18,10 +17,10 @@ const StyledLogo = styled.img`{
   -webkit-user-drag: none;
 }`
 
-const Logo = (props) => {
+const Location = (props) => {
     return (
-        <StyledLogo top={props.top} bottom={props.bottom} left={props.left} right={props.right}  src={props.src}/>
+        <StyledLocation top={props.top} bottom={props.bottom} left={props.left} right={props.right}  src={props.src}/>
     )
 }
 
-export default Logo
+export default Location

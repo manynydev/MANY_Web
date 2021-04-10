@@ -17,6 +17,7 @@ import RightWhiteButton from "./rightWhiteButton";
 import NavButtonsContainer from "./navButtonsContainer";
 import SnapItemContainer from "./snapItemContainer";
 import Logo from "./logo"
+import Location from "./location";
 
 export {
     NavigationButton,
@@ -37,5 +38,6 @@ export {
     TextBaseManySans,
     NavButtonsContainer,
     SnapItemContainer,
-    Logo
+    Logo,
+    Location
 }

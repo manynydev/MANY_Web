@@ -6,6 +6,7 @@ import {
     Glyph,
     TextBaseManySans,
     Logo,
+    Location,
     ManyHomeButton, RightBlackButton, SnapItemContainer
 } from "../components";
 import {
@@ -90,16 +91,16 @@ const mainUsers = [
         logo: require("../assets/logos/0067_AEA_BW.png").default,
         logo1: require("../assets/logos/0067_AEA_BW.png").default
     },
-    {
-        height: 100,
-        move: 130,
-        z: 0,
-        month: 36,
-        id: 9,
-        location: require("../assets/continents/0071_con.png").default,
-        glyph: require("../assets/glyphs/0071_C.png").default,
-        logo: require("../assets/logos/0071_ISAB_BW.png").default
-    },
+    // {
+    //     height: 100,
+    //     move: 130,
+    //     z: 0,
+    //     month: 36,
+    //     id: 9,
+    //     location: require("../assets/continents/0071_con.png").default,
+    //     glyph: require("../assets/glyphs/0071_C.png").default,
+    //     logo: require("../assets/logos/0071_ISAB_BW.png").default
+    // },
     {
         z: 0,
         month: 12,
@@ -380,14 +381,7 @@ const createUsers = (usersDict) => {
         users.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
              <SnapItemContainer>
-                    <img style={{
-                        objectFit: 'contain',
-                        height: '105px',
-                        position: 'relative',
-                        left: 55,
-                        top: 65,
-                    }}
-                         src={user.location} alt={'User location'}/>
+                    <Location left={'55px'} top={'65px'} src={user.location} alt={'User location'}/>
                          <Logo right={'80px'} bottom={'75px'} src={user.logo} alt={'User logo'}/>
                     <TextBaseManySans style={{position:'relative',right:90,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
                     <Glyph bottom={'45px'}  src={user.glyph} alt={'User glyph'}/>
@@ -406,15 +400,8 @@ const createMatches = (userId) => {
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
               <SnapItemContainer>
                     <Glyph top={'45px'} src={match.glyph} alt={'User glyph'}/>
-                    <img style={{
-                        objectFit: 'contain',
-                        height: '95px',
-                        position: 'relative',
-                        right: 25,
-                        top: 85,
-                    }}
-                         src={match.location} alt={'User location'}/>
-                    <Logo right={'110px'} src={match.logo} alt={'User logo'}/>
+                    <Location right ={'25px'} top={'75px'} src={match.location} alt={'User location'}/>
+                    <Logo right={'110px'} bottom={'40px'} src={match.logo} alt={'User logo'}/>
                     <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'80px'} >{match.month}</TextBaseManySans>
               </SnapItemContainer>
             </SnapItem>
@@ -449,7 +436,7 @@ const Matching = () => {
             <IphoneScreen>
                 <div style={{zIndex: 4, position: 'fixed', height: 300}}>
                     <SnapList ref={snapList} direction="horizontal"
-                              width='308px' height='370px'>
+                              width='308px' height='360px'>
                         {usersTop}
                     </SnapList>
                 </div>
