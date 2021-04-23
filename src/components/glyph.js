@@ -2,9 +2,12 @@ import styled from 'styled-components'
 
 
 const StyledGlyph = styled.img`{
+  object-fit: scale-down;
   height: 40%;
   width: 50%;
-  object-fit: scale-down;
+  position: relative;
+  top: ${props => props.top? props.top : ''};
+   bottom: ${props => props.bottom? props.bottom : ''};
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Old versions of Firefox */
@@ -16,7 +19,7 @@ const StyledGlyph = styled.img`{
 
 const Glyph = (props) => {
     return (
-        <StyledGlyph src={props.path}/>
+        <StyledGlyph top={props.top} bottom={props.bottom} src={props.src}/>
     )
 }
 

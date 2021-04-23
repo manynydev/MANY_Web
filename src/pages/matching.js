@@ -5,8 +5,9 @@ import {
     IphoneScreen,
     Glyph,
     TextBaseManySans,
-    LeftBlackButton,
-    ManyHomeButton, RightBlackButton
+    Logo,
+    Location,
+    ManyHomeButton, RightBlackButton, SnapItemContainer
 } from "../components";
 import {
     SnapItem, SnapList, useDragToScroll, useScroll,
@@ -90,16 +91,16 @@ const mainUsers = [
         logo: require("../assets/logos/0067_AEA_BW.png").default,
         logo1: require("../assets/logos/0067_AEA_BW.png").default
     },
-    {
-        height: 100,
-        move: 130,
-        z: 0,
-        month: 36,
-        id: 9,
-        location: require("../assets/continents/0071_con.png").default,
-        glyph: require("../assets/glyphs/0071_C.png").default,
-        logo: require("../assets/logos/0071_ISAB_BW.png").default
-    },
+    // {
+    //     height: 100,
+    //     move: 130,
+    //     z: 0,
+    //     month: 36,
+    //     id: 9,
+    //     location: require("../assets/continents/0071_con.png").default,
+    //     glyph: require("../assets/glyphs/0071_C.png").default,
+    //     logo: require("../assets/logos/0071_ISAB_BW.png").default
+    // },
     {
         z: 0,
         month: 12,
@@ -379,95 +380,30 @@ const createUsers = (usersDict) => {
     usersDict.forEach((user => {
         users.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <img style={{
-                        objectFit: 'contain',
-                        height: '105px',
-                        position: 'relative',
-                        left: 55,
-                        top: 65,
-                    }}
-                         src={user.location} alt={'User location'}/>
-
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '65px',
-                        width: '100px',
-                        position: 'relative',
-                        right: 70,
-                        bottom:75,
-                    }}
-                         src={user.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',right:80,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '40%',
-                        width: '50%',
-                        position: 'relative',
-                        bottom:40,
-                        // backgroundColor:'green'
-                    }}
-                         src={user.glyph} alt={'User glyph'}/>
-                    {/*<Glyph path={user.glyph}/>*/}
-                </div>
+             <SnapItemContainer>
+                    <Location left={'55px'} top={'65px'} src={user.location} alt={'User location'}/>
+                         <Logo right={'80px'} bottom={'75px'} src={user.logo} alt={'User logo'}/>
+                    <TextBaseManySans style={{position:'relative',right:90,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
+                    <Glyph bottom={'45px'}  src={user.glyph} alt={'User glyph'}/>
+             </SnapItemContainer>
             </SnapItem>
         )
     }))
     return users
 }
-// TODO: Remove all inline styling where possible
+
 const createMatches = (userId) => {
     let matchesData = allMatches[userId];
     let matchesRenderReady = []
     matchesData.forEach((match => {
         matchesRenderReady.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '40%',
-                        width: '50%',
-                        position: 'relative',
-                        top:45,
-                        // backgroundColor:'green'
-                    }}
-                         src={match.glyph} alt={'User glyph'}/>
-                    <img style={{
-                        objectFit: 'contain',
-                        height: '95px',
-                        position: 'relative',
-                        right: 25,
-                        top: 85,
-                    }}
-                         src={match.location} alt={'User location'}/>
-
-                    <img style={{
-                        objectFit: 'scale-down',
-                        height: '55px',
-                        width: '80px',
-                        position: 'relative',
-                        right: 110,
-                        bottom:75,
-                    }}
-                         src={match.logo} alt={'User logo'}/>
+              <SnapItemContainer>
+                    <Glyph top={'45px'} src={match.glyph} alt={'User glyph'}/>
+                    <Location right ={'25px'} top={'75px'} src={match.location} alt={'User location'}/>
+                    <Logo right={'110px'} bottom={'40px'} src={match.logo} alt={'User logo'}/>
                     <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'80px'} >{match.month}</TextBaseManySans>
-
-                    {/*<Glyph path={user.glyph}/>*/}
-                </div>
+              </SnapItemContainer>
             </SnapItem>
         )
     }))
@@ -500,7 +436,7 @@ const Matching = () => {
             <IphoneScreen>
                 <div style={{zIndex: 4, position: 'fixed', height: 300}}>
                     <SnapList ref={snapList} direction="horizontal"
-                              width='308px' height='370px'>
+                              width='308px' height='360px'>
                         {usersTop}
                     </SnapList>
                 </div>
