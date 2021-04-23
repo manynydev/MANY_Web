@@ -1,16 +1,21 @@
 import React from 'react';
-import {NavigationButton, IphoneScreen, MainContainer, TextBaseCush, IphoneFrame,ManyLogo} from "../components/index";
+import {NavigationButton, IphoneScreen, MainContainer, TextBaseCush, IphoneFrame, ManyLogo} from "../components/index";
 
 export default class Home extends React.Component {
 
     render() {
-        const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+        const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
+            return p.toString() === "[object SafariRemoteNotification]";
+        })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 
         const signInButtonDisplayComponent = <TextBaseCush>Sign in</TextBaseCush>
         const createGroupButtonDisplayComponent = <TextBaseCush>Create a group</TextBaseCush>
         const viewPrevGroupsButtonDisplayComponent = <TextBaseCush>View previous groups</TextBaseCush>
         return (
             <MainContainer>
+                <iframe
+                    style={{position: 'relative', left: '500px', minHeight: '720px', minWidth: '400px', border: 'none'}}
+                    src={'http://localhost:3000/matching'}></iframe>
                 <IphoneFrame/>
                 <IphoneScreen>
                     {/*//TODO: Make logo a nav button to info page*/}
