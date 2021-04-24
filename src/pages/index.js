@@ -8,6 +8,7 @@ import WhereGroup from "./whereGroup";
 import WhatMore from "./whatMore";
 import WhatExchange from "./whatExchange";
 import WhatGlyph from "./whatGlyph";
+import Platform from "./platform";
 
 export {
     Home,
@@ -19,5 +20,6 @@ export {
     WhereGroup,
     WhatMore,
     WhatExchange,
-    WhatGlyph
+    WhatGlyph,
+    Platform
 }

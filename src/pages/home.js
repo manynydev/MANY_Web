@@ -13,9 +13,6 @@ export default class Home extends React.Component {
         const viewPrevGroupsButtonDisplayComponent = <TextBaseCush>View previous groups</TextBaseCush>
         return (
             <MainContainer>
-                <iframe
-                    style={{position: 'relative', left: '500px', minHeight: '720px', minWidth: '400px', border: 'none'}}
-                    src={'http://localhost:3000/matching'}></iframe>
                 <IphoneFrame/>
                 <IphoneScreen>
                     {/*//TODO: Make logo a nav button to info page*/}

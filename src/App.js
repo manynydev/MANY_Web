@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
+import {Platform,Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
@@ -10,6 +10,9 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Splash/>
+                    </Route>
+                    <Route path="/platform">
+                        <Platform/>
                     </Route>
                     <Route path="/home">
                         <Home/>
