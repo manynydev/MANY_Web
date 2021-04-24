@@ -23,7 +23,7 @@ export default class Home extends React.Component {
                         gap: '90px',
                         marginTop: '210px'
                     }}>
-                        <NavigationButton height='60px' width='170px' path={'/home'} displayComponent=<ManyLogo/>/>
+                        <NavigationButton height='70px' width='170px' path={'/home'} displayComponent=<ManyLogo/>/>
                         <div
                             style={{
                                 // Safari does not support the CSS gap property for flex.
@@ -35,11 +35,11 @@ export default class Home extends React.Component {
                                 gap: '5px'
                             }}
                         >
-                            <NavigationButton path={'/'} width={'150px'}
+                            <NavigationButton path={'/'} width={'90px'} height={'35px'}
                                               displayComponent={signInButtonDisplayComponent}/>
-                            <NavigationButton path={'/whoGroup'} width={'170px'}
+                            <NavigationButton path={'/whoGroup'} width={'170px'} height={'35px'}
                                               displayComponent={createGroupButtonDisplayComponent}/>
-                            <NavigationButton path={'/matching'} width={'240px'}
+                            <NavigationButton path={'/matching'} width={'240px'} height={'35px'}
                                               displayComponent={viewPrevGroupsButtonDisplayComponent}/>
                         </div>
                     </div>

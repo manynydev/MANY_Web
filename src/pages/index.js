@@ -9,6 +9,7 @@ import WhatMore from "./whatMore";
 import WhatExchange from "./whatExchange";
 import WhatGlyph from "./whatGlyph";
 import Platform from "./platform";
+import RootHome from "./rootHome";
 
 export {
     Home,
@@ -21,5 +22,6 @@ export {
     WhatMore,
     WhatExchange,
     WhatGlyph,
-    Platform
+    Platform,
+    RootHome
 }
