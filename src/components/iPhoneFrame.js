@@ -4,7 +4,7 @@ import React from "react";
 
 const IphoneFrameStyled = styled.img`
 {
-  z-index: 0;
+  z-index: 1;
   margin: auto;
   max-height: 750px;
   min-height: 750px;
