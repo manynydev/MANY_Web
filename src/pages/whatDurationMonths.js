@@ -42,7 +42,6 @@ const WhatDurationMonths = () => {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen style={{backgroundColor: '#161616'}}>
                 <TextBaseGothic style={{
                     position: 'absolute',

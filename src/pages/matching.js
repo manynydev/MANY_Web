@@ -432,7 +432,6 @@ const Matching = () => {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{zIndex: 4, position: 'fixed', height: 300}}>
                     <SnapList ref={snapList} direction="horizontal"

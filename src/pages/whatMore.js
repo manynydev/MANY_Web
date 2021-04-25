@@ -17,7 +17,6 @@ function WhatMore() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What more?</TextHeaderCush>

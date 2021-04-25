@@ -11,6 +11,7 @@ const MainContainer = styled.div`
   justify-content: center;
   background-color: #eaeaea;
   position: fixed;
+  overflow: hidden;
 }
 `
 

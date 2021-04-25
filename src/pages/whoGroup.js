@@ -19,7 +19,6 @@ function WhoGroup() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Who is in the group?</TextHeaderCush>

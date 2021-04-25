@@ -11,12 +11,12 @@ export default class Platform extends React.Component {
                 <IphoneFrame/>
                 <IphoneFrame/>
                 </div>
-                <div style={{display:'flex',gap:169,marginTop:4,flexDirection:'row',position:'fixed'}}>
+                <div style={{overflow:'hidden',display:'flex',gap:169,marginTop:4,flexDirection:'row',position:'fixed'}}>
                 <iframe
-                    style={{position: 'relative',scrolling:'no', height: '538px', width: '306px', border: 'none', overflow: 'hidden'}}
+                    style={{scrolling:'no', height: '540px', width: '306px', border: 'none', overflow: 'hidden'}}
                     src={'http://localhost:3000/home'}/>
                 <iframe
-                    style={{position: 'relative',scrolling:'no', height: '538px', width: '306px', border: 'none', overflow: 'hidden'}}
+                    style={{scrolling:'no', height: '540px', width: '306px', border: 'none', overflow: 'hidden'}}
                     src={'http://localhost:3000/matching'}/>
                 </div>
             </MainContainer>

@@ -19,7 +19,6 @@ function WhereGroup() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Where is the group?</TextHeaderCush>

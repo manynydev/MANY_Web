@@ -13,7 +13,6 @@ export default class Home extends React.Component {
         const viewPrevGroupsButtonDisplayComponent = <TextBaseCush>View previous groups</TextBaseCush>
         return (
             <MainContainer>
-                <IphoneFrame/>
                 <IphoneScreen>
                     {/*//TODO: Make logo a nav button to info page*/}
                     <div style={{

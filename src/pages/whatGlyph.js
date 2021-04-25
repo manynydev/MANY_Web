@@ -13,7 +13,6 @@ function WhatGlyph() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is your glyph?</TextHeaderCush>

@@ -70,55 +70,6 @@ function App() {
     ));
 
     return (<div>{JSXPlatformTransitions} {JSXSiteTransitions}</div>);
-
-
-
-    // return platformTransitions((style, item, t, key) => (
-    //     <animated.div key={key} style={style}>
-    //         <Switch location={item}>
-    //             <Route exact path="/">
-    //                 <RootHome/>
-    //             </Route>
-    //             <Route exact path="/platformSplash">
-    //                 <Splash/>
-    //             </Route>
-    //             <Route exact path="/platform">
-    //                 <Platform/>
-    //             </Route>
-    //             <Route exact path="/home">
-    //                 <Home/>
-    //             </Route>
-    //             <Route exact path="/whoGroup">
-    //                 <WhoGroup/>
-    //             </Route>
-    //             <Route exact path="/whereGroup">
-    //                 <WhereGroup/>
-    //             </Route>
-    //             <Route exact path="/whatExchange">
-    //                 <WhatExchange/>
-    //             </Route>
-    //             <Route exact path="/whatDuration">
-    //                 <WhatDuration/>
-    //             </Route>
-    //             <Route exact path="/whatDurationMonths">
-    //                 <WhatDurationMonths/>
-    //             </Route>
-    //             <Route exact path="/whatGlyph">
-    //                 <WhatGlyph/>
-    //             </Route>
-    //             <Route exact path="/whatMore">
-    //                 <WhatMore/>
-    //             </Route>
-    //             <Route exact path="/matching">
-    //                 <Matching/>
-    //             </Route>
-    //         </Switch>
-    //     </animated.div>
-    // )
-    //
-    // );
-
-
 }
 
 
