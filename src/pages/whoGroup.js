@@ -52,7 +52,7 @@ function WhoGroup() {
                 </div>
                 <NavButtonsContainer>
                 {/*<div style={{display: 'flex', flexDirection: 'row', position: 'relative', top: '336px', gap: '55px'}}>*/}
-                    <LeftBlackButton path={'/home'}/>
+                    <LeftBlackButton goBack={true} path={'/home'}/>
                     <ManyHomeButton path={'/home'}/>
                     <RightBlackButton path={'/whereGroup'}/>
                 </NavButtonsContainer>

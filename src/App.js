@@ -1,23 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {RootHome,Platform,Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
-import {BrowserRouter as Router,Route,useLocation,Switch} from "react-router-dom";
+import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
 
-function App() {
+function App(props) {
     const location = useLocation()
+
     const siteTransitions = useTransition(location, {
         key:location.pathname,
         from: { opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
     })
+    // const platformTransitions = useTransition(location, {
+    //     key: location.pathname,
+    //     from: { opacity: 0, transform: location.goBack ? 'translate3d(0,100%,0)' : 'translate3d(100%,0,0)' },
+    //     enter: { opacity: 1, transform: location.goBack ? 'translate3d(0,0,0)'  : 'translate3d(0%,0,0)' },
+    //     leave: { opacity: 0, transform: location.goBack ? 'translate3d(0,50%,0)': 'translate3d(-50%,0,0)' },
+    // })
     const platformTransitions = useTransition(location, {
         key: location.pathname,
-        from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-        leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+        from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0,0,0)'   },
+        leave: { opacity: 0, transform: 'translate3d(0,50%,0)'},
     })
+    // const platformTransitions = useTransition(location, {
+    //     key: location.pathname,
+    //     from: { opacity: 0, transform:  'translate3d(100%,0,0)' },
+    //     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+    //     leave: { opacity: 0, transform:  'translate3d(-50%,0,0)' },
+    // })
+
+
 
     const JSXSiteTransitions = siteTransitions((style, item, t, key) =>
         <animated.div key={key} style={style}>
