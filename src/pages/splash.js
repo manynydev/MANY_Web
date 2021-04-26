@@ -1,6 +1,5 @@
 import React from "react";
-import {NavigationButton, IphoneScreen, ManyLogo, IphoneFrame, MainContainer} from "../components/index";
-import {forwardButtonIcon} from '../assets/icons/index'
+import {NavigationButton, IphoneScreen, ManyLogo, MainContainer} from "../components/index";
 
 
 export default class Splash extends React.Component {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Input} from '@material-ui/core'
 import {
-    IphoneFrame,
     MainContainer,
     TextHeaderCush,
     IphoneScreen,

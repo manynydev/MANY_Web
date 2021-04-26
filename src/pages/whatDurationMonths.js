@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     IphoneScreen,
     TextBaseGothic,
     RightWhiteButton

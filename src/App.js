@@ -32,8 +32,6 @@ function App(props) {
     //     leave: { opacity: 0, transform:  'translate3d(-50%,0,0)' },
     // })
 
-
-
     const JSXSiteTransitions = siteTransitions((style, item, t, key) =>
         <animated.div key={key} style={style}>
             <Switch location={item}>

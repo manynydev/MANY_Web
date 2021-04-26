@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     TextHeaderCush,
     IphoneScreen,
     TextBaseGothic,
