@@ -9,14 +9,14 @@ function RootHome() {
     const videoText = <TextBaseGothic fontSize='40px'> VIDEO </TextBaseGothic>
 
     return (
-        <MainContainer flexDirection={'column'}>
+        <MainContainer color={'white'} flexDirection={'column'}>
             <div style={{margin: 'auto',marginTop:300}}>
                 <ManyLogo/>
             </div>
             <div style={{display: 'flex',gap:150, flexDirection: 'row', margin: 'auto'}}>
-                <NavigationButton width={'150px'} height={'55px'} path={'/about'} displayComponent={aboutText}/>
-                <NavigationButton width={'230px'} height={'55px'} path={'/platform'} displayComponent={platformText}/>
-                <NavigationButton width={'140px'} height={'55px'} path={'/video'} displayComponent={videoText}/>
+                <NavigationButton hoverBorder={true}  width={'150px'} height={'55px'} path={'/about'} displayComponent={aboutText}/>
+                <NavigationButton hoverBorder={true}  width={'230px'} height={'55px'} path={'/platform'} displayComponent={platformText}/>
+                <NavigationButton hoverBorder={true}  width={'140px'} height={'55px'} path={'/video'} displayComponent={videoText}/>
             </div>
         </MainContainer>
     )

@@ -9,7 +9,7 @@ const MainContainer = styled.div`
   flex-direction: ${props => props.flexDirection};
   align-items: center;
   justify-content: center;
-  background-color: #eaeaea;
+  background-color: ${props => props.color? props.color : '#eaeaea'}; 
   position: fixed;
   overflow: hidden;
 }

@@ -10,6 +10,8 @@ import WhatExchange from "./whatExchange";
 import WhatGlyph from "./whatGlyph";
 import Platform from "./platform";
 import RootHome from "./rootHome";
+import RootVideo from "./rootVideo";
+import RootAbout from "./rootAbout";
 
 export {
     Home,
@@ -23,5 +25,7 @@ export {
     WhatExchange,
     WhatGlyph,
     Platform,
-    RootHome
+    RootHome,
+    RootVideo,
+    RootAbout
 }

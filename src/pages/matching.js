@@ -432,13 +432,13 @@ const Matching = () => {
     return (
         <MainContainer>
             <IphoneScreen>
-                <div style={{zIndex: 4, position: 'fixed', height: 300}}>
+                <div style={{zIndex: 4, position: 'fixed',width:'300px'}}>
                     <SnapList ref={snapList} direction="horizontal"
                               width='308px' height='360px'>
                         {usersTop}
                     </SnapList>
                 </div>
-                <div style={{zIndex: 3, position: 'fixed', height: 300, marginTop: 240}}>
+                <div style={{zIndex: 3, position: 'fixed' ,width:'300px', marginTop: 240}}>
                     <SnapList ref={snapList1} direction="horizontal"
                               width='308px' height='270px'>
                         {usersBottom}

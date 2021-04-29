@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavigationButton, IphoneScreen, MainContainer, TextBaseCush,ManyLogo} from "../components/index";
+import {CircularProgress} from "@material-ui/core";
 
-export default class Home extends React.Component {
+function Home (){
 
-    render() {
-        const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
+
+    const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
             return p.toString() === "[object SafariRemoteNotification]";
         })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 
@@ -13,7 +20,9 @@ export default class Home extends React.Component {
         const viewPrevGroupsButtonDisplayComponent = <TextBaseCush>View previous groups</TextBaseCush>
         return (
             <MainContainer>
-                <IphoneScreen>
+                <>
+                    {loading ? (<CircularProgress color="black" />) :
+                        (<IphoneScreen>
                     {/*//TODO: Make logo a nav button to info page*/}
                     <div style={{
                         display: 'flex',
@@ -42,10 +51,10 @@ export default class Home extends React.Component {
                                               displayComponent={viewPrevGroupsButtonDisplayComponent}/>
                         </div>
                     </div>
-                </IphoneScreen>
+                </IphoneScreen>)}</>
             </MainContainer>
         )
-    }
-
 }
+
+export default Home;
 

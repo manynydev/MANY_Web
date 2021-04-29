@@ -10,6 +10,7 @@ const IphoneScreen = styled.div`{
   margin: auto;
   margin-bottom: 0px;
   background-color: #f8f8f8;
+  overflow: hidden;
   z-index: 0;
   user-select: none;
   position:absolute;

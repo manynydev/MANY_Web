@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import {RootHome,Platform,Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
+import {RootAbout,RootVideo,RootHome,Platform,Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
 
@@ -8,6 +8,7 @@ function App(props) {
     const location = useLocation()
 
     const siteTransitions = useTransition(location, {
+        config:{ friction: 10 },
         key:location.pathname,
         from: { opacity: 0 },
         enter: { opacity: 1 },
@@ -37,6 +38,12 @@ function App(props) {
             <Switch location={item}>
                 <Route exact path="/">
                     <RootHome/>
+                </Route>
+                <Route exact path="/video">
+                    <RootVideo/>
+                </Route>
+                <Route exact path="/about">
+                    <RootAbout/>
                 </Route>
                 <Route exact path="/platformSplash">
                     <Splash/>
