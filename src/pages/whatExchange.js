@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     TextHeaderCush,
     IphoneScreen,
     TextBaseCush,
@@ -13,7 +12,6 @@ function WhatExchange() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is the exchange?</TextHeaderCush>

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    IphoneFrame,
     MainContainer,
     TextHeaderCush,
     IphoneScreen,
@@ -19,7 +18,6 @@ function WhereGroup() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Where is the group?</TextHeaderCush>
@@ -59,7 +57,7 @@ function WhereGroup() {
                     />
                 </div>
                 <NavButtonsContainer>
-                    <LeftBlackButton path={'/whoGroup'}/>
+                    <LeftBlackButton goBack={true} path={'/whoGroup'}/>
                     <ManyHomeButton path={'/home'}/>
                     <RightBlackButton path={'/whatExchange'}/>
                 </NavButtonsContainer>

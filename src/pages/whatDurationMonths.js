@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     IphoneScreen,
     TextBaseGothic,
     RightWhiteButton
@@ -42,7 +41,6 @@ const WhatDurationMonths = () => {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen style={{backgroundColor: '#161616'}}>
                 <TextBaseGothic style={{
                     position: 'absolute',

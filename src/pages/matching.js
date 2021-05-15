@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     IphoneScreen,
     Glyph,
     TextBaseManySans,
@@ -381,10 +380,10 @@ const createUsers = (usersDict) => {
         users.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
              <SnapItemContainer>
-                    <Location left={'55px'} top={'65px'} src={user.location} alt={'User location'}/>
-                         <Logo right={'80px'} bottom={'75px'} src={user.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',right:90,bottom:50}} fontSize={'80px'} >{user.month}</TextBaseManySans>
-                    <Glyph bottom={'45px'}  src={user.glyph} alt={'User glyph'}/>
+                    <Location left={'55px'} top={'50px'} src={user.location} alt={'User location'}/>
+                    <Logo right={'80px'} bottom={'90px'} src={user.logo} alt={'User logo'}/>
+                    <TextBaseManySans style={{position:'relative',right:90,bottom:70}} fontSize={'80px'} >{user.month}</TextBaseManySans>
+                    <Glyph bottom={'55px'}  src={user.glyph} alt={'User glyph'}/>
              </SnapItemContainer>
             </SnapItem>
         )
@@ -399,7 +398,7 @@ const createMatches = (userId) => {
         matchesRenderReady.push(
             <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
               <SnapItemContainer>
-                    <Glyph top={'45px'} src={match.glyph} alt={'User glyph'}/>
+                    <Glyph top={'55px'} src={match.glyph} alt={'User glyph'}/>
                     <Location right ={'25px'} top={'75px'} src={match.location} alt={'User location'}/>
                     <Logo right={'110px'} bottom={'40px'} src={match.logo} alt={'User logo'}/>
                     <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'80px'} >{match.month}</TextBaseManySans>
@@ -432,15 +431,14 @@ const Matching = () => {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
-                <div style={{zIndex: 4, position: 'fixed', height: 300}}>
+                <div style={{zIndex: 4, position: 'fixed',width:'300px'}}>
                     <SnapList ref={snapList} direction="horizontal"
                               width='308px' height='360px'>
                         {usersTop}
                     </SnapList>
                 </div>
-                <div style={{zIndex: 3, position: 'fixed', height: 300, marginTop: 240}}>
+                <div style={{zIndex: 3, position: 'fixed' ,width:'300px', marginTop: 240}}>
                     <SnapList ref={snapList1} direction="horizontal"
                               width='308px' height='270px'>
                         {usersBottom}
@@ -448,7 +446,6 @@ const Matching = () => {
                 </div>
                 <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: '489px',left:'108px', gap: '30px'}}>
                     <ManyHomeButton path={'/home'}/>
-                    <RightBlackButton path={'/matching'}/>
                 </div>
             </IphoneScreen>
         </MainContainer>

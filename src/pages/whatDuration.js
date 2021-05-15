@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     MainContainer,
-    IphoneFrame,
     TextHeaderCush,
     IphoneScreen,
     TextBaseGothic,
@@ -14,7 +13,6 @@ function WhatDuration() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is the duration?</TextHeaderCush>

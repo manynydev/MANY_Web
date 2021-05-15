@@ -1,7 +1,6 @@
 import React from 'react';
 import {Input} from '@material-ui/core'
 import {
-    IphoneFrame,
     MainContainer,
     TextHeaderCush,
     IphoneScreen,
@@ -17,7 +16,6 @@ function WhatMore() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What more?</TextHeaderCush>

@@ -5,6 +5,7 @@ const TextBaseGothic = styled.text`
   font-size: ${props => props.fontSize ? props.fontSize : '24px'};
   font-weight: normal;
   text-transform: initial;
+  margin-top: 5px;
   font-family: MSGothicThesis, sans-serif;
   color: #151515;
   justify-content: center;

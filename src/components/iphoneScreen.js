@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 
 const IphoneScreen = styled.div`{
-  max-width: 306px;
-  min-width: 306px;
-  width: 306px;
-  height: 538px;
+  max-width: 304px;
+  min-width: 304px;
+  //width: 306px;
+  //height: 526px;
   min-height: 538px;
   max-height: 538px;
-  padding-top: 2px;
-  padding-right: 2px;
   margin: auto;
+  margin-bottom: 0px;
   background-color: #f8f8f8;
-  z-index: 1;
+  overflow: hidden;
+  z-index: 0;
   user-select: none;
-  position:absolute
+  position:absolute;
 }`
 
 export default IphoneScreen;

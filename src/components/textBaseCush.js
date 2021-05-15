@@ -8,6 +8,7 @@ const TextBaseCush = styled.text`
   font-weight: bold;
   text-transform: initial;
   font-family: 'CushingStdBook', serif;
+  margin-top: 3px;
   color: #151515;
   justify-content: center;
   -webkit-touch-callout: none; /* iOS Safari */

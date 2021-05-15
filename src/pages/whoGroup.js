@@ -1,7 +1,6 @@
 import React from 'react';
-import {TextField, Button, Input} from '@material-ui/core'
+import {Input} from '@material-ui/core'
 import {
-    IphoneFrame,
     MainContainer,
     TextHeaderCush,
     TextBaseManySans,
@@ -19,7 +18,6 @@ function WhoGroup() {
 
     return (
         <MainContainer>
-            <IphoneFrame/>
             <IphoneScreen>
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Who is in the group?</TextHeaderCush>
@@ -53,7 +51,7 @@ function WhoGroup() {
                 </div>
                 <NavButtonsContainer>
                 {/*<div style={{display: 'flex', flexDirection: 'row', position: 'relative', top: '336px', gap: '55px'}}>*/}
-                    <LeftBlackButton path={'/home'}/>
+                    <LeftBlackButton goBack={true} path={'/home'}/>
                     <ManyHomeButton path={'/home'}/>
                     <RightBlackButton path={'/whereGroup'}/>
                 </NavButtonsContainer>
