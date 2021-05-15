@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledLogo = styled.img`{
   object-fit: scale-down;
   height: 20%;
-  width: 40%;
+  width: 65px;
   position: relative;
   top: ${props => props.top ? props.top : 'auto'};
   bottom: ${props => props.bottom ? props.bottom : 'auto'};
