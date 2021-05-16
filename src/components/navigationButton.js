@@ -9,7 +9,7 @@ const StyledButton = styled(Button)`
   width: ${props => props.width ? props.width : '90px'};
 
   &:hover {
-    border: ${props => props.hoverBorder? '2px solid black' :''};
+    border: ${props => props.hoverBorder? '1px solid black' :''};
     cursor: initial;
   }
 
