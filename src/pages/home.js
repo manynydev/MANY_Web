@@ -29,7 +29,7 @@ function Home (){
                         flexDirection: 'column',
                         alignItems: 'center',
                         gap: '90px',
-                        marginTop: '210px'
+                        marginTop: '200px'
                     }}>
                         <NavigationButton height='70px' width='170px' path={'/home'} displayComponent=<ManyLogo/>/>
                         <div
