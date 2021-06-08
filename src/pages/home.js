@@ -43,7 +43,7 @@ function Home (){
                                 gap: '5px'
                             }}
                         >
-                            <NavigationButton path={'/'} width={'90px'} height={'35px'}
+                            <NavigationButton path={'/home'} width={'90px'} height={'35px'}
                                               displayComponent={signInButtonDisplayComponent}/>
                             <NavigationButton path={'/whoGroup'} width={'170px'} height={'35px'}
                                               displayComponent={createGroupButtonDisplayComponent}/>

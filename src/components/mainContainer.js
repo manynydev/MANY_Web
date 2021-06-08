@@ -12,6 +12,7 @@ const MainContainer = styled.div`
   background-color: ${props => props.color? props.color : '#eaeaea'}; 
   position: fixed;
   overflow: hidden;
+  margin:auto;
 }
 `
 
