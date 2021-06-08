@@ -1,40 +1,41 @@
 import React from "react";
 import {NavigationButton, MainContainer, TextBaseManySans} from "../components/index"
-import MANYLogoLarge from "../assets/many/MANY_Large.png";
+import MANYLogoLarge from "../assets/many/MANY_Home_Logo.png";
 
 
 function RootHome() {
 
-    const aboutText = <TextBaseManySans fontSize='30px'> About </TextBaseManySans>
-    const platformText = <TextBaseManySans fontSize='30px'> Platform </TextBaseManySans>
-    const videoText = <TextBaseManySans fontSize='30px'> Video </TextBaseManySans>
+    const aboutText = <TextBaseManySans fontSize='60px'> About </TextBaseManySans>
+    const platformText = <TextBaseManySans fontSize='60px'> Platform </TextBaseManySans>
+    const videoText = <TextBaseManySans fontSize='60px'> Video </TextBaseManySans>
 
     return (
         <MainContainer color={'white'} flexDirection={'column'}>
-            <div style={{margin: 'auto', marginTop: 300, width: 800}}>
+            <div style={{margin: 'auto', width: 800,position:'relative',bottom:100}}>
                 <div style={{margin: 'auto', width: '100%'}}>
-                    <img alt="logo" style={{width: '100%'}} src={MANYLogoLarge}/>
+                    <img alt="logo" style={{width: '95%'}} src={MANYLogoLarge}/>
                 </div>
                 <div style={{
                     width: '100%',
-                    marginLeft: 15,
-                    top:50,
+                    right:30,
+                    top:180,
                     display: 'flex',
                     flexDirection: 'row',
+                    justifyContent:'space-evenly',
                     margin: 'auto',
                     position:'relative'
                 }}>
-                    <div style={{marginLeft: 20}}>
-
-                    <NavigationButton hoverBorder={true} width={'90px'} height={'40px'} path={'/about'}
+                    <div style={{position:'relative',right:110}}>
+                    <NavigationButton hoverBorder={true} width={'165px'} height={'62px'} path={'/about'}
                                       displayComponent={aboutText}/>
                     </div>
-                    <div style={{marginLeft: 236}}>
-                        <NavigationButton hoverBorder={true} width={'140px'} height={'40px'} path={'/platform'}
+                    <div style={{position:'relative',left:15}}>
+                        <NavigationButton hoverBorder={true} width={'255px'} height={'62px'} path={'/platform'}
                                           displayComponent={platformText}/>
                     </div>
-                    <div style={{marginLeft: 185}}>
-                        <NavigationButton hoverBorder={true} width={'90px'} height={'40px'} path={'/video'}
+                    <div style={{position:'relative',left:140}}>
+                        <NavigationButton hoverBorder={true} width={'165' +
+                        'px'} height={'62px'} path={'/video'}
                                           displayComponent={videoText}/>
                     </div>
                 </div>
