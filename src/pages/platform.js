@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {IphoneFrame, MainContainer} from "../components/index";
+import {IphoneFrame, LeftBlackButton, MainContainer, NavButtonsContainer} from "../components/index";
 import {CircularProgress} from "@material-ui/core";
+import leftBlackArrow from "../assets/icons/left_black.png";
+import NavigationButton from "../components/navigationButton";
 
 function Platform() {
 
@@ -8,6 +10,8 @@ function Platform() {
     const [frame2loading, setFrame2Loading] = useState(true);
     const [framesLoading, setFramesLoading] = useState(true);
 
+    const leftArrowImage = <img style={{height:35,position:'absolute'}} alt='leftBlackArrow' src={leftBlackArrow}/>
+    const largeNavButton = <NavigationButton hoverBorder={true} width={'50px'} height={'40px'}displayComponent={leftArrowImage} path={'/rootHome'}/>
 
     return (
         <MainContainer flexDirection={'row'}>
@@ -15,6 +19,9 @@ function Platform() {
             <div style={{display: 'flex', gap: 100, flexDirection: 'row', position: 'fixed'}}>
                 <IphoneFrame/>
                 <IphoneFrame/>
+            </div>
+            <div style={{position:'relative',right:800}}>
+                {largeNavButton}
             </div>
             <div onLoad={() => setFramesLoading(false)} style={{
                 zIndex: 0,

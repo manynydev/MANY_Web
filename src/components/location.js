@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledLocation = styled.img`{
   object-fit: scale-down;
-  width: 200px;
+  width: 160px;
   position: relative;
   top: ${props => props.top ? props.top : 'auto'};
   bottom: ${props => props.bottom ? props.bottom : 'auto'};
