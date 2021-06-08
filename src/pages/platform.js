@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {IphoneFrame, MainContainer} from "../components/index";
 import {CircularProgress} from "@material-ui/core";
 
+
 function Platform() {
 
     const [frame1loading, setFrame1Loading] = useState(true);
