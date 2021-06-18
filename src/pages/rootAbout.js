@@ -11,7 +11,7 @@ function RootAbout() {
 
     return (
         <div>
-            <div style={{position: "fixed", top: 475,left:1550}}>
+            <div style={{position: "fixed", top: 475,right:150}}>
                 {largeNavButton}
             </div>
             <div style={{whiteSpace: 'pre-wrap', width: 900, margin: 'auto'}}>
