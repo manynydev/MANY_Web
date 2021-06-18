@@ -18,7 +18,7 @@ function Platform() {
 
     return (
         <MainContainer flexDirection={'row'}>
-            {(frame1loading || frame2loading || framesLoading) && <CircularProgress style={{left:30,position:'relative'}} color="black"/>}
+            {(frame1loading || frame2loading || framesLoading) && <CircularProgress style={{position:'relative'}} color="black"/>}
             <div style={{display: 'flex', gap: 100, flexDirection: 'row', position: 'fixed'}}>
                 <IphoneFrame/>
                 <IphoneFrame/>
