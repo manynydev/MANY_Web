@@ -27,7 +27,7 @@ function Platform() {
                 zIndex: 0,
                 overflow: 'hidden',
                 display: 'flex',
-                gap: 180,
+                gap: 176,
                 marginTop: 3,
                 marginRight: 5,
                 flexDirection: 'row',
@@ -36,12 +36,12 @@ function Platform() {
                 <iframe loading={'lazy'} onLoad={() => {
                     setFrame1Loading(false)
                 }}
-                        style={{scrolling: 'no', height: '502px', width: '285px', border: 'none', overflow: 'hidden'}}
+                        style={{scrolling: 'no', height: 444, width: 250, border: 'none', overflow: 'hidden'}}
                         src={'http://localhost:3000/home'}/>
                 <iframe loading={'lazy'} onLoad={() => {
                     setFrame2Loading(false)
                 }}
-                        style={{scrolling: 'no', height: '502px', width: '285px', border: 'none', overflow: 'hidden'}}
+                        style={{scrolling: 'no', height: 443, width: 250, border: 'none', overflow: 'hidden'}}
                         src={'http://localhost:3000/matching'}/>
             </div>
         </MainContainer>

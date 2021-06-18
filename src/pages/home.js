@@ -29,13 +29,13 @@ function Home (){
                         flexDirection: 'column',
                         alignItems: 'center',
                         gap: '90px',
-                        marginTop: '200px'
+                        marginTop: '150px'
                     }}>
                         <NavigationButton height='70px' width='170px' path={'/home'} displayComponent=<ManyLogo/>/>
                         <div
                             style={{
                                 // Safari does not support the CSS gap property for flex.
-                                marginTop: isSafari ? '90px' : 0,
+                                marginTop: isSafari ? 0 : -30,
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
@@ -43,11 +43,11 @@ function Home (){
                                 gap: '5px'
                             }}
                         >
-                            <NavigationButton path={'/home'} width={'90px'} height={'35px'}
+                            <NavigationButton path={'/home'} width={'75px'} height={'35px'}
                                               displayComponent={signInButtonDisplayComponent}/>
-                            <NavigationButton path={'/whoGroup'} width={'170px'} height={'35px'}
+                            <NavigationButton path={'/whoGroup'} width={'150px'} height={'35px'}
                                               displayComponent={createGroupButtonDisplayComponent}/>
-                            <NavigationButton path={'/matching'} width={'240px'} height={'35px'}
+                            <NavigationButton path={'/matching'} width={'220px'} height={'35px'}
                                               displayComponent={viewPrevGroupsButtonDisplayComponent}/>
                         </div>
                     </div>

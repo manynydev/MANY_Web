@@ -9,7 +9,7 @@ import {
 
 function WhatDuration() {
 
-    const monthsIntElement = <TextBaseGothic fontSize='80px'> 12 </TextBaseGothic>
+    const monthsIntElement = <TextBaseGothic fontSize='72px'> 12 </TextBaseGothic>
 
     return (
         <MainContainer>
@@ -21,7 +21,7 @@ function WhatDuration() {
                     <NavigationButton width={'95px'} displayComponent={monthsIntElement} path={'/whatDurationMonths'}
                                       height={'80px'}/>
                     <div style={{marginTop: '50px'}}>
-                        <TextBaseGothic fontSize='20px'> months </TextBaseGothic>
+                        <TextBaseGothic fontSize='15px'> months </TextBaseGothic>
                     </div>
                 </div>
                 <NavButtonsContainer>
