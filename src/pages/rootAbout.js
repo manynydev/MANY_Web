@@ -11,7 +11,7 @@ function RootAbout() {
 
     return (
         <div>
-            <div style={{position: "fixed", top: 475,left:1700}}>
+            <div style={{position: "fixed", top: 475,left:1550}}>
                 {largeNavButton}
             </div>
             <div style={{whiteSpace: 'pre-wrap', width: 900, margin: 'auto'}}>
@@ -21,7 +21,10 @@ function RootAbout() {
                     {"\n"}
                 </TextBaseGothic>
                 <TextBaseGothic>
-                    {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs. Global infrastructure space has perfectly streamlined the movements of billions of products and tens of millions of tourists and cheap laborers, but at a time when over 80 million people in the world are displaced, there are still so few ways to handle political, economic, or environmental migrations. The nation-state has a dumb on-off button to grant or deny citizenship/asylum. And the NGOcracy offers as its best idea storage in a refugee camp—a form of detention lasting on average 17 years."}
+                    {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs."}
+                    {"\n"}
+                    {"\n"}
+                    {"Global infrastructure space has perfectly streamlined the movements of billions of products and tens of millions of tourists and cheap laborers, but at a time when over 80 million people in the world are displaced, there are still so few ways to handle political, economic, or environmental migrations. The nation-state has a dumb on-off button to grant or deny citizenship/asylum. And the NGOcracy offers as its best idea storage in a refugee camp—a form of detention lasting on average 17 years."}
                     {"\n"}
                     {"\n"}
                     {"Upstream from the violence of the refugee camp, MANY considers a global form of matchmaking between the sidelined talents of migrating individuals and a multitude of endeavors and opportunities around the world. The platform more robustly networks existing organizations to create short term, project-based journeys and cooperative exchanges organized around intervals of time or seasons of a life."}
