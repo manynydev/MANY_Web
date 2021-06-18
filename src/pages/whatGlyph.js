@@ -15,7 +15,7 @@ function WhatGlyph() {
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is your glyph?</TextHeaderCush>
                 </div>
-                <div style={{position: 'relative', top: '150px', left: '100px', width: '120px'}}>
+                <div style={{position: 'relative', top: 150, left: 90, width: 120}}>
                     <input
                         accept="image/*"
                         style={{display: "none"}}

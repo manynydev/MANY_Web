@@ -382,7 +382,7 @@ const createUsers = (usersDict) => {
              <SnapItemContainer>
                     <Location left={'55px'} top={'50px'} src={user.location} alt={'User location'}/>
                     <Logo right={'80px'} bottom={'90px'} src={user.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',right:90,bottom:70}} fontSize={'80px'} >{user.month}</TextBaseManySans>
+                    <TextBaseManySans style={{position:'relative',right:90,bottom:70}} fontSize={'65px'} >{user.month}</TextBaseManySans>
                     <Glyph bottom={'55px'}  src={user.glyph} alt={'User glyph'}/>
              </SnapItemContainer>
             </SnapItem>
@@ -401,7 +401,7 @@ const createMatches = (userId) => {
                     <Glyph top={'55px'} src={match.glyph} alt={'User glyph'}/>
                     <Location right ={'25px'} top={'75px'} src={match.location} alt={'User location'}/>
                     <Logo right={'110px'} bottom={'40px'} src={match.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'80px'} >{match.month}</TextBaseManySans>
+                    <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'65px'} >{match.month}</TextBaseManySans>
               </SnapItemContainer>
             </SnapItem>
         )
@@ -429,22 +429,38 @@ const Matching = () => {
      let usersTop = createUsers(mainUsers);
      let usersBottom = createMatches("u5");
 
+    // let usersBottom = [];
+    // let exampleUser = <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center"><SnapItemContainer>
+    //     {/*<Logo right={'60px'} top={'20px'} src={require("../assets/logos/0055_CSU_BW.png").default} alt={'User logo'}/>*/}
+    // <img style={{  objectFit:'scale-down',
+    //     zIndex:1,
+    //     height: '95%',
+    //     width: '100%',
+    //     position: 'relative',
+    //     userSelect: false}} alt={'examp user'} src={require('../assets/users/exampleUser1.png').default}/>
+    // </SnapItemContainer>
+    // </SnapItem>;
+    // usersBottom.push(exampleUser);
+    // usersBottom.push(exampleUser);
+    // usersBottom.push(exampleUser);
+
     return (
         <MainContainer>
             <IphoneScreen>
-                <div style={{zIndex: 4, position: 'fixed',width:'300px'}}>
+                <div style={{zIndex: 4, position: 'fixed',width:'285px'}}>
                     <SnapList ref={snapList} direction="horizontal"
                               width='308px' height='360px'>
+                        {/*{usersBottom}*/}
                         {usersTop}
                     </SnapList>
                 </div>
-                <div style={{zIndex: 3, position: 'fixed' ,width:'300px', marginTop: 240}}>
+                <div style={{zIndex: 3, position: 'fixed' ,width:'285px', marginTop: 200}}>
                     <SnapList ref={snapList1} direction="horizontal"
                               width='308px' height='270px'>
                         {usersBottom}
                     </SnapList>
                 </div>
-                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: '489px',left:'108px', gap: '30px'}}>
+                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: 460,left:'108px', gap: '30px'}}>
                     <ManyHomeButton path={'/home'}/>
                 </div>
             </IphoneScreen>

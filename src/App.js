@@ -58,6 +58,9 @@ function App(props) {
     const JSXPlatformTransitions = platformTransitions((style, item, t, key) => (
         <animated.div key={key} style={style}>
             <Switch location={item}>
+                <Route exact path="/rootHome">
+                    <RootHome/>
+                </Route>
                 <Route exact path="/home">
                     <Home/>
                 </Route>

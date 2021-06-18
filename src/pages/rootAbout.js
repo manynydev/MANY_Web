@@ -1,11 +1,19 @@
 import React from "react";
-import { MainContainer, TextBaseGothic,} from "../components/index";
+import {MainContainer, RightBlackButton, TextBaseGothic,} from "../components/index";
+import rightBlackArrow from "../assets/icons/right_black.png";
+import NavigationButton from "../components/navigationButton";
 
 
 function RootAbout() {
+    const leftArrowImage = <img style={{height:35,position:'absolute'}} alt='rightBlackArrow' src={rightBlackArrow}/>
+    const largeNavButton = <NavigationButton hoverBorder={true} width={'50px'} height={'40px'}displayComponent={leftArrowImage} path={'/rootHome'}/>
 
     return (
         <MainContainer color={'white'} flexDirection={'column'}>
+            {/*TODO: fix width unit*/}
+            <div style={{position:'relative',left:800,top:420}}>
+            {largeNavButton}
+            </div>
             <div style={{width:'90vh', height:'70vh',marginBottom:'100px'}}>
             <TextBaseGothic  fontSize='35px'> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
