@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {IphoneFrame, LeftBlackButton, MainContainer, NavButtonsContainer, TextBaseManySans} from "../components/index";
+import React, {useState} from 'react';
+import {IphoneFrame, MainContainer, TextBaseManySans} from "../components/index";
 import {CircularProgress} from "@material-ui/core";
-import leftBlackArrow from "../assets/icons/left_black.png";
 import NavigationButton from "../components/navigationButton";
 
 function Platform() {
@@ -12,9 +11,6 @@ function Platform() {
     const aboutText = <TextBaseManySans color='white' fontSize='45px'> About </TextBaseManySans>
     const platformText = <TextBaseManySans color='white' fontSize='45px'> Platform </TextBaseManySans>
     const videoText = <TextBaseManySans color='white' fontSize='45px'> Video </TextBaseManySans>
-
-    const leftArrowImage = <img style={{height:35,position:'absolute'}} alt='leftBlackArrow' src={leftBlackArrow}/>
-    const largeNavButton = <NavigationButton hoverBorder={true} width={'50px'} height={'40px'}displayComponent={leftArrowImage} path={'/rootHome'}/>
 
     return (
         <MainContainer flexDirection={'row'}>
