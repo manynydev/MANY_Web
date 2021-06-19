@@ -6,7 +6,7 @@ import {
     TextBaseManySans,
     Logo,
     Location,
-    ManyHomeButton, RightBlackButton, SnapItemContainer
+    ManyHomeButton, SnapItemContainer
 } from "../components";
 import {
     SnapItem, SnapList, useDragToScroll, useScroll,
