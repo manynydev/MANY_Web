@@ -23,7 +23,6 @@ function Home (){
                 <>
                     {loading ? (<CircularProgress color="black" />) :
                         (<IphoneScreen>
-                    {/*//TODO: Make logo a nav button to info page*/}
                     <div style={{
                         display: 'flex',
                         flexDirection: 'column',
