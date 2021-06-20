@@ -6,7 +6,7 @@ const TextBaseManySans = styled.text`
   font-weight: normal;
   text-transform: initial;
   font-family: ManySans, sans-serif;
-  color: #151515;
+  color: ${props => props.color ? props.color : '#151515'};
   justify-content: center;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

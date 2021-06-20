@@ -9,9 +9,9 @@ const NavButtonContainer = (props) => {
             display: 'flex',
             flexDirection: 'row',
             position: 'absolute',
-            width: '308px',
-            bottom: 10,
-            left: -11,
+            width: '270px',
+            bottom: 15,
+            left: 0,
             gap: 30,
         }}>
             {props.children}

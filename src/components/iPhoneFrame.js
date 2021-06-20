@@ -6,8 +6,8 @@ const IphoneFrameStyled = styled.img`
 {
   z-index: 1;
   margin: auto;
-  max-height: 700px;
-  min-height: 700px;
+  max-height: 620px;
+  min-height: 620px;
   -webkit-user-drag: none;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

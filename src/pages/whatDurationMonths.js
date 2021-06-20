@@ -18,7 +18,7 @@ function createMonthsElements() {
                     style={{
                         color: 'white',
                         fontWeight: 'regular',
-                        fontSize: '80px',
+                        fontSize: '72px',
                         // paddingBottom: i === 24 ? 395 : 0,
                         // paddingTop: i === 1 ? 40 : 0
                     }}>{i}
@@ -48,16 +48,15 @@ const WhatDurationMonths = () => {
                     marginLeft: '120px',
                     marginTop: 105,
                     fontWeight: 'regular',
-                    fontSize: '20px'
+                    fontSize: '15px'
                 }}>months
                 </TextBaseGothic>
                 <div style={{marginLeft: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                    <SnapList width='85' height='538px' direction="vertical" ref={snapList}>
+                    <SnapList width='70px' height='538px' direction="vertical" ref={snapList}>
                         {months}
                     </SnapList>
                 </div>
-                {/*TODO: Fix inline styling for this button*/}
-                <RightWhiteButton style={{position: 'relative', left: 210, bottom: 75, height: '20px'}}
+                <RightWhiteButton style={{position: 'relative', left: 188, bottom: 133, height: '19px'}}
                                   path={'/whatDuration'}/>
             </IphoneScreen>
         </MainContainer>

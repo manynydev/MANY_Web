@@ -5,39 +5,42 @@ import MANYLogoLarge from "../assets/many/MANY_Home_Logo.png";
 
 function RootHome() {
 
-    const aboutText = <TextBaseManySans fontSize='60px'> About </TextBaseManySans>
-    const platformText = <TextBaseManySans fontSize='60px'> Platform </TextBaseManySans>
-    const videoText = <TextBaseManySans fontSize='60px'> Video </TextBaseManySans>
+    const aboutText = <TextBaseManySans color='white' fontSize='45px'> About </TextBaseManySans>
+    const platformText = <TextBaseManySans color='white' fontSize='45px'> Platform </TextBaseManySans>
+    const videoText = <TextBaseManySans color='white' fontSize='45px'> Video </TextBaseManySans>
 
     return (
         <MainContainer color={'white'} flexDirection={'column'}>
-            <div style={{margin: 'auto', width: 800,position:'relative',bottom:100}}>
+            <div style={{margin: 'auto', width: 800,position:'relative'}}>
                 <div style={{margin: 'auto', width: '100%'}}>
                     <img alt="logo" style={{width: '95%'}} src={MANYLogoLarge}/>
                 </div>
-                <div style={{
-                    width: '100%',
-                    right:30,
-                    top:180,
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent:'space-evenly',
-                    margin: 'auto',
-                    position:'relative'
-                }}>
-                    <div style={{position:'relative',right:110}}>
+
+            </div>
+            <div style={{
+                height:70,
+                bottom:0,
+                width:'100vw',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent:'center',
+                margin: 'auto',
+                gap:150,
+                position:'absolute',
+                backgroundColor:'#0c0c0c'
+            }}>
+                <div style={{position:'relative',right:0}}>
                     <NavigationButton hoverBorder={true} width={'165px'} height={'62px'} path={'/about'}
                                       displayComponent={aboutText}/>
-                    </div>
-                    <div style={{position:'relative',left:15}}>
-                        <NavigationButton hoverBorder={true} width={'255px'} height={'62px'} path={'/platform'}
-                                          displayComponent={platformText}/>
-                    </div>
-                    <div style={{position:'relative',left:140}}>
-                        <NavigationButton hoverBorder={true} width={'165' +
-                        'px'} height={'62px'} path={'/video'}
-                                          displayComponent={videoText}/>
-                    </div>
+                </div>
+                <div style={{position:'relative',left:0}}>
+                    <NavigationButton hoverBorder={true} width={'255px'} height={'62px'} path={'/platform'}
+                                      displayComponent={platformText}/>
+                </div>
+                <div style={{position:'relative',left:0}}>
+                    <NavigationButton hoverBorder={true} width={'165' +
+                    'px'} height={'62px'} path={'/video'}
+                                      displayComponent={videoText}/>
                 </div>
             </div>
         </MainContainer>

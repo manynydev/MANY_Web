@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     MainContainer,
     TextHeaderCush,
@@ -7,6 +7,8 @@ import {
 } from "../components";
 
 function WhatGlyph() {
+
+    const [glyph, setGlyph] = useState('');
 
 
     return (
@@ -21,13 +23,22 @@ function WhatGlyph() {
                         style={{display: "none"}}
                         type="file"
                         id="contained-button-file"
+                        onChange={(event) => {
+                            setGlyph(URL.createObjectURL(event.target.files[0]))
+                        }}
                     />
-                    <label htmlFor="contained-button-file">
-                        {/*<Button variant="text" component="span">*/}
-                        <TextBaseManySans fontSize={'19px'} style={{cursor: 'pointer', color: '#bdbdbd'}}>Choose
+                    {glyph ? <img style={{height: 120, position: 'relative', margin: 'auto', right: 15, bottom: 40}}
+                                  alt={'uploaded glyph'} src={glyph}/> : <label htmlFor="contained-button-file">
+                        <TextBaseManySans fontSize={'19px'} style={{
+                            cursor: 'pointer',
+                            color: '#bdbdbd',
+                            position: 'relative',
+                            right: 10,
+                            margin: 'auto'
+                        }}>Choose
                             image</TextBaseManySans>
-                        {/*</Button>*/}
-                    </label>
+                    </label>}
+
                 </div>
                 <NavButtonsContainer>
                     <LeftBlackButton path={'/whatDuration'}/>

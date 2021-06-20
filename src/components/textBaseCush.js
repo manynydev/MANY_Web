@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TextBaseCush = styled.text`
 {
   position: absolute;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-transform: initial;
   font-family: 'CushingStdBook', serif;
