@@ -8,7 +8,7 @@ function App(props) {
     const location = useLocation()
 
     const siteTransitions = useTransition(location, {
-        config:{ friction: 10 },
+        config:{ friction: 25 },
         key:location.pathname,
         from: { opacity: 0 },
         enter: { opacity: 1 },
@@ -24,7 +24,7 @@ function App(props) {
         key: location.pathname,
         from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)'   },
-        leave: { opacity: 0, transform: 'translate3d(0,50%,0)'},
+        leave: { opacity: 0, transform: 'translate3d(0,100%,0)'},
     })
     // const platformTransitions = useTransition(location, {
     //     key: location.pathname,

@@ -378,12 +378,12 @@ const createUsers = (usersDict) => {
     let users = []
     usersDict.forEach((user => {
         users.push(
-            <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
+            <SnapItem margin={{right:14}} width="90%" height="90%" snapAlign="center">
              <SnapItemContainer>
-                    <Location left={'55px'} top={'50px'} src={user.location} alt={'User location'}/>
-                    <Logo right={'80px'} bottom={'90px'} src={user.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',right:90,bottom:70}} fontSize={'65px'} >{user.month}</TextBaseManySans>
-                    <Glyph bottom={'55px'}  src={user.glyph} alt={'User glyph'}/>
+                    <Location left={'60px'} top={'70px'} src={user.location} alt={'User location'}/>
+                    <Logo right={'70px'} bottom={'20px'} src={user.logo} alt={'User logo'}/>
+                    <TextBaseManySans style={{position:'relative',right:'85px',top:'10px'}} fontSize={'60px'} >{user.month}</TextBaseManySans>
+                    <Glyph bottom={'20px'} src={user.glyph} alt={'User glyph'}/>
              </SnapItemContainer>
             </SnapItem>
         )
@@ -396,12 +396,12 @@ const createMatches = (userId) => {
     let matchesRenderReady = []
     matchesData.forEach((match => {
         matchesRenderReady.push(
-            <SnapItem margin={{right: '73px'}} width="100%" height="100%" snapAlign="center">
+            <SnapItem margin={{right:14}} width="90%" height="90%" snapAlign="center">
               <SnapItemContainer>
-                    <Glyph top={'55px'} src={match.glyph} alt={'User glyph'}/>
-                    <Location right ={'25px'} top={'75px'} src={match.location} alt={'User location'}/>
-                    <Logo right={'110px'} bottom={'40px'} src={match.logo} alt={'User logo'}/>
-                    <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'65px'} >{match.month}</TextBaseManySans>
+                    <Glyph top={'45px'} src={match.glyph} alt={'User glyph'}/>
+                    <Logo right={'80px'} top={'65px'} src={match.logo} alt={'User logo'}/>
+                    <Location right ={20} bottom={'10px'} src={match.location} alt={'User location'}/>
+                    <TextBaseManySans style={{position:'relative',left:90,bottom:100}} fontSize={'60px'} >{match.month}</TextBaseManySans>
               </SnapItemContainer>
             </SnapItem>
         )
@@ -447,20 +447,20 @@ const Matching = () => {
     return (
         <MainContainer>
             <IphoneScreen>
-                <div style={{zIndex: 4, position: 'fixed',width:'285px'}}>
+                <div style={{zIndex: 4, position: 'fixed',width:260,overflow:'hidden'}}>
                     <SnapList ref={snapList} direction="horizontal"
-                              width='308px' height='360px'>
+                              width='100%' height={300}>
                         {/*{usersBottom}*/}
                         {usersTop}
                     </SnapList>
                 </div>
-                <div style={{zIndex: 3, position: 'fixed' ,width:'285px', marginTop: 200}}>
+                <div style={{zIndex: 3, position: 'fixed' ,width:260, marginTop: 200,overflow:'hidden'}}>
                     <SnapList ref={snapList1} direction="horizontal"
-                              width='308px' height='270px'>
+                              width='100%' height={246}>
                         {usersBottom}
                     </SnapList>
                 </div>
-                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: 460,left:'108px', gap: '30px'}}>
+                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: 400,left:90, gap: '30px'}}>
                     <ManyHomeButton path={'/home'}/>
                 </div>
             </IphoneScreen>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledGlyph = styled.img`{
   object-fit: scale-down;
-  height: 35%;
+  height: 65%;
   width: 45%;
   position: relative;
   top: ${props => props.top? props.top : ''};
