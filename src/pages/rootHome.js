@@ -5,9 +5,9 @@ import MANYLogoLarge from "../assets/many/MANY_Home_Logo.png";
 
 function RootHome() {
 
-    const aboutText = <TextBaseManySans color='white' fontSize='45px'> About </TextBaseManySans>
-    const platformText = <TextBaseManySans color='white' fontSize='45px'> Platform </TextBaseManySans>
-    const videoText = <TextBaseManySans color='white' fontSize='45px'> Video </TextBaseManySans>
+    const aboutText = <TextBaseManySans color='white' fontSize='30px'> About </TextBaseManySans>
+    const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
+    const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
     return (
         <MainContainer color={'white'} flexDirection={'column'}>
@@ -18,7 +18,7 @@ function RootHome() {
 
             </div>
             <div style={{
-                height:70,
+                height:40,
                 bottom:0,
                 width:'100vw',
                 display: 'flex',
@@ -30,16 +30,16 @@ function RootHome() {
                 backgroundColor:'#0c0c0c'
             }}>
                 <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'62px'} path={'/about'}
+                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/about'}
                                       displayComponent={aboutText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'255px'} height={'62px'} path={'/platform'}
+                    <NavigationButton hoverBorder={true} width={'255px'} height={'40px'} path={'/platform'}
                                       displayComponent={platformText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
                     <NavigationButton hoverBorder={true} width={'165' +
-                    'px'} height={'62px'} path={'/video'}
+                    'px'} height={'40px'} path={'/video'}
                                       displayComponent={videoText}/>
                 </div>
             </div>

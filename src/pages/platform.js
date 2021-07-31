@@ -8,9 +8,9 @@ function Platform() {
     const [frame1loading, setFrame1Loading] = useState(true);
     const [frame2loading, setFrame2Loading] = useState(true);
     const [framesLoading, setFramesLoading] = useState(true);
-    const aboutText = <TextBaseManySans color='white' fontSize='45px'> About </TextBaseManySans>
-    const platformText = <TextBaseManySans color='white' fontSize='45px'> Platform </TextBaseManySans>
-    const videoText = <TextBaseManySans color='white' fontSize='45px'> Video </TextBaseManySans>
+    const aboutText = <TextBaseManySans color='white' fontSize={'30px'}> About </TextBaseManySans>
+    const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
+    const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
     return (
         <MainContainer flexDirection={'row'}>
@@ -42,7 +42,7 @@ function Platform() {
                         src={'http://localhost:3000/matching'}/>
             </div>
             <div style={{
-                height:70,
+                height:40,
                 bottom:0,
                 width:'100vw',
                 display: 'flex',
@@ -54,16 +54,16 @@ function Platform() {
                 backgroundColor:'#0c0c0c'
             }}>
                 <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'62px'} path={'/about'}
+                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/about'}
                                       displayComponent={aboutText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'255px'} height={'62px'} path={'/platform'}
+                    <NavigationButton hoverBorder={true} width={'255px'} height={'40px'} path={'/platform'}
                                       displayComponent={platformText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
                     <NavigationButton hoverBorder={true} width={'165' +
-                    'px'} height={'62px'} path={'/video'}
+                    'px'} height={'40px'} path={'/video'}
                                       displayComponent={videoText}/>
                 </div>
             </div>
