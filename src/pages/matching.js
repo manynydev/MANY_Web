@@ -56,30 +56,15 @@ const bottomUsers = {
 }
 
 
-const createTopUsers = (topUsers) => {
-    let topUsersSnapItems = []
-    topUsers.forEach((user => {
-        topUsersSnapItems.push(
-            <SnapItem margin={{left:'14px'}} width="100%" height="90%" snapAlign="center">
-             <SnapItemContainer>
-                 <div onClick={()=>{alert("Changing users")} }>
-                     <img style={{width: '100%' }} src={user.profile} alt={'Users profile'}/>
-                 </div>
-             </SnapItemContainer>
-            </SnapItem>
-        )
-    }))
-    return topUsersSnapItems;
-}
 
 const createBottomUsers = (activeUserId) => {
     let activeUsersBottomMatches = bottomUsers[activeUserId];
     let bottomUsersSnapItems = []
     activeUsersBottomMatches.forEach((match => {
         bottomUsersSnapItems.push(
-            <SnapItem margin={14} width="100%" height="90%" snapAlign="center">
+            <SnapItem margin={14} width="96%" height="100%" snapAlign="center">
               <SnapItemContainer>
-                  <img style={{width: '100%' }} src={match.profile} alt={'Users profile'}/>
+                  <img style={{width: '100%'}} src={match.profile} alt={'Users profile'}/>
             </SnapItemContainer>
             </SnapItem>
         )
@@ -106,7 +91,23 @@ const Matching = () => {
         goToBottomUser(1, {animationEnabled: false});
     }, []);
 
-     let topUsersSnapItems = createTopUsers(topUsers);
+    const createTopUsers = (topUsers) => {
+        let topUsersSnapItems = []
+        topUsers.forEach((user => {
+            topUsersSnapItems.push(
+                <SnapItem margin={{left:'14px'}} width="100%" height="100%" snapAlign="center">
+                    <SnapItemContainer>
+                        <div onClick={()=>{setActiveUserId(user.id)} }>
+                            <img style={{width: '100%' }} src={user.profile} alt={'Users profile'}/>
+                        </div>
+                    </SnapItemContainer>
+                </SnapItem>
+            )
+        }))
+        return topUsersSnapItems;
+    }
+
+    let topUsersSnapItems = createTopUsers(topUsers);
      let bottomUsersSnapItems = createBottomUsers(activeUserId);
 
     return (
@@ -124,7 +125,7 @@ const Matching = () => {
                         {bottomUsersSnapItems}
                     </SnapList>
                 </div>
-                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: 400,left:90, gap: '30px'}}>
+                <div style={{zIndex:4,display: 'flex', flexDirection: 'row', position: 'relative', top: 405,left:90, gap: '30px'}}>
                     <ManyHomeButton path={'/home'}/>
                 </div>
             </IphoneScreen>
