@@ -7,6 +7,7 @@ import {
 import {
     SnapItem, SnapList, useDragToScroll, useScroll,
 } from 'react-snaplist-carousel';
+import { ButtonBase } from '@material-ui/core';
 
 
 const topUsers = [
@@ -74,9 +75,9 @@ const createBottomUsers = (activeUserId) => {
     activeUsersBottomMatches.forEach((match => {
         bottomUsersSnapItems.push(
             <SnapItem margin={14} width="96%" height="100%" snapAlign="center">
-              <SnapItemContainer>
-                  <Profile src={match.profile}/>
-            </SnapItemContainer>
+                <SnapItemContainer>
+                    <Profile src={match.profile}/>
+                </SnapItemContainer>
             </SnapItem>
         )
     }))
@@ -98,9 +99,8 @@ const Matching = () => {
     const goToBottomUser = useScroll({ref: snapList1});
 
     React.useEffect(() => {
-        // scroll instantly on component did mount
         goToTopUser(0, {animationEnabled: false});
-        goToBottomUser(1, {animationEnabled: false});
+        goToBottomUser(0, {animationEnabled: false});
     }, []);
 
 
@@ -113,11 +113,11 @@ const Matching = () => {
         let topUsersSnapItems = []
         topUsers.forEach((user => {
             topUsersSnapItems.push(
-                <SnapItem margin={{left:'14px'}} width="100%" height="100%" snapAlign="center">
+                <SnapItem width="100%" height="100%" snapAlign="center">
                     <SnapItemContainer>
-                        <div onClick={() => { handleClick(user.id,user?.zIndex)}}>
-                            <Profile src={user.profile}/>
-                        </div>
+                        <ButtonBase onClick={() => {handleClick(user.id,user?.zIndex)}}>
+                        <Profile src={user.profile}/>
+                        </ButtonBase>
                     </SnapItemContainer>
                 </SnapItem>
             )
@@ -131,15 +131,15 @@ const Matching = () => {
     return (
         <MainContainer>
             <IphoneScreen>
-                <div style={{zIndex: topUserZIndex, position: 'fixed',width:260,top:4,overflow:'hidden'}}>
+                <div style={{zIndex: topUserZIndex, position: 'fixed',width:260,top:0,overflow:'hidden'}}>
                     <SnapList ref={snapList} direction="horizontal"
-                              width='100%' width={250}>
+                              width='100%' width={260}>
                         {topUsersSnapItems}
                     </SnapList>
                 </div>
                 <div style={{zIndex: 3, position: 'fixed' ,width:260, marginTop: 135,overflow:'hidden'}}>
                     <SnapList ref={snapList1} direction="horizontal"
-                              width='100%' width={250}>
+                              width='100%' width={260}>
                         {bottomUsersSnapItems}
                     </SnapList>
                 </div>
