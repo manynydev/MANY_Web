@@ -15,5 +15,4 @@ const MainContainer = styled.div`
   margin:auto;
 }
 `
-
 export default MainContainer;

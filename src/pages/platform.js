@@ -15,11 +15,10 @@ function Platform() {
     return (
         <MainContainer flexDirection={'row'}>
             {(frame1loading || frame2loading || framesLoading) && <CircularProgress style={{position:'relative'}} color="black"/>}
-            <div style={{display: 'flex', gap: 100, flexDirection: 'row', position: 'fixed'}}>
+            <div style={{display: 'flex', gap: 100, flexDirection: 'row',marginBottom:55, position: 'fixed'}}>
                 <IphoneFrame/>
                 <IphoneFrame/>
             </div>
-
             <div onLoad={() => setFramesLoading(false)} style={{
                 zIndex: 0,
                 overflow: 'hidden',
@@ -33,7 +32,7 @@ function Platform() {
                 <iframe loading={'lazy'} onLoad={() => {
                     setFrame1Loading(false)
                 }}
-                        style={{scrolling: 'no', height: 444, width: 250, border: 'none', overflow: 'hidden'}}
+                        style={{scrolling: 'no', height: 444, width: 250,marginBottom:55, border: 'none', overflow: 'hidden'}}
                         src={'http://localhost:3000/home'}/>
                 <iframe loading={'lazy'} onLoad={() => {
                     setFrame2Loading(false)
@@ -48,9 +47,8 @@ function Platform() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent:'center',
-                margin: 'auto',
                 gap:150,
-                position:'absolute',
+                position:'fixed',
                 backgroundColor:'#0c0c0c'
             }}>
                 <div style={{position:'relative',right:0}}>

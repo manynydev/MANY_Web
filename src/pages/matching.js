@@ -115,7 +115,7 @@ const Matching = () => {
             topUsersSnapItems.push(
                 <SnapItem width="100%" height="100%" snapAlign="center">
                     <SnapItemContainer>
-                        <ButtonBase onClick={() => {handleClick(user.id,user?.zIndex)}}>
+                        <ButtonBase disableRipple={true} style={{cursor:'initial'}} onClick={() => {handleClick(user.id,user?.zIndex)}}>
                         <Profile src={user.profile}/>
                         </ButtonBase>
                     </SnapItemContainer>
