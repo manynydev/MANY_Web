@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
     MainContainer,
     TextHeaderCush,
@@ -9,12 +9,15 @@ import {
     TextBaseManySans,
     NavButtonsContainer
 } from "../components/index";
-import {Input} from "@material-ui/core";
+import {Input,Button} from "@material-ui/core";
 import {useLocation} from "react-router-dom";
+
+
 
 function WhereGroup() {
     const location = useLocation();
-    const [navProps, setNavProps] = React.useState(location.navProps);
+    const [navProps, setNavProps] = useState(location.navProps);
+    const [selectedCheck, selectCheck] = useState(0);
 
     return (
         <MainContainer>
@@ -28,15 +31,15 @@ function WhereGroup() {
                         flexDirection: 'column',
                         position: 'relative',
                         top: '10px',
-                        left: '45px',
+                        left: '15px',
                         gap: '5px'
                     }}>
-                    <TextBaseManySans fontSize='20px'>Located in</TextBaseManySans>
-                    <TextBaseManySans fontSize='20px'>Traveling from</TextBaseManySans>
-                    <TextBaseManySans fontSize='20px'>Sharing from</TextBaseManySans>
+                    <Button style={{width:155,height:25}}><TextBaseManySans fontSize='20px'>__ Located in</TextBaseManySans></Button>
+                    <Button style={{width:195,height:25}}><TextBaseManySans fontSize='20px'>__ Traveling from</TextBaseManySans></Button>
+                    <Button style={{width:175,height:25}}><TextBaseManySans fontSize='20px'>__ Sharing from</TextBaseManySans></Button>
                 </div>
                 <div
-                    style={{display: 'flex', flexDirection: 'column', position: 'relative', top: '20px', left: '20px'}}>
+                    style={{display: 'flex', flexDirection: 'column', position: 'relative', top: '20px', left: '25px'}}>
                     <Input
                         placeholder='Country'
                         color='black'

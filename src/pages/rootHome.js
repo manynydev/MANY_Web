@@ -15,7 +15,6 @@ function RootHome() {
                 <div style={{margin: 'auto', width: '100%'}}>
                     <img alt="logo" style={{width: '95%'}} src={MANYLogoLarge}/>
                 </div>
-
             </div>
             <div style={{
                 height:40,
@@ -38,8 +37,7 @@ function RootHome() {
                                       displayComponent={platformText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'165' +
-                    'px'} height={'40px'} path={'/video'}
+                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/video'}
                                       displayComponent={videoText}/>
                 </div>
             </div>
