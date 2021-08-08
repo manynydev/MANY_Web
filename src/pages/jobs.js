@@ -3,7 +3,7 @@ import {
     MainContainer,
     IphoneScreen,
     TextBaseGothic,
-    RightWhiteButton, NavigationButton
+    RightWhiteButton, NavigationButton, TextBaseManySans
 } from "../components";
 import {SnapList, SnapItem, useDragToScroll} from "react-snaplist-carousel";
 import {useHistory} from "react-router-dom";
@@ -19,16 +19,18 @@ const Jobs = (props) => {
             'Cooperators', 'Chefs', 'Seamen', 'Designers/Artists', 'Agricultural trainees', 'Industrial trainees', 'Business trainees', 'Medical trainees', 'Other'];
         let jobSnapItems = [];
         jobs.forEach((job) => {
-            const jobText = <TextBaseGothic style={{
+            const jobText = <TextBaseManySans style={{
                 color: 'white',
                 fontWeight: 'regular',
-                fontSize: '72px',
+                fontSize: '18px',
             }}>{job}
-            </TextBaseGothic>
+            </TextBaseManySans>
             jobSnapItems.push(
-                <SnapItem margin={{top: '10px', bottom: '10px'}} height="80px" snapAlign="center">
-                    <NavigationButton displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
-                </SnapItem>)
+                <NavigationButton width={jobText.props.children.length} height={'24px'} displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
+            )
+                // <SnapItem margin={{top:'5px'}} height="20px" width="150px" snapAlign="center">
+                //     <NavigationButton displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
+                // </SnapItem>)
         })
         return jobSnapItems
     }
@@ -37,10 +39,10 @@ const Jobs = (props) => {
     return (
         <MainContainer>
             <IphoneScreen style={{backgroundColor: '#161616'}}>
-                <div style={{marginLeft: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                    <SnapList width='70px' height='538px' direction="vertical" ref={snapList}>
+                <div style={{position:'relative',left:15,top:10, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                    {/*<SnapList width='200px' height='538px' direction="vertical" ref={snapList}>*/}
                         {jobSnapItems}
-                    </SnapList>
+                    {/*</SnapList>*/}
                 </div>
             </IphoneScreen>
         </MainContainer>

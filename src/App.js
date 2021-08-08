@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {RootAbout,RootVideo,RootHome,Platform,Home, Splash,Jobs, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
+import {RootAbout,RootVideo,RootHome,Platform,Home, Splash,Jobs,Offers, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
 
@@ -70,6 +70,9 @@ function App(props) {
                 </Route>
                 <Route exact path="/jobs">
                     <Jobs/>
+                </Route>
+                <Route exact path="/offers">
+                    <Offers/>
                 </Route>
                 <Route exact path="/whatGlyph">
                     <WhatGlyph/>

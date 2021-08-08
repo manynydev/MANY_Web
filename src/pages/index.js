@@ -13,11 +13,13 @@ import RootHome from "./rootHome";
 import RootVideo from "./rootVideo";
 import RootAbout from "./rootAbout";
 import Jobs from "./jobs";
+import Offers from "./offers";
 
 export {
     Home,
     Splash,
     Jobs,
+    Offers,
     WhoGroup,
     WhatDuration,
     WhatDurationMonths,

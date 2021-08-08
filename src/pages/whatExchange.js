@@ -44,21 +44,13 @@ function WhatExchange(props) {
                     <TextBaseCush fontWeight='normal' style={{position:'relative',bottom:'5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
                     <div style={{position:'relative',bottom:'8px',right:'5px'}}>
-                        <NavigationButton width={selectOffers.props.children.length} displayComponent={selectOffers} path={'/whatDurationMonths'}
+                        <NavigationButton width={selectOffers.props.children.length} navProps={location?.navProps} displayComponent={selectOffers} path={'/offers'}
                                           height={'16px'}/>
                     </div>
 
                     <TextBaseCush fontWeight='normal' style={{position:'relative',right:'12px',bottom:'3px'}}
                                   fontSize='16px'>.</TextBaseCush>
                 </div>
-
-
-
-
-
-
-
-
 
 
                 <NavButtonsContainer>

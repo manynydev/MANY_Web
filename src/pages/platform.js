@@ -24,8 +24,8 @@ function Platform() {
                 overflow: 'hidden',
                 display: 'flex',
                 gap: 176,
-                marginTop: 3,
-                marginRight: 5,
+                marginTop: 2,
+                marginRight: 3,
                 flexDirection: 'row',
                 position: 'fixed'
             }}>

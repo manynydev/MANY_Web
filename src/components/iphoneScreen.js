@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const IphoneScreen = styled.div`{
-  max-width: 270px;
+  max-width: 275px;
   min-width: 270px;
   min-height: 450px;
   max-height: 450px;
