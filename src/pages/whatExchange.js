@@ -10,9 +10,10 @@ import {useHistory} from "react-router-dom";
 
 function WhatExchange(props) {
     let history = useHistory();
-    const title = <TextBaseManySans color={'#919191'} underline={true} fontSize='18px'> select title </TextBaseManySans>
-    const describeActivities = <TextBaseManySans color={'#919191'} underline={true} fontSize='18px'> describe
+    const title = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> select title </TextBaseManySans>
+    const describeActivities = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> describe
         activities </TextBaseManySans>
+    const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> select offers </TextBaseManySans>
 
 
     return (
@@ -22,24 +23,28 @@ function WhatExchange(props) {
                     <TextHeaderCush>What is the exchange?</TextHeaderCush>
                 </div>
 
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '50px'}} fontSize='19px'> The group needs
+                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '50px'}} fontSize='18px'> The group needs
                     to
                     engage</TextBaseCush>
 
-                <div style={{top: '90px',left:'7px', position: 'absolute'}}>
+                <div style={{top: '90px',left:'2px', position: 'absolute'}}>
                     <NavigationButton width={'129px'} displayComponent={title} path={'/whatDurationMonths'}
                                       height={'16px'}/>
                 </div>
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '76px', left: '120px'}}
-                              fontSize='19px'> to </TextBaseCush>
-                <div style={{top: '115px', position: 'absolute',left:'7px'}}>
-                    <NavigationButton width={'195px'} displayComponent={describeActivities} path={'/whatDurationMonths'}
+                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '77px', left: '107px'}}
+                              fontSize='18px'> to </TextBaseCush>
+                <div style={{top: '115px', position: 'absolute'}}>
+                    <NavigationButton width={'190px'} displayComponent={describeActivities} path={'/whatDurationMonths'}
                                       height={'16px'}/>
                 </div>
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '103px', left: '180px'}}
-                              fontSize='19px'>.</TextBaseCush>
+                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '103px', left: '160px'}}
+                              fontSize='18px'>.</TextBaseCush>
                 <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '127px'}}
-                              fontSize='19px'>The group offers</TextBaseCush>
+                              fontSize='18px'>The group offers</TextBaseCush>
+                <div style={{top: '145px',left:'130px', position: 'absolute'}}>
+                    <NavigationButton width={'139px'} displayComponent={selectOffers} path={'/whatDurationMonths'}
+                                      height={'16px'}/>
+                </div>
 
 
 
