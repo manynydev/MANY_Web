@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
-//TODO: Import fonts and make size a prop.
 const TextBaseCush = styled.text`
 {
   position: absolute;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: ${props => props.fontSize ? props.fontSize : '22px' };
   text-transform: initial;
+  font-weight: ${props => props.fontWeight ? props.fontWeight : 'bold'};
   font-family: 'CushingStdBook', serif;
-  margin-top: 3px;
-  color: #151515;
+  color:  ${props => props.color ? props.color : '#151515' };
   justify-content: center;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

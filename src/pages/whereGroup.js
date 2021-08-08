@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState, useEffect} from "react";
 import {
     MainContainer,
     TextHeaderCush,
@@ -9,18 +9,20 @@ import {
     TextBaseManySans,
     NavButtonsContainer
 } from "../components/index";
-import {Input,Button} from "@material-ui/core";
-import {useLocation} from "react-router-dom";
+import {Input, Button} from "@material-ui/core";
+import {useHistory} from "react-router-dom";
 
 
-
-function WhereGroup() {
-    const location = useLocation();
-    const [navProps, setNavProps] = useState(location.navProps);
+function WhereGroup(props) {
     const [selectedCheck, selectCheck] = useState(0);
+    let history = useHistory();
+
+    useEffect(() => {
+        selectCheck(history.location.navProps?.selectedCheck)
+    }, [history.location.navProps])
 
     function getSelectedItem() {
-        switch(selectedCheck){
+        switch (selectedCheck) {
             case 1:
                 return 95
             case 2:
@@ -36,7 +38,8 @@ function WhereGroup() {
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Where is the group?</TextHeaderCush>
                 </div>
-                <img style={{position:'absolute',left:32, height:20, top: getSelectedItem()}} src={require('../assets/icons/check_black.png').default} alt={'Check'} />
+                <img style={{position: 'absolute', left: 32, height: 20, top: getSelectedItem(props)}}
+                     src={require('../assets/icons/check_black.png').default} alt={'Check'}/>
                 <div
                     style={{
                         display: 'flex',
@@ -46,9 +49,18 @@ function WhereGroup() {
                         left: '15px',
                         gap: '5px'
                     }}>
-                    <Button onClick={() => {selectCheck(0)}} style={{width:155,height:25}}><TextBaseManySans fontSize='20px'>__ Located in</TextBaseManySans></Button>
-                    <Button onClick={() => {selectCheck(1)}} style={{width:195,height:25}}><TextBaseManySans fontSize='20px'>__ Traveling from</TextBaseManySans></Button>
-                    <Button onClick={() => {selectCheck(2)}} style={{width:175,height:25}}><TextBaseManySans fontSize='20px'>__ Sharing from</TextBaseManySans></Button>
+                    <Button onClick={() => {
+                        selectCheck(0)
+                    }} style={{width: 155, height: 25}}><TextBaseManySans fontSize='20px'>__ Located
+                        in</TextBaseManySans></Button>
+                    <Button onClick={() => {
+                        selectCheck(1)
+                    }} style={{width: 195, height: 25}}><TextBaseManySans fontSize='20px'>__ Traveling
+                        from</TextBaseManySans></Button>
+                    <Button onClick={() => {
+                        selectCheck(2)
+                    }} style={{width: 175, height: 25}}><TextBaseManySans fontSize='20px'>__ Sharing
+                        from</TextBaseManySans></Button>
                 </div>
                 <div
                     style={{display: 'flex', flexDirection: 'column', position: 'relative', top: '20px', left: '25px'}}>
@@ -72,9 +84,11 @@ function WhereGroup() {
                     />
                 </div>
                 <NavButtonsContainer>
-                    <LeftBlackButton goBack={true} path={'/whoGroup'}/>
+                    <LeftBlackButton navProps={{...history.location.navProps, selectedCheck: selectedCheck}}
+                                     path={'/whoGroup'}/>
                     <ManyHomeButton path={'/home'}/>
-                    <RightBlackButton path={'/whatExchange'}/>
+                    <RightBlackButton navProps={{...history.location.navProps, selectedCheck: selectedCheck}}
+                                      path={'/whatExchange'}/>
                 </NavButtonsContainer>
             </IphoneScreen>
         </MainContainer>

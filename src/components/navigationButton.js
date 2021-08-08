@@ -18,12 +18,12 @@ const StyledButton = styled(Button)`
 
 const NavigationButton = (props) => {
     const history = useHistory();
-    const handleClick = () =>
-        history.push({
-            pathname: props.path,
-            navProps: props.navProps,
-            goBack: props.goBack,
-        });
+    const handleClick = () => {
+            history.push({
+                pathname: props.path,
+                navProps: props.navProps,
+            });
+    }
 
     return (
         <StylesProvider injectFirst>
