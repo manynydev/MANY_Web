@@ -23,7 +23,7 @@ function WhatExchange(props) {
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is the exchange?</TextHeaderCush>
                 </div>
-                <div style={{display:'flex',flexDirection:'row',top:'60px',position:'absolute',flexWrap:"wrap",left:'7px',margin:'15px'}}>
+                <div style={{display:'flex',flexDirection:'row',top:'50px',position:'absolute',flexWrap:"wrap",left:'5px',margin:'15px'}}>
                     <TextBaseCush fontWeight='normal' style={{position:'relative'}} fontSize='16px'> The group needs
                         to
                         engage

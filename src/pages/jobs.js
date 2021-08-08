@@ -27,7 +27,7 @@ const Jobs = (props) => {
             </TextBaseGothic>
             jobSnapItems.push(
                 <SnapItem margin={{top: '10px', bottom: '10px'}} height="80px" snapAlign="center">
-                    <NavigationButton displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job}}/>
+                    <NavigationButton displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
                 </SnapItem>)
         })
         return jobSnapItems
