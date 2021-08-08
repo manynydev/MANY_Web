@@ -12,10 +12,12 @@ import Platform from "./platform";
 import RootHome from "./rootHome";
 import RootVideo from "./rootVideo";
 import RootAbout from "./rootAbout";
+import Jobs from "./jobs";
 
 export {
     Home,
     Splash,
+    Jobs,
     WhoGroup,
     WhatDuration,
     WhatDurationMonths,

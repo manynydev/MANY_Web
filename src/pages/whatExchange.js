@@ -9,12 +9,11 @@ import {
 import {useHistory} from "react-router-dom";
 
 function WhatExchange(props) {
-    let history = useHistory();
-    const title = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> select title </TextBaseManySans>
-    const describe = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> describe </TextBaseManySans>
-    const activities = <TextBaseManySans color={'#919191'} underline={true}
-                                         fontSize='16px'> activities </TextBaseManySans>
-    const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='16px'> select
+    let location = useHistory().location;
+    console.log(location);
+    const jobTitle = <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> {location?.navProps?.job? location.navProps.job : 'select title'} </TextBaseManySans>
+    const describeActivities = <TextBaseManySans color={'#919191'} underline={true} fontSize='15x'> describe activites </TextBaseManySans>
+    const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> select
         offers </TextBaseManySans>
 
 
@@ -24,45 +23,46 @@ function WhatExchange(props) {
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>What is the exchange?</TextHeaderCush>
                 </div>
+                <div style={{display:'flex',flexDirection:'row',top:'60px',position:'absolute',flexWrap:"wrap",left:'7px',margin:'15px'}}>
+                    <TextBaseCush fontWeight='normal' style={{position:'relative'}} fontSize='16px'> The group needs
+                        to
+                        engage
+                    </TextBaseCush>
+                    <div style={{position:'relative',right:'7px'}}>
+                        <NavigationButton width={jobTitle.props.children.length} navProps={location?.navProps} displayComponent={jobTitle} path={'/jobs'}
+                                          height={'16px'}/>
+                    </div>
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',top:'3px',right:'10px'}}
+                                  fontSize='16px'> to </TextBaseCush>
 
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '50px'}} fontSize='18px'> The group needs
-                    to
-                    engage</TextBaseCush>
+                    <div style={{position:'relative',right:'7px' }}>
+                        <NavigationButton width={(describeActivities.props.children.length)} displayComponent={describeActivities} path={'/whatDurationMonths'}
+                                          height={'16px'}/>
+                    </div>
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',top:'4px',right:'15px'}}
+                                  fontSize='16px'>.</TextBaseCush>
+                    <TextBaseCush fontWeight='normal' style={{position:'relative'}}
+                                  fontSize='16px'>The group offers</TextBaseCush>
+                    <div style={{position:'relative',bottom:'3px'}}>
+                        <NavigationButton width={selectOffers.props.children.length} displayComponent={selectOffers} path={'/whatDurationMonths'}
+                                          height={'16px'}/>
+                    </div>
 
-                <div style={{top: '82px', left: '2px', position: 'absolute'}}>
-                    <NavigationButton width={'129px'} displayComponent={title} path={'/whatDurationMonths'}
-                                      height={'16px'}/>
-                </div>
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '70px', left: '107px'}}
-                              fontSize='18px'> to </TextBaseCush>
-
-                <div style={{top: '82px', left: '135px', position: 'absolute'}}>
-                    <NavigationButton width={'80px'} displayComponent={describe} path={'/whatDurationMonths'}
-                                      height={'16px'}/>
-                </div>
-
-                <div style={{top: '100px', left: '17px', position: 'absolute'}}>
-                    <NavigationButton width={'80px'} displayComponent={activities} path={'/whatDurationMonths'}
-                                      height={'16px'}/>
-                </div>
-
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '88px', left: '85px'}}
-                              fontSize='18px'>.</TextBaseCush>
-
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '88px',left:'90px'}}
-                              fontSize='18px'>The group offers</TextBaseCush>
-
-                <div style={{top: '119px', position: 'absolute'}}>
-                    <NavigationButton width={'139px'} displayComponent={selectOffers} path={'/whatDurationMonths'}
-                                      height={'16px'}/>
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',right:'7px',top:'1px'}}
+                                  fontSize='16px'>.</TextBaseCush>
                 </div>
 
-                <TextBaseCush fontWeight='normal' style={{margin: '15px', top: '108px', left: '110px'}}
-                              fontSize='18px'>.</TextBaseCush>
+
+
+
+
+
+
+
 
 
                 <NavButtonsContainer>
-                    <LeftBlackButton goBack={true} navProps={history.location.navProps} path={'/whereGroup'}/>
+                    <LeftBlackButton goBack={true} navProps={location?.navProps} path={'/whereGroup'}/>
                     <ManyHomeButton path={'/home'}/>
                     <RightBlackButton navProps={props.navProps} path={'/whatDuration'}/>
                 </NavButtonsContainer>
