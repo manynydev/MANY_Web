@@ -28,27 +28,27 @@ function WhatExchange(props) {
                         to
                         engage
                     </TextBaseCush>
-                    <div style={{position:'relative',right:'7px'}}>
+                    <div style={{position:'relative',right:'7px',bottom:'5px'}}>
                         <NavigationButton width={jobTitle.props.children.length} navProps={location?.navProps} displayComponent={jobTitle} path={'/jobs'}
                                           height={'16px'}/>
                     </div>
-                    <TextBaseCush fontWeight='normal' style={{position:'relative',top:'3px',right:'10px'}}
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',bottom:'1px',right:'10px'}}
                                   fontSize='16px'> to </TextBaseCush>
 
-                    <div style={{position:'relative',right:'7px' }}>
+                    <div style={{position:'relative',right:'7px',bottom:'6px' }}>
                         <NavigationButton width={(describeActivities.props.children.length)} displayComponent={describeActivities} path={'/whatDurationMonths'}
                                           height={'16px'}/>
                     </div>
-                    <TextBaseCush fontWeight='normal' style={{position:'relative',top:'4px',right:'15px'}}
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',bottom:'4px',right:'15px'}}
                                   fontSize='16px'>.</TextBaseCush>
-                    <TextBaseCush fontWeight='normal' style={{position:'relative'}}
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',bottom:'5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
-                    <div style={{position:'relative',bottom:'3px'}}>
+                    <div style={{position:'relative',bottom:'8px',right:'5px'}}>
                         <NavigationButton width={selectOffers.props.children.length} displayComponent={selectOffers} path={'/whatDurationMonths'}
                                           height={'16px'}/>
                     </div>
 
-                    <TextBaseCush fontWeight='normal' style={{position:'relative',right:'7px',top:'1px'}}
+                    <TextBaseCush fontWeight='normal' style={{position:'relative',right:'12px',bottom:'3px'}}
                                   fontSize='16px'>.</TextBaseCush>
                 </div>
 
