@@ -32,6 +32,8 @@ function WhatExchange(props) {
     console.log(location);
     const jobTitle = <TextBaseManySans color={'#919191'} underline={true}
                                        fontSize='15px'> {location?.navProps?.job ? location.navProps.job : 'select title'} </TextBaseManySans>
+    const offerTitles = <TextBaseManySans color={'#919191'} underline={true}
+                                       fontSize='15px'> {location?.navProps?.offer ? location.navProps.offer : 'select offers'} </TextBaseManySans>
     const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> select
         offers </TextBaseManySans>
 
@@ -64,7 +66,7 @@ function WhatExchange(props) {
                                   fontSize='16px'> to </TextBaseCush>
 
                     <div style={{position: 'relative', right: '0px', bottom: '6px'}}>
-                        <StyledInput style={{width:150}} placeholder={'describe activities'} multiline={true}/>
+                        <StyledInput error={false} style={{width:150}} placeholder={'describe activities'} multiline={true}/>
                     </div>
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '-1px', right: '2px'}}
                                   fontSize='16px'>.</TextBaseCush>
@@ -72,7 +74,7 @@ function WhatExchange(props) {
                                   fontSize='16px'>The group offers</TextBaseCush>
                     <div style={{position: 'relative', bottom: '8px', right: '5px'}}>
                         <NavigationButton width={selectOffers.props.children.length} navProps={location?.navProps}
-                                          displayComponent={selectOffers} path={'/offers'}
+                                          displayComponent={offerTitles} path={'/offers'}
                                           height={'16px'}/>
                     </div>
 

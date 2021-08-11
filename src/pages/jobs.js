@@ -2,10 +2,9 @@ import React, {useRef} from 'react';
 import {
     MainContainer,
     IphoneScreen,
-    TextBaseGothic,
-    RightWhiteButton, NavigationButton, TextBaseManySans
+    NavigationButton, TextBaseManySans
 } from "../components";
-import {SnapList, SnapItem, useDragToScroll} from "react-snaplist-carousel";
+import {useDragToScroll} from "react-snaplist-carousel";
 import {useHistory} from "react-router-dom";
 
 
@@ -26,11 +25,9 @@ const Jobs = (props) => {
             }}>{job}
             </TextBaseManySans>
             jobSnapItems.push(
-                <NavigationButton width={jobText.props.children.length} height={'24px'} displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
+                <NavigationButton width={jobText.props.children.length} height={'24px'} displayComponent={jobText}
+                                  path={'./whatExchange'} navProps={{...location?.navProps, job: job.toLowerCase()}}/>
             )
-                // <SnapItem margin={{top:'5px'}} height="20px" width="150px" snapAlign="center">
-                //     <NavigationButton displayComponent={jobText} path={'./whatExchange'} navProps={{...location?.navProps,job:job.toLowerCase()}}/>
-                // </SnapItem>)
         })
         return jobSnapItems
     }
@@ -39,10 +36,15 @@ const Jobs = (props) => {
     return (
         <MainContainer>
             <IphoneScreen style={{backgroundColor: '#161616'}}>
-                <div style={{position:'relative',left:15,top:10, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-                    {/*<SnapList width='200px' height='538px' direction="vertical" ref={snapList}>*/}
-                        {jobSnapItems}
-                    {/*</SnapList>*/}
+                <div style={{
+                    position: 'relative',
+                    left: 15,
+                    top: 20,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start'
+                }}>
+                    {jobSnapItems}
                 </div>
             </IphoneScreen>
         </MainContainer>
