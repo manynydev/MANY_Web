@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
     MainContainer,
     IphoneScreen
-    , NavigationButton, TextBaseManySans, RightBlackButton, NavButtonsContainer, RightWhiteButton
+    , TextBaseManySans, RightWhiteButton
 } from "../components";
 import {useHistory} from "react-router-dom";
 import {ButtonBase} from "@material-ui/core";
@@ -11,7 +11,6 @@ import {ButtonBase} from "@material-ui/core";
 const Offers = (props) => {
     const location = useHistory().location;
     const [selectedOffers, setSelectedOffers] = useState([]);
-
 
     function handleClick(offerTextData) {
         const selectedOffersCopy = [...selectedOffers];
@@ -36,7 +35,7 @@ const Offers = (props) => {
             </TextBaseManySans>
 
             offerSnapItems.push(
-                <ButtonBase style={{margin:2}} onClick={() => handleClick(offer)}>
+                <ButtonBase style={{margin: 2}} onClick={() => handleClick(offer)}>
                     {offerText}
                     <img style={{
                         position: 'relative',
@@ -65,6 +64,8 @@ const Offers = (props) => {
                     alignItems: 'flex-start'
                 }}>
                     {offerSnapItems}
+                </div>
+                <div style={{position:'absolute', right: -10,bottom:15}}>
                     <RightWhiteButton navProps={{...location?.navProps, offer: selectedOffers}}
                                       path={'/whatExchange'}/>
                 </div>
