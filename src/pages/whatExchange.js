@@ -18,25 +18,37 @@ const StyledInput = withStyles({
     },
     underline: {
         '&:before': {
-            marginBottom: 7
+            marginBottom: 5,
         },
         '&:after': {
-            borderBottomColor: 'black', marginBottom: 7
+            borderBottomColor: 'black', marginBottom: 5
         }
     }
 })(Input);
 
 
+
+
 function WhatExchange(props) {
     let location = useHistory().location;
-    console.log(location);
     const jobTitle = <TextBaseManySans color={'#919191'} underline={true}
                                        fontSize='15px'> {location?.navProps?.job ? location.navProps.job : 'select title'} </TextBaseManySans>
-    const offerTitles = <TextBaseManySans color={'#919191'} underline={true}
-                                       fontSize='15px'> {location?.navProps?.offer ? location.navProps.offer : 'select offers'} </TextBaseManySans>
+    const offerTitles =location?.navProps?.offers ? formatSelectedOffers(location.navProps.offers) :  <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> {'select offers'} </TextBaseManySans>
     const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> select
         offers </TextBaseManySans>
 
+    function formatSelectedOffers(selectedOffers){
+        if (selectedOffers.length <= 0){
+            return 'select offers'
+        }
+        return selectedOffers.map((offer) => {
+            const text = <TextBaseManySans color={'#111111'} underline={true} fontSize='15px'> {(offer + ',').toLowerCase()} </TextBaseManySans>
+            return <NavigationButton width={offer.length} navProps={location?.navProps}
+                                     displayComponent={text} path={'/offers'}
+                                     height={'16px'}/>
+
+        })
+    }
 
     return (
         <MainContainer>
@@ -72,10 +84,10 @@ function WhatExchange(props) {
                                   fontSize='16px'>.</TextBaseCush>
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
-                    <div style={{position: 'relative', bottom: '8px', right: '5px'}}>
-                        <NavigationButton width={selectOffers.props.children.length} navProps={location?.navProps}
-                                          displayComponent={offerTitles} path={'/offers'}
-                                          height={'16px'}/>
+
+                    {/*TODO: fix formating of mulitple selections, adjust distance of underline to show comma*/}
+                    <div style={{position: 'relative', bottom: '8px', right: '5px',overflowWrap:'break-word'}}>
+                        {offerTitles}
                     </div>
 
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', right: '12px', bottom: '3px'}}

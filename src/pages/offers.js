@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     MainContainer,
     IphoneScreen
@@ -11,6 +11,12 @@ import {ButtonBase} from "@material-ui/core";
 const Offers = (props) => {
     const location = useHistory().location;
     const [selectedOffers, setSelectedOffers] = useState([]);
+
+    useEffect( () =>{
+        if (location?.navProps?.offers){
+            setSelectedOffers([...location.navProps.offers])
+        }
+    },[])
 
     function handleClick(offerTextData) {
         const selectedOffersCopy = [...selectedOffers];
@@ -66,7 +72,7 @@ const Offers = (props) => {
                     {offerSnapItems}
                 </div>
                 <div style={{position:'absolute', right: -10,bottom:15}}>
-                    <RightWhiteButton navProps={{...location?.navProps, offer: selectedOffers}}
+                    <RightWhiteButton navProps={{...location?.navProps, offers: selectedOffers}}
                                       path={'/whatExchange'}/>
                 </div>
             </IphoneScreen>
