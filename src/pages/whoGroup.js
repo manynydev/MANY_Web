@@ -18,13 +18,9 @@ function WhoGroup() {
         console.log(sharedStore.getState());
     }, [])
 
+    const [sponsor, setSponsor] = useState(sharedStore.getState().sponsor);
+    const [webAddress, setWebAddress] = useState(sharedStore.getState().webAddress);
     const [logo, setLogo] = useState(sharedStore.getState().logoImg);
-
-    useEffect(() => {
-        sharedStore.dispatch({type: 'logoImg', value: logo}
-        )
-    }, [logo])
-
 
     return (
         <MainContainer>
@@ -39,16 +35,21 @@ function WhoGroup() {
                         color='black'
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans,sans-serif', fontSize: 'large'}}
-                        value={sharedStore.getState().sponsor}
-                        onChange={(event) => sharedStore.dispatch({type: 'sponsor', value: event.target.value})}
+                        value={sponsor}
+                        onChange={(event) =>
+                        {
+                            setSponsor(event.target.value);
+                            sharedStore.dispatch({type: 'sponsor', value: event.target.value})}}
                     />
                     <Input
                         placeholder="Website address"
                         color='black'
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans,sans-serif', fontSize: 'large'}}
-                        value={sharedStore.getState().webAddress}
-                        onChange={(event) => sharedStore.dispatch({type: 'webAddress', value: event.target.value})}
+                        value={webAddress}
+                        onChange={(event) =>
+                        {   setWebAddress(event.target.value);
+                            sharedStore.dispatch({type: 'webAddress', value: event.target.value})}}
                     />
                     <input
                         accept="image/*"
@@ -56,7 +57,8 @@ function WhoGroup() {
                         type="file"
                         id="contained-button-file"
                         onChange={(event) => {
-                            setLogo(URL.createObjectURL(event.target.files[0]))
+                            setLogo(URL.createObjectURL(event.target.files[0]));
+                            sharedStore.dispatch({type: 'logoImg', value: URL.createObjectURL(event.target.files[0])})
                         }}
                     />
                     {<label htmlFor="contained-button-file"> {logo ? <img
