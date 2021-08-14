@@ -6,26 +6,23 @@ import {
 } from "../components";
 import {useHistory} from "react-router-dom";
 import {ButtonBase} from "@material-ui/core";
+import {sharedStore} from "../components/hooks";
 
 
-const Offers = (props) => {
-    const location = useHistory().location;
-    const [selectedOffers, setSelectedOffers] = useState([]);
-
-    useEffect( () =>{
-        if (location?.navProps?.offers){
-            setSelectedOffers([...location.navProps.offers])
-        }
-    },[])
+const Offers = () => {
+    const [selectedOffers, setSelectedOffers] = useState(sharedStore.getState().offers);
 
     function handleClick(offerTextData) {
+        console.log(selectedOffers);
         const selectedOffersCopy = [...selectedOffers];
         if (selectedOffersCopy.includes(offerTextData)) {
             const index = selectedOffers.indexOf(offerTextData);
             selectedOffersCopy.splice(index, 1);
             setSelectedOffers([...selectedOffersCopy]);
+            sharedStore.dispatch({type: 'offers', value: [...selectedOffersCopy]})
         } else {
             setSelectedOffers([...selectedOffers, offerTextData])
+            sharedStore.dispatch({type: 'offers', value: [...selectedOffers, offerTextData]})
         }
     }
 
@@ -48,7 +45,7 @@ const Offers = (props) => {
                         height: 15,
                         left: 8,
                         bottom: 3,
-                        visibility: selectedOffers.includes(offerText.props.children) ? 'visible' : 'hidden'
+                        visibility: selectedOffers?.includes(offerText.props.children) ? 'visible' : 'hidden'
                     }}
                          src={require('../assets/icons/check_white.png').default} alt={'Check'}/>
                 </ButtonBase>
@@ -71,9 +68,8 @@ const Offers = (props) => {
                 }}>
                     {offerSnapItems}
                 </div>
-                <div style={{position:'absolute', right: -10,bottom:15}}>
-                    <RightWhiteButton navProps={{...location?.navProps, offers: selectedOffers}}
-                                      path={'/whatExchange'}/>
+                <div style={{position: 'absolute', right: -10, bottom: 15}}>
+                    <RightWhiteButton path={'/whatExchange'}/>
                 </div>
             </IphoneScreen>
         </MainContainer>

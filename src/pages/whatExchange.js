@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     MainContainer,
     TextHeaderCush,
@@ -9,12 +9,13 @@ import {
 import {useHistory} from "react-router-dom";
 import Input from '@material-ui/core/Input';
 import {withStyles} from "@material-ui/core";
+import {sharedStore} from "../components/hooks";
 
 const StyledInput = withStyles({
     root: {
         fontFamily: 'ManySans, sans-serif',
         fontSize: '15px',
-        fontWeight:'bold'
+        fontWeight: 'bold'
     },
     underline: {
         '&:before': {
@@ -27,23 +28,28 @@ const StyledInput = withStyles({
 })(Input);
 
 
+function WhatExchange() {
 
+    const {title, offers} = sharedStore.getState();
+    const [activities, setActivities] = useState(sharedStore.getState().activities)
 
-function WhatExchange(props) {
-    let location = useHistory().location;
     const jobTitle = <TextBaseManySans color={'#919191'} underline={true}
-                                       fontSize='15px'> {location?.navProps?.job ? location.navProps.job : 'select title'} </TextBaseManySans>
-    const offerTitles =location?.navProps?.offers ? formatSelectedOffers(location.navProps.offers) :  <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> {'select offers'} </TextBaseManySans>
-    const selectOffers = <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> select
-        offers </TextBaseManySans>
+                                       fontSize='15px'> {title ?? 'select title'} </TextBaseManySans>
+    const offerTitles = offers.length > 0 ? formatSelectedOffers(offers) :
+        <NavigationButton width={'select offers'.length}
+                          displayComponent={ <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> {'select offers'} </TextBaseManySans>} path={'/offers'}
+                          height={'16px'}/>
 
-    function formatSelectedOffers(selectedOffers){
-        if (selectedOffers.length <= 0){
+
+
+    function formatSelectedOffers(selectedOffers) {
+        if (selectedOffers.length <= 0) {
             return 'select offers'
         }
         return selectedOffers.map((offer) => {
-            const text = <TextBaseManySans color={'#111111'} underline={true} fontSize='15px'> {(offer + ',').toLowerCase()} </TextBaseManySans>
-            return <NavigationButton width={offer.length} navProps={location?.navProps}
+            const text = <TextBaseManySans color={'#111111'} underline={true}
+                                           fontSize='15px'> {(offer + ',').toLowerCase()} </TextBaseManySans>
+            return <NavigationButton width={(offer.length)}
                                      displayComponent={text} path={'/offers'}
                                      height={'16px'}/>
         })
@@ -69,7 +75,7 @@ function WhatExchange(props) {
                         engage
                     </TextBaseCush>
                     <div style={{position: 'relative', right: '7px', bottom: '5px'}}>
-                        <NavigationButton width={jobTitle.props.children.length} navProps={location?.navProps}
+                        <NavigationButton width={jobTitle.props.children.length}
                                           displayComponent={jobTitle} path={'/jobs'}
                                           height={'16px'}/>
                     </div>
@@ -77,7 +83,11 @@ function WhatExchange(props) {
                                   fontSize='16px'> to </TextBaseCush>
 
                     <div style={{position: 'relative', right: '0px', bottom: '6px'}}>
-                        <StyledInput error={false} style={{width:150}} placeholder={'describe activities'} multiline={true}/>
+                        <StyledInput onChange={(event) => {
+                            setActivities(event.target.value);
+                            sharedStore.dispatch({type: 'activities', value: event.target.value})
+                        }} value={activities} error={false} style={{width: 150}} placeholder={'describe activities'}
+                                     multiline={true}/>
                     </div>
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '-1px', right: '2px'}}
                                   fontSize='16px'>.</TextBaseCush>
@@ -85,7 +95,7 @@ function WhatExchange(props) {
                                   fontSize='16px'>The group offers</TextBaseCush>
 
                     {/*TODO: fix formating of mulitple selections, adjust distance of underline to show comma, need to change color of job text to black when slected*/}
-                    <div style={{position: 'relative', bottom: '8px', right: '5px',overflowWrap:'break-word'}}>
+                    <div style={{position: 'relative', bottom: '8px', right: '5px', overflowWrap: 'break-word'}}>
                         {offerTitles}
                     </div>
 
@@ -95,9 +105,9 @@ function WhatExchange(props) {
 
 
                 <NavButtonsContainer>
-                    <LeftBlackButton goBack={true} navProps={location?.navProps} path={'/whereGroup'}/>
+                    <LeftBlackButton path={'/whereGroup'}/>
                     <ManyHomeButton path={'/home'}/>
-                    <RightBlackButton navProps={props.navProps} path={'/whatDuration'}/>
+                    <RightBlackButton path={'/whatDuration'}/>
                 </NavButtonsContainer>
             </IphoneScreen>
         </MainContainer>

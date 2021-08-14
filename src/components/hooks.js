@@ -6,7 +6,7 @@ const initState = {
     glyphImg: null,
     title : null,
     activities : null,
-    offers : null,
+    offers : [],
     duration: null,
     sponsor: null,
     webAddress: null,

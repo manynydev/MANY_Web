@@ -36,10 +36,10 @@ function WhoGroup() {
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans,sans-serif', fontSize: 'large'}}
                         value={sponsor}
-                        onChange={(event) =>
-                        {
+                        onChange={(event) => {
                             setSponsor(event.target.value);
-                            sharedStore.dispatch({type: 'sponsor', value: event.target.value})}}
+                            sharedStore.dispatch({type: 'sponsor', value: event.target.value})
+                        }}
                     />
                     <Input
                         placeholder="Website address"
@@ -47,9 +47,10 @@ function WhoGroup() {
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans,sans-serif', fontSize: 'large'}}
                         value={webAddress}
-                        onChange={(event) =>
-                        {   setWebAddress(event.target.value);
-                            sharedStore.dispatch({type: 'webAddress', value: event.target.value})}}
+                        onChange={(event) => {
+                            setWebAddress(event.target.value);
+                            sharedStore.dispatch({type: 'webAddress', value: event.target.value})
+                        }}
                     />
                     <input
                         accept="image/*"
