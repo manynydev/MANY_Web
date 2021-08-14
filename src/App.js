@@ -3,9 +3,11 @@ import './App.css';
 import {RootAbout,RootVideo,RootHome,Platform,Home, Splash,Jobs,Offers, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
+import {sharedStore} from "./components/hooks";
 
 function App(props) {
     const location = useLocation()
+
 
     const siteTransitions = useTransition(location, {
         config:{ friction: 25 },

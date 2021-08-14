@@ -46,7 +46,6 @@ function WhatExchange(props) {
             return <NavigationButton width={offer.length} navProps={location?.navProps}
                                      displayComponent={text} path={'/offers'}
                                      height={'16px'}/>
-
         })
     }
 
@@ -85,7 +84,7 @@ function WhatExchange(props) {
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
 
-                    {/*TODO: fix formating of mulitple selections, adjust distance of underline to show comma*/}
+                    {/*TODO: fix formating of mulitple selections, adjust distance of underline to show comma, need to change color of job text to black when slected*/}
                     <div style={{position: 'relative', bottom: '8px', right: '5px',overflowWrap:'break-word'}}>
                         {offerTitles}
                     </div>
