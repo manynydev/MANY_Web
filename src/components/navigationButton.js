@@ -7,7 +7,7 @@ import {StylesProvider} from "@material-ui/core/styles";
 const StyledButton = styled(Button)`
   height: ${props => props.height ? props.height : '30px'};
   width: ${props => props.width ? props.width : '90px'};
-
+  max-width: ${props => props.width ? props.width : '90px'};
   &:hover {
     border: ${props => props.hoverBorder? '1px solid black' :''};
     cursor: initial;

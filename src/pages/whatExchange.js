@@ -15,11 +15,12 @@ const StyledInput = withStyles({
     root: {
         fontFamily: 'ManySans, sans-serif',
         fontSize: '15px',
-        fontWeight: 'bold'
+       
     },
     underline: {
         '&:before': {
             marginBottom: 5,
+            borderBottomColor:'#111111'
         },
         '&:after': {
             borderBottomColor: 'black', marginBottom: 5
@@ -33,13 +34,15 @@ function WhatExchange() {
     const {title, offers} = sharedStore.getState();
     const [activities, setActivities] = useState(sharedStore.getState().activities)
 
-    const jobTitle = <TextBaseManySans color={'#919191'} underline={true}
-                                       fontSize='15px'> {title ?? 'select title'} </TextBaseManySans>
+    const jobTitle = title ? <TextBaseManySans color={'#111111'} underline={true}
+                                               fontSize='15px'> {title} </TextBaseManySans> : <TextBaseManySans color={'#919191'} underline={true}
+                                       fontSize='15px'> {'select title'} </TextBaseManySans>
     const offerTitles = offers.length > 0 ? formatSelectedOffers(offers) :
         <NavigationButton width={'select offers'.length}
-                          displayComponent={ <TextBaseManySans color={'#919191'} underline={true} fontSize='15px'> {'select offers'} </TextBaseManySans>} path={'/offers'}
+                          displayComponent={<TextBaseManySans color={'#919191'} underline={true}
+                                                              fontSize='15px'> {'select offers'} </TextBaseManySans>}
+                          path={'/offers'}
                           height={'16px'}/>
-
 
 
     function formatSelectedOffers(selectedOffers) {
@@ -49,7 +52,7 @@ function WhatExchange() {
         return selectedOffers.map((offer) => {
             const text = <TextBaseManySans color={'#111111'} underline={true}
                                            fontSize='15px'> {(offer + ',').toLowerCase()} </TextBaseManySans>
-            return <NavigationButton width={(offer.length)}
+            return <NavigationButton width={offer.length-10}
                                      displayComponent={text} path={'/offers'}
                                      height={'16px'}/>
         })
@@ -86,7 +89,7 @@ function WhatExchange() {
                         <StyledInput onChange={(event) => {
                             setActivities(event.target.value);
                             sharedStore.dispatch({type: 'activities', value: event.target.value})
-                        }} value={activities} error={false} style={{width: 150}} placeholder={'describe activities'}
+                        }} value={activities} inputProps={{ spellCheck: 'false' }} style={{width: 150}} placeholder={'describe activities'}
                                      multiline={true}/>
                     </div>
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '-1px', right: '2px'}}
@@ -94,7 +97,6 @@ function WhatExchange() {
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
 
-                    {/*TODO: fix formating of mulitple selections, adjust distance of underline to show comma, need to change color of job text to black when slected*/}
                     <div style={{position: 'relative', bottom: '8px', right: '5px', overflowWrap: 'break-word'}}>
                         {offerTitles}
                     </div>

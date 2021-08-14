@@ -1,17 +1,17 @@
-import React, {useRef} from 'react';
+import React, {useState} from 'react';
 import {
     MainContainer,
     IphoneScreen,
     NavigationButton, TextBaseManySans
 } from "../components";
-import {useDragToScroll} from "react-snaplist-carousel";
-import {useHistory} from "react-router-dom";
+import {sharedStore} from "../components/hooks";
+import {Button,ButtonBase} from "@material-ui/core";
+import {useHistory} from 'react-router-dom';
 
 
-const Jobs = (props) => {
-    const location = useHistory().location;
-    const snapList = useRef(null);
-    useDragToScroll({ref: snapList, disable: false});
+
+const Jobs = () => {
+    const history = useHistory();
 
     function createJobSnapItems() {
         let jobs = ['Students/Researchers', 'Teachers', 'Physicians', 'Nurses', 'Investors',
@@ -25,8 +25,16 @@ const Jobs = (props) => {
             }}>{job}
             </TextBaseManySans>
             jobSnapItems.push(
-                <NavigationButton width={jobText.props.children.length} height={'24px'} displayComponent={jobText}
-                                  path={'./whatExchange'} navProps={{...location?.navProps, job: job.toLowerCase()}}/>
+                <Button style={{margin:2, width:`${job.length + 20}`, height:'24px'}} onClick={() =>
+                {
+                   sharedStore.dispatch({type:'title',value:job});
+                    history.push({
+                        pathname: '/whatExchange',
+                    });
+                }
+                   }>
+                    {jobText}
+                </Button>
             )
         })
         return jobSnapItems

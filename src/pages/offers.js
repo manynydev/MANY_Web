@@ -4,7 +4,6 @@ import {
     IphoneScreen
     , TextBaseManySans, RightWhiteButton
 } from "../components";
-import {useHistory} from "react-router-dom";
 import {ButtonBase} from "@material-ui/core";
 import {sharedStore} from "../components/hooks";
 
