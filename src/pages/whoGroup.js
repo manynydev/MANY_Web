@@ -50,7 +50,6 @@ function WhoGroup() {
                         value={sharedStore.getState().webAddress}
                         onChange={(event) => sharedStore.dispatch({type: 'webAddress', value: event.target.value})}
                     />
-
                     <input
                         accept="image/*"
                         style={{display: "none"}}
@@ -61,8 +60,8 @@ function WhoGroup() {
                         }}
                     />
                     {<label htmlFor="contained-button-file"> {logo ? <img
-                        style={{maxHeight:'30%',maxWidth:'40%', position: 'relative', margin: 'auto', top: 5}}
-                        alt={'uploaded glyph'} src={logo}/>
+                            style={{maxHeight: '30%', maxWidth: '40%', position: 'relative', margin: 'auto', top: 5}}
+                            alt={'uploaded glyph'} src={logo}/>
                         :
                         <TextBaseManySans fontSize={'19px'} style={{
                             cursor: 'pointer',

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {
     MainContainer,
     TextHeaderCush,
@@ -10,19 +10,18 @@ import {
     NavButtonsContainer
 } from "../components/index";
 import {Input, Button} from "@material-ui/core";
-import {useHistory} from "react-router-dom";
+import {sharedStore} from "../components/hooks";
 
 
 function WhereGroup(props) {
-    const [selectedCheck, selectCheck] = useState(0);
-    let history = useHistory();
+    const [selectedAction, selectAction] = useState(sharedStore.getState().groupAction);
+    const [country, setCountry] = useState(sharedStore.getState().country);
+    const [city, setCity] = useState(sharedStore.getState().city);
+    const [postalCode, setPostalCode] = useState(sharedStore.getState().postalCode);
 
-    useEffect(() => {
-        selectCheck(history.location.navProps?.selectedCheck)
-    }, [history.location.navProps])
 
-    function getSelectedItem() {
-        switch (selectedCheck) {
+    function getSelectedGroupAction() {
+        switch (selectedAction) {
             case 1:
                 return 95
             case 2:
@@ -38,7 +37,7 @@ function WhereGroup(props) {
                 <div style={{margin: '15px'}}>
                     <TextHeaderCush>Where is the group?</TextHeaderCush>
                 </div>
-                <img style={{position: 'absolute', left: 32, height: 20, top: getSelectedItem(props)}}
+                <img style={{position: 'absolute', left: 32, height: 20, top: getSelectedGroupAction()}}
                      src={require('../assets/icons/check_black.png').default} alt={'Check'}/>
                 <div
                     style={{
@@ -50,15 +49,18 @@ function WhereGroup(props) {
                         gap: '5px'
                     }}>
                     <Button onClick={() => {
-                        selectCheck(0)
+                        selectAction(0);
+                        sharedStore.dispatch({type: 'groupAction', value: 0})
                     }} style={{width: 155, height: 25}}><TextBaseManySans fontSize='20px'>__ Located
                         in</TextBaseManySans></Button>
                     <Button onClick={() => {
-                        selectCheck(1)
+                        selectAction(1)
+                        sharedStore.dispatch({type: 'groupAction', value: 1})
                     }} style={{width: 195, height: 25}}><TextBaseManySans fontSize='20px'>__ Traveling
                         from</TextBaseManySans></Button>
                     <Button onClick={() => {
-                        selectCheck(2)
+                        selectAction(2)
+                        sharedStore.dispatch({type: 'groupAction', value: 2})
                     }} style={{width: 175, height: 25}}><TextBaseManySans fontSize='20px'>__ Sharing
                         from</TextBaseManySans></Button>
                 </div>
@@ -69,26 +71,40 @@ function WhereGroup(props) {
                         color='black'
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans', fontSize: 'large'}}
+                        value={country}
+                        onChange={(event) => {
+                            setCountry(event.target.value);
+                            sharedStore.dispatch({type: 'country', value: event.target.value})
+                        }}
                     />
                     <Input
                         placeholder="City"
                         color='black'
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans', fontSize: 'large'}}
+                        value={city}
+                        onChange={(event) => {
+                            setCity(event.target.value);
+                            sharedStore.dispatch({type: 'city', value: event.target.value})
+                        }}
                     />
                     <Input
                         placeholder="Postal code"
                         color='black'
                         disableUnderline={true}
                         style={{width: '90%', fontFamily: 'MANYSans', fontSize: 'large'}}
+                        value={postalCode}
+                        onChange={(event) =>
+                        {   setPostalCode(event.target.value);
+                            sharedStore.dispatch({type: 'postalCode', value: event.target.value})}}
                     />
                 </div>
                 <NavButtonsContainer>
-                    <LeftBlackButton navProps={{...history.location.navProps, selectedCheck: selectedCheck}}
-                                     path={'/whoGroup'}/>
+                    <LeftBlackButton
+                        path={'/whoGroup'}/>
                     <ManyHomeButton path={'/home'}/>
-                    <RightBlackButton navProps={{...history.location.navProps, selectedCheck: selectedCheck}}
-                                      path={'/whatExchange'}/>
+                    <RightBlackButton
+                        path={'/whatExchange'}/>
                 </NavButtonsContainer>
             </IphoneScreen>
         </MainContainer>
