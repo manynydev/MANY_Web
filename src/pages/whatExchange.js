@@ -15,7 +15,7 @@ const StyledInput = withStyles({
     root: {
         fontFamily: 'ManySans, sans-serif',
         fontSize: '15px',
-       
+
     },
     underline: {
         '&:before': {
@@ -92,8 +92,8 @@ function WhatExchange() {
                         }} value={activities} inputProps={{ spellCheck: 'false' }} style={{width: 150}} placeholder={'describe activities'}
                                      multiline={true}/>
                     </div>
-                    <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '-1px', right: '2px'}}
-                                  fontSize='16px'>.</TextBaseCush>
+                    {activities ?<></> : <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '-1px', right: '2px'}}
+                                  fontSize='16px'>.</TextBaseCush>}
                     <TextBaseCush fontWeight='normal' style={{position: 'relative', bottom: '5px'}}
                                   fontSize='16px'>The group offers</TextBaseCush>
 

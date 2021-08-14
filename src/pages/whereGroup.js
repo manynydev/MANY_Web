@@ -14,11 +14,10 @@ import {sharedStore} from "../components/hooks";
 
 
 function WhereGroup() {
-    const {initAction,initCountry,initCity,initPostalCode} = sharedStore.getState();
-    const [selectedAction, selectAction] = useState(initAction);
-    const [country, setCountry] = useState(initCountry);
-    const [city, setCity] = useState(initCity);
-    const [postalCode, setPostalCode] = useState(initPostalCode);
+    const [selectedAction, selectAction] = useState(sharedStore.getState().groupAction);
+    const [country, setCountry] = useState(sharedStore.getState().country);
+    const [city, setCity] = useState(sharedStore.getState().city);
+    const [postalCode, setPostalCode] = useState(sharedStore.getState().postalCode);
 
     function getSelectedGroupAction() {
         switch (selectedAction) {
