@@ -28,6 +28,15 @@ const topUsers = [
         profile: require("../assets/topUsers/46.2.png").default,
         zIndex: 5
     },
+    {
+        id:4,
+        profile: require("../assets/topUsers/49.1.png").default,
+    },
+    {
+        id:5,
+        profile: require("../assets/topUsers/61.png").default,
+        zIndex: 5
+    },
 ]
 
 const bottomUsers = {
@@ -66,6 +75,36 @@ const bottomUsers = {
         {profile: require("../assets/bottomUsers/69.1.png").default},
         {profile: require("../assets/bottomUsers/70.1.png").default},
         {profile: require("../assets/bottomUsers/70.2.png").default}
+    ],
+    4:[
+        {profile: require("../assets/bottomUsers/51.1.png").default},
+        {profile: require("../assets/bottomUsers/51.2.png").default},
+        {profile: require("../assets/bottomUsers/51.3.png").default},
+        {profile: require("../assets/bottomUsers/51.4.png").default},
+    ],
+    5:[
+        {profile: require("../assets/bottomUsers/56.1.png").default},
+        {profile: require("../assets/bottomUsers/56.2.png").default},
+        {profile: require("../assets/bottomUsers/56.3.png").default},
+        {profile: require("../assets/bottomUsers/56.4.png").default},
+        {profile: require("../assets/bottomUsers/57.1.png").default},
+        {profile: require("../assets/bottomUsers/57.2.png").default},
+        {profile: require("../assets/bottomUsers/57.3.png").default},
+        {profile: require("../assets/bottomUsers/57.4.png").default},
+        {profile: require("../assets/bottomUsers/57.5.png").default},
+        {profile: require("../assets/bottomUsers/58.1.png").default},
+        {profile: require("../assets/bottomUsers/58.2.png").default},
+        {profile: require("../assets/bottomUsers/58.3.png").default},
+        {profile: require("../assets/bottomUsers/58.4.png").default},
+        {profile: require("../assets/bottomUsers/58.5.png").default},
+        {profile: require("../assets/bottomUsers/59.1.png").default},
+        {profile: require("../assets/bottomUsers/59.2.png").default},
+        {profile: require("../assets/bottomUsers/59.3.png").default},
+        {profile: require("../assets/bottomUsers/59.4.png").default},
+        {profile: require("../assets/bottomUsers/59.5.png").default},
+        {profile: require("../assets/bottomUsers/60.1.png").default},
+        {profile: require("../assets/bottomUsers/60.2.png").default},
+        {profile: require("../assets/bottomUsers/60.3.png").default},
     ],
 }
 
