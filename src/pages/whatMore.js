@@ -6,13 +6,14 @@ import {
     IphoneScreen,
     LeftBlackButton,
     RightBlackButton,
-    ManyHomeButton
+    ManyHomeButton, NavButtonsContainer
 } from "../components/index";
+import {sharedStore} from "../components/hooks";
 
 
 function WhatMore() {
 
-    const [usersText, setUsersText] = React.useState("");
+    const [usersText, setUsersText] = React.useState(sharedStore.getState().whatMore ?? '');
 
     return (
         <MainContainer>
@@ -23,28 +24,23 @@ function WhatMore() {
                 <div
                     style={{display: 'flex', flexDirection: 'column', position: 'relative', top: '10px', left: '20px'}}>
                     <Input
+                        inputProps={{ spellCheck: 'false' }}
                         placeholder="Anything else to add?"
                         color='black'
                         disableUnderline={true}
                         multiline={true}
                         rowsMax={19}
-                        onChange={(event) => setUsersText(event.target.value)}
+                        value={usersText}
+                        onChange={(event) => {setUsersText(event.target.value)
+                        sharedStore.dispatch({type:'whatMore',value:event.target.value})}}
                         style={{width: '90%', fontFamily: 'MANYSans,sans-serif', fontSize: 'large'}}
                     />
                 </div>
-                {/*Bottom button div position is absolute to account for changing number of input text rows*/}
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    position: 'sticky',
-                    top: '690px',
-                    right: 235,
-                    gap: '53px'
-                }}>
-                    <LeftBlackButton path={'/whatDuration'} navProps={usersText}/>
+                <NavButtonsContainer>
+                    <LeftBlackButton path={'/whatGlyph'}/>
                     <ManyHomeButton path={'/home'}/>
                     <RightBlackButton path={'/matching'}/>
-                </div>
+                </NavButtonsContainer>
             </IphoneScreen>
         </MainContainer>
     );

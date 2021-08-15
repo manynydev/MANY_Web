@@ -47,7 +47,7 @@ function WhatGlyph() {
                 <NavButtonsContainer>
                     <LeftBlackButton path={'/whatDuration'}/>
                     <ManyHomeButton path={'/home'}/>
-                    <RightBlackButton path={'/matching'}/>
+                    <RightBlackButton path={'/whatMore'}/>
                 </NavButtonsContainer>
             </IphoneScreen>
         </MainContainer>
