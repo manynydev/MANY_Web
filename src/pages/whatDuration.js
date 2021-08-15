@@ -6,10 +6,11 @@ import {
     TextBaseGothic,
     NavigationButton, LeftBlackButton, ManyHomeButton, RightBlackButton, NavButtonsContainer
 } from "../components";
+import {sharedStore} from "../components/hooks";
 
 function WhatDuration() {
 
-    const monthsIntElement = <TextBaseGothic fontSize='72px'> 12 </TextBaseGothic>
+    const monthsIntElement = <TextBaseGothic fontSize='72px'> {sharedStore.getState().duration ?? '12'} </TextBaseGothic>
 
     return (
         <MainContainer>
