@@ -31,7 +31,7 @@ function WhatGlyph() {
                     />
                     <label htmlFor="contained-button-file">
                         {glyph ? <img
-                                style={{height:'90%',width:'100%', position: 'relative', margin: 'auto', bottom: 65,right:20}}
+                                style={{objectFit: 'contain',maxWidth:200, position: 'relative', margin: 'auto', bottom: 105,right:60}}
                                 alt={'uploaded glyph'} src={glyph}/> :
                             <TextBaseManySans fontSize={'19px'} style={{
                                 cursor: 'pointer',
