@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {IphoneFrame, MainContainer, TextBaseManySans} from "../components/index";
 import {CircularProgress} from "@material-ui/core";
 import NavigationButton from "../components/navigationButton";
@@ -11,6 +11,14 @@ function Platform() {
     const aboutText = <TextBaseManySans color='white' fontSize={'30px'}> About </TextBaseManySans>
     const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
+
+    useEffect(()=>{
+        if(!framesLoading){
+            document.getElementById("frame1").contentWindow.document.body.style.overflow='hidden';
+            document.getElementById("frame2").contentWindow.document.body.style.overflow='hidden';
+        }
+    },[framesLoading])
+
 
     return (
         <MainContainer flexDirection={'row'}>
@@ -29,12 +37,12 @@ function Platform() {
                 flexDirection: 'row',
                 position: 'fixed'
             }}>
-                <iframe loading={'lazy'} onLoad={() => {
+                <iframe id={"frame1"} loading={'lazy'} onLoad={() => {
                     setFrame1Loading(false)
                 }}
                         style={{scrolling: 'no', height: 444, width: 250,marginBottom:55, border: 'none', overflow: 'hidden'}}
                         src={'http://localhost:3000/home'}/>
-                <iframe loading={'lazy'} onLoad={() => {
+                <iframe id={"frame2"}  loading={'lazy'} onLoad={() => {
                     setFrame2Loading(false)
                 }}
                         style={{scrolling: 'no', height: 443, width: 250, border: 'none', overflow: 'hidden'}}

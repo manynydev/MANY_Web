@@ -11,7 +11,6 @@ const MainContainer = styled.div`
   justify-content: center;
   background-color: ${props => props.color? props.color : '#eaeaea'}; 
   position: fixed;
-  overflow: hidden;
   margin:auto;
 }
 `
