@@ -42,10 +42,10 @@ const topUsers = [
 
 const bottomUsers = {
     0: [
-        {profile: require("../assets/bottomUsers/14.png").default},
-        {profile: require("../assets/bottomUsers/16.png").default},
-        {profile: require("../assets/bottomUsers/37.png").default},
-        {profile: require("../assets/bottomUsers/47.2.png").default},
+        {profile: require("../assets/bottomUsers/14.png").default,paragraph: require("../assets/paragraphs/0014_para.png").default},
+        {profile: require("../assets/bottomUsers/16.png").default,paragraph: require("../assets/paragraphs/0016_para.png").default},
+        {profile: require("../assets/bottomUsers/37.png").default,paragraph: require("../assets/paragraphs/0037_para.png").default},
+        {profile: require("../assets/bottomUsers/47.2.png").default,paragraph: require("../assets/paragraphs/0047_para.png").default},
     ],
     1: [
         {profile: require("../assets/bottomUsers/21.1.png").default},
@@ -113,19 +113,19 @@ const Matching = () => {
 
     let [activeUserId, setActiveUserId] = useState(0);
     let [topUserZIndex, setTopUserZIndex] = useState(2);
-    let [bottomUserClicked, setBottomUserClicked] = useState(false);
+    // let [bottomUserClicked, setBottomUserClicked] = useState(false);
 
-    const profileAnimationProps = useSpring(
-        {
-            opacity: bottomUserClicked ? 0 : 1,
-        }
-    )
-
-    const paragraphAnimationProps = useSpring(
-        {
-            opacity: bottomUserClicked ? 1 : 0,
-        }
-    )
+    // const profileAnimationProps = useSpring(
+    //     {
+    //         opacity: bottomUserClicked ? 0 : 1,
+    //     }
+    // )
+    //
+    // const paragraphAnimationProps = useSpring(
+    //     {
+    //         opacity: bottomUserClicked ? 1 : 0,
+    //     }
+    // )
 
 
     const snapList = useRef(null);
@@ -152,27 +152,21 @@ const Matching = () => {
         }
     );
 
-    const goToTopUser = useScroll(
-        {
-            ref: snapList
-        }
-    );
-    const goToBottomUser = useScroll(
-        {
-            ref: snapList1
-        }
-    );
-
-    React.useEffect(() => {
-            goToTopUser(0, {animationEnabled: false});
-            goToBottomUser(0, {animationEnabled: false});
-        }
-        , []);
-
-
+    // const goToTopUser = useScroll(
+    //     {
+    //         ref: snapList
+    //     }
+    // );
+    // const goToBottomUser = useScroll(
+    //     {
+    //         ref: snapList1
+    //     }
+    // );
+    //
+    //
     const handleClick = (userId, zIndex) => {
         setActiveUserId(userId);
-        setTopUserZIndex(zIndex ? zIndex : 2);
+        // setTopUserZIndex(zIndex ? zIndex : 2);
     }
 
     const createTopUsers = (topUsers) => {
@@ -206,11 +200,11 @@ const Matching = () => {
                             objectFit: 'contain',
                             height: 400,
                             position: 'relative',
-                            top: 80,
-                            left: 20,
+                            top: 55,
+                            left: 10,
                             backgroundColor: '#f8f8f8'
                         }}
-                             src={require('../assets/0096_para.png').default} alt={"paragraph"}/>
+                             src={match.paragraph} alt={"paragraph"}/>
                     </div>
                 </SnapItem>
             )
@@ -228,7 +222,7 @@ const Matching = () => {
             <IphoneScreen>
                 <SnapList direction="vertical" height={650} width={275} ref={snapListVertical}>
                     <div style={{marginTop: 5}}>
-                        <SnapItem height={600} margin={{bottom: '420px'}} snapAlign="center">
+                        <SnapItem height={570} margin={{bottom: '420px'}} snapAlign="center">
                             <div style={{position: 'relative', width: 260, bottom: 10}}>
                                 <SnapList ref={snapList} direction="horizontal" width={260}>
                                     {topUsersSnapItems}
