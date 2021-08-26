@@ -18,7 +18,7 @@ function RootHome() {
             </div>
             <div style={{
                 height:40,
-                bottom:0,
+                top:0,
                 width:'100vw',
                 display: 'flex',
                 flexDirection: 'row',
@@ -26,18 +26,18 @@ function RootHome() {
                 margin: 'auto',
                 gap:150,
                 position:'absolute',
-                backgroundColor:'#0c0c0c'
+                backgroundColor:'#1d1d1d'
             }}>
                 <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/about'}
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/about'}
                                       displayComponent={aboutText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'255px'} height={'40px'} path={'/platform'}
+                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/platform'}
                                       displayComponent={platformText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/video'}
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/video'}
                                       displayComponent={videoText}/>
                 </div>
             </div>

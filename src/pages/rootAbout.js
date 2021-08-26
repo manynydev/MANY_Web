@@ -1,5 +1,5 @@
 import React from "react";
-import {MainContainer, TextBaseGothic,} from "../components/index";
+import {MainContainer, TextBaseGothic, TextBaseManySans,} from "../components/index";
 import rightBlackArrow from "../assets/icons/right_black.png";
 import NavigationButton from "../components/navigationButton";
 
@@ -9,18 +9,23 @@ function RootAbout() {
     const largeNavButton = <NavigationButton hoverBorder={true} width={"50px"} height={"40px"}
                                              displayComponent={leftArrowImage} path={"/rootHome"}/>
 
+    const homeText = <TextBaseManySans color='white' fontSize='30px'> Home </TextBaseManySans>
+    const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
+    const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
+
     return (
-        <div>
-            <div style={{position: "fixed", top: 475,right:150}}>
-                {largeNavButton}
-            </div>
-            <div style={{whiteSpace: 'pre-wrap', width: 900, margin: 'auto'}}>
-                <TextBaseGothic fontSize={'50px'}>
+        <MainContainer overflowY={'scroll'} color={'white'} alignItems={'none'} justifyContent={'none'} flexDirection={'column'}>
+        {/*<div>*/}
+            {/*<div style={{position: "fixed", top: 475,right:150}}>*/}
+            {/*    {largeNavButton}*/}
+            {/*</div>*/}
+            <div style={{top:80,margin:'auto',position:'relative',whiteSpace: 'pre-wrap', width: 900}}>
+                <TextBaseGothic fontSize={'30px'}>
                     {"MANY"}
                     {"\n"}
                     {"\n"}
                 </TextBaseGothic>
-                <TextBaseGothic>
+                <TextBaseGothic fontSize={'17px'}>
                     {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs."}
                     {"\n"}
                     {"\n"}
@@ -57,7 +62,34 @@ function RootAbout() {
                     {"In the fall of 2018, MANY was also the subject of an interdisciplinary university-wide seminar to critically consider the project and rehearse strategies for realizing it. The projects dealt with things like emerging methods for global credentialling or links between retirees and young trainees  in the greying industries of agriculture, construction and fishing."}
                 </TextBaseGothic>
             </div>
-        </div>
+
+            <div style={{
+                height:40,
+                top:0,
+                width:'100vw',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent:'center',
+                margin: 'auto',
+                gap:150,
+                position:'absolute',
+                backgroundColor:'#1d1d1d'
+            }}>
+                <div style={{position:'relative',right:0}}>
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/'}
+                                      displayComponent={homeText}/>
+                </div>
+                <div style={{position:'relative',left:0}}>
+                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/platform'}
+                                      displayComponent={platformText}/>
+                </div>
+                <div style={{position:'relative',left:0}}>
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/video'}
+                                      displayComponent={videoText}/>
+                </div>
+            </div>
+        {/*</div>*/}
+        </MainContainer>
     )
 }
 

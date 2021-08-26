@@ -9,7 +9,8 @@ function Platform() {
     const [frame2loading, setFrame2Loading] = useState(true);
     const [framesLoading, setFramesLoading] = useState(true);
     const aboutText = <TextBaseManySans color='white' fontSize={'30px'}> About </TextBaseManySans>
-    const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
+    const homeText = <TextBaseManySans color='white' fontSize='30px'> Home </TextBaseManySans>
+    const exploreText = <TextBaseManySans color='white' fontSize='30px'> Explore </TextBaseManySans>
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
     useEffect(()=>{
@@ -50,25 +51,29 @@ function Platform() {
             </div>
             <div style={{
                 height:40,
-                bottom:0,
+                top:0,
                 width:'100vw',
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent:'center',
                 gap:150,
                 position:'fixed',
-                backgroundColor:'#0c0c0c'
+                backgroundColor:'#1d1d1d'
             }}>
+                <div style={{position:'relative',left:0}}>
+                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/'}
+                                      displayComponent={homeText}/>
+                </div>
                 <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/about'}
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/about'}
                                       displayComponent={aboutText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'255px'} height={'40px'} path={'/platform'}
-                                      displayComponent={platformText}/>
+                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/explore'}
+                                      displayComponent={exploreText}/>
                 </div>
                 <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'165' +
+                    <NavigationButton hoverBorder={false} width={'165' +
                     'px'} height={'40px'} path={'/video'}
                                       displayComponent={videoText}/>
                 </div>

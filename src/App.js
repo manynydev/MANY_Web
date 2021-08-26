@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {RootAbout,RootVideo,RootHome,Platform,Home, Splash,Jobs,Offers, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
+import {RootExplore,RootAbout,RootVideo,RootHome,Platform,Home, Splash,Jobs,Offers, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
 import {sharedStore} from "./components/hooks";
@@ -36,8 +36,8 @@ function App(props) {
                 <Route exact path="/about">
                     <RootAbout/>
                 </Route>
-                <Route exact path="/platformSplash">
-                    <Splash/>
+                <Route exact path="/explore">
+                    <RootExplore/>
                 </Route>
                 <Route exact path="/platform">
                     <Platform/>

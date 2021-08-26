@@ -14,6 +14,7 @@ import RootVideo from "./rootVideo";
 import RootAbout from "./rootAbout";
 import Jobs from "./jobs";
 import Offers from "./offers";
+import RootExplore from "./rootExplore";
 
 export {
     Home,
@@ -31,5 +32,6 @@ export {
     Platform,
     RootHome,
     RootVideo,
-    RootAbout
+    RootAbout,
+    RootExplore
 }
