@@ -13,7 +13,8 @@ import {useSpring, animated} from 'react-spring'
 const topUsers = [
     {
         id: 0,
-        profile: require("../assets/topUsers/39.3.png").default
+        profile: require("../assets/topUsers/39.3.png").default,
+        paragraph: require("../assets/paragraphs/0014_para.png").default
     },
     {
         id: 1,
@@ -42,10 +43,22 @@ const topUsers = [
 
 const bottomUsers = {
     0: [
-        {profile: require("../assets/bottomUsers/14.png").default,paragraph: require("../assets/paragraphs/0014_para.png").default},
-        {profile: require("../assets/bottomUsers/16.png").default,paragraph: require("../assets/paragraphs/0016_para.png").default},
-        {profile: require("../assets/bottomUsers/37.png").default,paragraph: require("../assets/paragraphs/0037_para.png").default},
-        {profile: require("../assets/bottomUsers/47.2.png").default,paragraph: require("../assets/paragraphs/0047_para.png").default},
+        {
+            profile: require("../assets/bottomUsers/14.png").default,
+            paragraph: require("../assets/paragraphs/0014_para.png").default
+        },
+        {
+            profile: require("../assets/bottomUsers/16.png").default,
+            paragraph: require("../assets/paragraphs/0016_para.png").default
+        },
+        {
+            profile: require("../assets/bottomUsers/37.png").default,
+            paragraph: require("../assets/paragraphs/0037_para.png").default
+        },
+        {
+            profile: require("../assets/bottomUsers/47.2.png").default,
+            paragraph: require("../assets/paragraphs/0047_para.png").default
+        },
     ],
     1: [
         {profile: require("../assets/bottomUsers/21.1.png").default},
@@ -152,18 +165,12 @@ const Matching = () => {
         }
     );
 
-    // const goToTopUser = useScroll(
-    //     {
-    //         ref: snapList
-    //     }
-    // );
-    // const goToBottomUser = useScroll(
-    //     {
-    //         ref: snapList1
-    //     }
-    // );
-    //
-    //
+    const goToProfiles = useScroll(
+        {
+            ref: snapListVertical
+        }
+    );
+
     const handleClick = (userId, zIndex) => {
         setActiveUserId(userId);
         // setTopUserZIndex(zIndex ? zIndex : 2);
@@ -178,6 +185,15 @@ const Matching = () => {
                                 onClick={() => {
                                     handleClick(user.id, user?.zIndex)
                                 }}>
+                        <img draggable='false' style={{
+                            objectFit: 'contain',
+                            height: 400,
+                            bottom: 250,
+                            position:'absolute',
+                            left: 25,
+                            backgroundColor: '#bf0b0b'
+                        }}
+                             src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>
                         <Profile src={user.profile}/>
                     </ButtonBase>
                 </SnapItem>
@@ -185,7 +201,6 @@ const Matching = () => {
         }))
         return topUsersSnapItems;
     }
-
     const createBottomUsers = (activeUserId) => {
         let activeUsersBottomMatches = bottomUsers[activeUserId];
         let bottomUsersSnapItems = []
@@ -193,16 +208,16 @@ const Matching = () => {
             bottomUsersSnapItems.push(
                 <SnapItem margin={{left: 14, right: 14}} width="96%" height="100%" snapAlign="center">
                     <div style={{top: 10, right: 5, position: 'relative'}}>
-                        <div style={{position:'relative',top:20}}>
+                        <div style={{position: 'relative', top: 20}}>
                             <Profile src={match.profile}/>
                         </div>
                         <img draggable='false' style={{
                             objectFit: 'contain',
                             height: 400,
                             position: 'relative',
-                            top: 55,
+                            top: 105,
                             left: 10,
-                            backgroundColor: '#f8f8f8'
+                            backgroundColor: '#f8f8f8',
                         }}
                              src={match.paragraph} alt={"paragraph"}/>
                     </div>
@@ -212,17 +227,40 @@ const Matching = () => {
         return bottomUsersSnapItems;
     }
 
-
     let topUsersSnapItems = createTopUsers(topUsers);
     let bottomUsersSnapItems = createBottomUsers(activeUserId);
+    React.useEffect(() => {
+        goToProfiles(1, { animationEnabled: false });
+    }, []);
+
+    const styles = {
+        root: {
+            backgroundColor: 'transparent !important',
+            boxShadow: 'none',
+            paddingTop: '25px',
+            color: '#FFFFFF'
+        }
+    };
+
 
     return (
-
         <MainContainer>
             <IphoneScreen>
                 <SnapList direction="vertical" height={650} width={275} ref={snapListVertical}>
-                    <div style={{marginTop: 5}}>
-                        <SnapItem height={570} margin={{bottom: '420px'}} snapAlign="center">
+                        <SnapItem height={400} snapAlign={'center'}>
+                            {/*<div style={{opacity:0,visibility:'hidden'}}>*/}
+                            {/*/!*<img draggable='false' style={{*!/*/}
+                            {/*/!*    objectFit: 'contain',*!/*/}
+                            {/*/!*    height: 400,*!/*/}
+                            {/*/!*    bottom: 0,*!/*/}
+                            {/*/!*    position:'relative',*!/*/}
+                            {/*/!*    left: 25,*!/*/}
+                            {/*/!*    backgroundColor: '#bf0b0b'*!/*/}
+                            {/*/!*}}*!/*/}
+                            {/*/!*     src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>*!/*/}
+                            {/*</div>*/}
+                        </SnapItem>
+                    <SnapItem height={630} margin={{bottom: '425px',top:'405px'}} snapAlign="center">
                             <div style={{position: 'relative', width: 260, bottom: 10}}>
                                 <SnapList ref={snapList} direction="horizontal" width={260}>
                                     {topUsersSnapItems}
@@ -245,26 +283,9 @@ const Matching = () => {
                                 <ManyHomeButton path={'/home'}/>
                             </div>
                         </SnapItem>
-                    </div>
-
-
                     <SnapItem snapAlign={"center"}>
                         <div style={{height: 100}}/>
                     </SnapItem>
-
-
-                    {/*<SnapItem width="96%" height="100%" snapAlign="center">*/}
-                    {/*    <SnapItemContainer>*/}
-                    {/*        <img draggable='false' style={{*/}
-                    {/*            objectFit: 'contain',*/}
-                    {/*            height:400,*/}
-                    {/*            position:'relative',*/}
-                    {/*            top:10,*/}
-                    {/*            backgroundColor: '#f8f8f8'*/}
-                    {/*        }}*/}
-                    {/*             src={require('../assets/0096_para.png').default} alt={"paragraph"}/>*/}
-                    {/*    </SnapItemContainer>*/}
-                    {/*</SnapItem>*/}
                 </SnapList>
             </IphoneScreen>
         </MainContainer>

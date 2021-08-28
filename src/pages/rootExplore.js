@@ -12,13 +12,15 @@ function RootExplore() {
     const aboutText = <TextBaseManySans color='white' fontSize='30px'> About </TextBaseManySans>
     const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
+    const exploreText = <TextBaseManySans color='white' fontSize='30px'> Explore </TextBaseManySans>
+
 
     return (
-        <MainContainer color={'white'} alignItems={'none'} justifyContent={'none'} flexDirection={'column'}>
+        <MainContainer color={'white'}>
             {/*<div style={{position: "fixed", top: 475,right:150}}>*/}
             {/*    {largeNavButton}*/}
             {/*</div>*/}
-            <div style={{bottom:230,margin:'auto',position:'relative',whiteSpace: 'pre-wrap', width: 900}}>
+            <div style={{bottom: 230, margin: 'auto', position: 'relative', whiteSpace: 'pre-wrap', width: 900}}>
                 <TextBaseGothic fontSize={'30px'}>
                     {"Explore MANY"}
                     {"\n"}
@@ -33,33 +35,27 @@ function RootExplore() {
                 </TextBaseGothic>
             </div>
             <div style={{
-                height:40,
-                top:0,
-                width:'100vw',
+                height: 40,
+                bottom: 0,
+                width: '100vw',
                 display: 'flex',
                 flexDirection: 'row',
-                justifyContent:'center',
+                justifyContent: 'center',
                 margin: 'auto',
-                gap:150,
-                position:'absolute',
-                backgroundColor:'#1d1d1d'
+                gap: 150,
+                position: 'absolute',
+                backgroundColor: '#1d1d1d'
             }}>
-                <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/'}
-                                      displayComponent={homeText}/>
-                </div>
-                <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/about'}
-                                      displayComponent={aboutText}/>
-                </div>
-                <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/platform'}
-                                      displayComponent={platformText}/>
-                </div>
-                <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/video'}
-                                      displayComponent={videoText}/>
-                </div>
+                <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/'}
+                                  displayComponent={homeText}/>
+                <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/about'}
+                                  displayComponent={aboutText}/>
+                <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/explore'}
+                                  displayComponent={exploreText}/>
+                <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/platform'}
+                                  displayComponent={platformText}/>
+                <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/video'}
+                                  displayComponent={videoText}/>
             </div>
         </MainContainer>
     )
