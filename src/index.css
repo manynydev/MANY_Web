@@ -23,8 +23,7 @@ code {
 
 @font-face {
     font-family: "MSGothicThesis";
-    src: local("MSGothicThesis"),
-    url("./assets/fonts/MS Gothic Thesis.ttf") format("truetype");
+    src: local("MS Gothic Thesis"),url("./assets/fonts/MSGothicThesis.woff") format('woff');
     font-weight: normal;
 }
 

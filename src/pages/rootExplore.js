@@ -20,7 +20,7 @@ function RootExplore() {
             {/*<div style={{position: "fixed", top: 475,right:150}}>*/}
             {/*    {largeNavButton}*/}
             {/*</div>*/}
-            <div style={{bottom: 230, margin: 'auto', position: 'relative', whiteSpace: 'pre-wrap', width: 900}}>
+            <div style={{lineHeight:1.7,bottom: 180, margin: 'auto', position: 'relative', whiteSpace: 'pre-wrap', width: 900}}>
                 <TextBaseGothic fontSize={'30px'}>
                     {"Explore MANY"}
                     {"\n"}

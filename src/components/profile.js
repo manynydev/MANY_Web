@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 const StyledProfile = styled.img`{
-  object-fit: scale-down;
+  //object-fit: scale-down;
   width: 100%;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

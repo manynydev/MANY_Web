@@ -28,11 +28,53 @@
   color: #61dafb;
 }
 
-/*.Placeholder{*/
-/*  .root:*/
-/*    color: #61dafb;*/
+.yellow {
+  background-color: yellow;
+  position: relative;
+  /*bottom: 1600px;*/
+  /*height: 600px;*/
+}
 
-/*}*/
+.orange {
+  background-color: orange;
+  overflow: visible;
+  user-select: none;
+  z-index: auto;
+}
+
+.transparentBg{
+
+  overflow: visible !important;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+}
+
+.purple {
+  background-color: blueviolet;
+  opacity: 1;
+  position: relative;
+  bottom:300px;
+  height: 1px;
+}
+
+.blue{
+  background-color: #0040ff;
+}
+
+.snapList1{
+  background-color: antiquewhite;
+  z-index: -1;
+}
+
+.green{
+  background-color: #2be234;
+  z-index: 2;
+}
+
+.snapItemInvisible {
+  opacity: 0;
+}
 
 @keyframes App-logo-spin {
   from {

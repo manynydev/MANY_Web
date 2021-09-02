@@ -180,21 +180,27 @@ const Matching = () => {
         let topUsersSnapItems = []
         topUsers.forEach((user => {
             topUsersSnapItems.push(
-                <SnapItem margin={{left: 14, right: 14}} width="100%" height="100%" snapAlign="center">
-                    <ButtonBase disableRipple={true} style={{cursor: 'initial', left: 5, zIndex: user?.zIndex}}
+                <SnapItem margin={{left: 14, right: 14}} width="100%" height={900}
+                          snapAlign="center">
+                    <ButtonBase disableRipple={true} style={{
+                        position: 'relative',
+                        cursor: 'initial',
+                        right: 120,
+                        top: 330,
+                        zIndex: user?.zIndex
+                    }}
                                 onClick={() => {
                                     handleClick(user.id, user?.zIndex)
                                 }}>
                         <img draggable='false' style={{
                             objectFit: 'contain',
                             height: 400,
-                            bottom: 250,
-                            position:'absolute',
-                            left: 25,
-                            backgroundColor: '#bf0b0b'
+                            bottom: 560,
+                            right: 40,
+                            position: 'relative',
                         }}
                              src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>
-                        <Profile src={user.profile}/>
+                            <Profile src={user.profile}/>
                     </ButtonBase>
                 </SnapItem>
             )
@@ -206,18 +212,17 @@ const Matching = () => {
         let bottomUsersSnapItems = []
         activeUsersBottomMatches.forEach((match => {
             bottomUsersSnapItems.push(
-                <SnapItem margin={{left: 14, right: 14}} width="96%" height="100%" snapAlign="center">
-                    <div style={{top: 10, right: 5, position: 'relative'}}>
-                        <div style={{position: 'relative', top: 20}}>
+                <SnapItem className={'transparentBg'} margin={{left: 14, right: 14}} width="100%" height={900} snapAlign="center">
+                    <div style={{whiteSpace:'nowrap',zIndex:100,top: 10, right: 5, position: 'relative'}}>
+                        <div style={{position: 'relative', bottom:40,right:17}}>
                             <Profile src={match.profile}/>
                         </div>
                         <img draggable='false' style={{
                             objectFit: 'contain',
                             height: 400,
                             position: 'relative',
-                            top: 105,
+                            top: 275,
                             left: 10,
-                            backgroundColor: '#f8f8f8',
                         }}
                              src={match.paragraph} alt={"paragraph"}/>
                     </div>
@@ -230,7 +235,7 @@ const Matching = () => {
     let topUsersSnapItems = createTopUsers(topUsers);
     let bottomUsersSnapItems = createBottomUsers(activeUserId);
     React.useEffect(() => {
-        goToProfiles(1, { animationEnabled: false });
+        goToProfiles(1, {animationEnabled: false});
     }, []);
 
     const styles = {
@@ -241,56 +246,40 @@ const Matching = () => {
             color: '#FFFFFF'
         }
     };
-
-
     return (
         <MainContainer>
-            <IphoneScreen>
-                <SnapList direction="vertical" height={650} width={275} ref={snapListVertical}>
-                        <SnapItem height={400} snapAlign={'center'}>
-                            {/*<div style={{opacity:0,visibility:'hidden'}}>*/}
-                            {/*/!*<img draggable='false' style={{*!/*/}
-                            {/*/!*    objectFit: 'contain',*!/*/}
-                            {/*/!*    height: 400,*!/*/}
-                            {/*/!*    bottom: 0,*!/*/}
-                            {/*/!*    position:'relative',*!/*/}
-                            {/*/!*    left: 25,*!/*/}
-                            {/*/!*    backgroundColor: '#bf0b0b'*!/*/}
-                            {/*/!*}}*!/*/}
-                            {/*/!*     src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>*!/*/}
-                            {/*</div>*/}
-                        </SnapItem>
-                    <SnapItem height={630} margin={{bottom: '425px',top:'405px'}} snapAlign="center">
-                            <div style={{position: 'relative', width: 260, bottom: 10}}>
-                                <SnapList ref={snapList} direction="horizontal" width={260}>
-                                    {topUsersSnapItems}
-                                </SnapList>
-                            </div>
-                            <div style={{position: 'relative', width: '100%', top: 100, right: 250}}>
-                                <SnapList ref={snapList1} direction="horizontal"
-                                          width={260}>
-                                    {bottomUsersSnapItems}
-                                </SnapList>
-                            </div>
-                            <div style={{
-                                zIndex: 4,
-                                display: 'flex',
-                                flexDirection: 'row',
-                                position: 'relative',
-                                top: 405,
-                                right: 430,
-                            }}>
-                                <ManyHomeButton path={'/home'}/>
-                            </div>
-                        </SnapItem>
-                    <SnapItem snapAlign={"center"}>
-                        <div style={{height: 100}}/>
-                    </SnapItem>
-                </SnapList>
-            </IphoneScreen>
+            {/*<IphoneScreen>*/}
+            <SnapList direction="vertical" width={"100%"} scrollPadding={{top:500}} ref={snapListVertical}>
+                <SnapItem  snapAlign={"center"} height={200}/>
+                <SnapItem  height={'250%'} margin={{bottom: '100px', top: '0px'}} snapAlign="center">
+                    <div>
+                        <div style={{position: 'relative', width: "100%", bottom: 200}}>
+                            <SnapList margin={{top: '0px'}} ref={snapList} direction="horizontal" width={260}>
+                                {topUsersSnapItems}
+                            </SnapList>
+                        </div>
+                        <div style={{position: 'relative', width: '100%', bottom: 290,left:10,zIndex:50}}>
+                            <SnapList ref={snapList1} direction="horizontal"
+                                      width={260}>
+                                {bottomUsersSnapItems}
+                            </SnapList>
+                        </div>
+                        <div style={{
+                            zIndex: 4,
+                            display: 'flex',
+                            flexDirection: 'row',
+                            position: 'relative',
+                            top: 405,
+                            right: 430,
+                        }}>
+                            <ManyHomeButton path={'/home'}/>
+                        </div>
+                    </div>
+                </SnapItem>
+                <SnapItem className={'purple'} snapAlign={"center"} height={50}/>
+            </SnapList>
+            {/*</IphoneScreen>*/}
         </MainContainer>
-
-
     )
 }
 
