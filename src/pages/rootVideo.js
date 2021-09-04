@@ -10,7 +10,7 @@ function RootVideo() {
     const [loading, setLoading] = useState(true);
 
     const leftArrowImage = <img style={{height: 35, position: 'absolute'}} alt='leftBlackArrow' src={leftBlackArrow}/>
-    const largeNavButton = <NavigationButton hoverBorder={true} width={'50px'} height={'40px'}
+    const largeNavButton = <NavigationButton hoverBorder={false} width={'50px'} height={'40px'}
                                              displayComponent={leftArrowImage} path={'/rootHome'}/>
 
     return (

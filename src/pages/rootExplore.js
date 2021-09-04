@@ -16,11 +16,15 @@ function RootExplore() {
 
 
     return (
-        <MainContainer color={'white'}>
-            {/*<div style={{position: "fixed", top: 475,right:150}}>*/}
-            {/*    {largeNavButton}*/}
-            {/*</div>*/}
-            <div style={{lineHeight:1.7,bottom: 180, margin: 'auto', position: 'relative', whiteSpace: 'pre-wrap', width: 900}}>
+        <MainContainer display={"block"} color={'white'} flexDirection={'column'}>
+            <div style={{
+                lineHeight: 1.7,
+                top: 10,
+                margin: 'auto',
+                position: 'relative',
+                whiteSpace: 'pre-wrap',
+                width: "60%"
+            }}>
                 <TextBaseGothic fontSize={'30px'}>
                     {"Explore MANY"}
                     {"\n"}

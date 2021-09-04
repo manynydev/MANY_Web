@@ -11,14 +11,28 @@ function RootAbout() {
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
 
-    const exploreArrowButton = <div style={{display: 'flex', flexDirection: 'row', width: 40, alignItems: 'center'}}>
+    const exploreArrowButton = <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: 40,
+        alignItems: 'center',
+        position: 'relative',
+        bottom: 3
+    }}>
         <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
-        <TextBaseGothic>{"Explore"}</TextBaseGothic>
+        <TextBaseGothic fontSize='24px'>{"Explore"}</TextBaseGothic>
     </div>
 
-    const videoArrowButton = <div style={{display: 'flex', flexDirection: 'row', width: 40, alignItems: 'center'}}>
+    const videoArrowButton = <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: 40,
+        alignItems: 'center',
+        position: 'relative',
+        bottom: 3
+    }}>
         <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
-        <TextBaseGothic>{"Video"}</TextBaseGothic>
+        <TextBaseGothic fontSize='24px'>{"Video"}</TextBaseGothic>
     </div>
 
 
@@ -38,9 +52,18 @@ function RootAbout() {
                         {"\n"}
                     </TextBaseGothic>
                     <div
-                        style={{display: 'flex', flexDirection: 'column', position: 'relative', right: 10, bottom: 30,gap:5}}>
-                        <NavigationButton justifyContent={'initial'} width={'130px'} displayComponent={exploreArrowButton} path={"/explore"}/>
-                        <NavigationButton justifyContent={'initial'} width={'105px'} displayComponent={videoArrowButton} path={"/video"}/>
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            right: 10,
+                            bottom: 30,
+                            gap: 5
+                        }}>
+                        <NavigationButton justifyContent={'initial'} width={'130px'}
+                                          displayComponent={exploreArrowButton} path={"/explore"}/>
+                        <NavigationButton justifyContent={'initial'} width={'105px'} displayComponent={videoArrowButton}
+                                          path={"/video"}/>
                     </div>
                     <TextBaseGothic fontSize={'17px'}>
                         {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs."}
