@@ -63,7 +63,7 @@ function RootAbout() {
                         <NavigationButton justifyContent={'initial'} width={'130px'}
                                           displayComponent={exploreArrowButton} path={"/explore"}/>
                         <NavigationButton justifyContent={'initial'} width={'105px'} displayComponent={videoArrowButton}
-                                          path={"/video"}/>
+                                          path={"/aboutVideo"}/>
                     </div>
                     <TextBaseGothic fontSize={'17px'}>
                         {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs."}

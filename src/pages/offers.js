@@ -67,7 +67,7 @@ const Offers = () => {
                 }}>
                     {offerSnapItems}
                 </div>
-                <div style={{position: 'absolute', right: -10, bottom: 15}}>
+                <div style={{position: 'absolute', right: 10, bottom: 15}}>
                     <RightWhiteButton path={'/whatExchange'}/>
                 </div>
             </IphoneScreen>
