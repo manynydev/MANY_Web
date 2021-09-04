@@ -238,18 +238,10 @@ const Matching = () => {
         goToProfiles(1, {animationEnabled: false});
     }, []);
 
-    const styles = {
-        root: {
-            backgroundColor: 'transparent !important',
-            boxShadow: 'none',
-            paddingTop: '25px',
-            color: '#FFFFFF'
-        }
-    };
     return (
         <MainContainer>
             {/*<IphoneScreen>*/}
-            <SnapList direction="vertical" width={"100%"} scrollPadding={{top:500}} ref={snapListVertical}>
+            <SnapList direction="vertical" width={"100%"} scrollPadding={{top:470}} ref={snapListVertical}>
                 <SnapItem  snapAlign={"center"} height={200}/>
                 <SnapItem  height={'250%'} margin={{bottom: '100px', top: '0px'}} snapAlign="center">
                     <div>
@@ -258,22 +250,23 @@ const Matching = () => {
                                 {topUsersSnapItems}
                             </SnapList>
                         </div>
-                        <div style={{position: 'relative', width: '100%', bottom: 290,left:10,zIndex:50}}>
+                        <div style={{position: 'relative', width: '100%', bottom: 290,left:13,zIndex:50}}>
                             <SnapList ref={snapList1} direction="horizontal"
                                       width={260}>
                                 {bottomUsersSnapItems}
                             </SnapList>
                         </div>
-                        <div style={{
-                            zIndex: 4,
-                            display: 'flex',
-                            flexDirection: 'row',
-                            position: 'relative',
-                            top: 405,
-                            right: 430,
-                        }}>
-                            <ManyHomeButton path={'/home'}/>
-                        </div>
+                    </div>
+                    <div style={{
+                        zIndex: 100,
+                        right:170,
+                        top:855,
+                        height:10,
+                        display: 'flex',
+                        flexDirection: 'row',
+                        position: 'relative',
+                    }}>
+                        <ManyHomeButton path={'/home'}/>
                     </div>
                 </SnapItem>
                 <SnapItem className={'purple'} snapAlign={"center"} height={50}/>
