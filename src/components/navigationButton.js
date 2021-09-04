@@ -6,13 +6,13 @@ import {StylesProvider} from "@material-ui/core/styles";
 
 const StyledButton = styled(Button)`
   height: ${props => props.height ? props.height : '30px'};
-  width: ${props => props.width ? props.width : '90px'};
-  max-width: ${props => props.width ? props.width : '90px'};
+  width: ${props => props.width ? props.width : props.children.length};
+  justify-content: ${props => props.justifyContent ? props.justifyContent : 'none' };
+  max-width: ${props => props.width ? props.width :'150px'};
   &:hover {
     border: ${props => props.hoverBorder? '1px solid black' :''};
     cursor: initial;
   }
-
   z-index: 1;
 `;
 
@@ -27,7 +27,7 @@ const NavigationButton = (props) => {
 
     return (
         <StylesProvider injectFirst>
-            <StyledButton hoverBorder={props.hoverBorder} height={props.height}
+            <StyledButton justifyContent={props.justifyContent} hoverBorder={props.hoverBorder} height={props.height}
                           width={props.width} onClick={handleClick}>
                 {props.displayComponent}
             </StyledButton>
