@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import Button from '@material-ui/core/Button'
 import styled from "styled-components";
-import {StylesProvider} from "@material-ui/core/styles";
+import { StylesProvider } from '@material-ui/core';
 
 const StyledButton = styled(Button)`
   height: ${props => props.height ? props.height : '30px'};
