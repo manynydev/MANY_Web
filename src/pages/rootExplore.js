@@ -14,6 +14,18 @@ function RootExplore() {
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
     const exploreText = <TextBaseManySans color='white' fontSize='30px'> Explore </TextBaseManySans>
 
+    const exploreArrowButton = <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: 40,
+        alignItems: 'center',
+        position: 'relative',
+        bottom: 3
+    }}>
+        <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
+        <TextBaseGothic fontSize='24px'>{"Explore"}</TextBaseGothic>
+    </div>
+
 
     return (
         <MainContainer display={"block"} color={'white'} flexDirection={'column'}>
@@ -30,12 +42,28 @@ function RootExplore() {
                     {"\n"}
                     {"\n"}
                 </TextBaseGothic>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        position: 'relative',
+                        right: 10,
+                        bottom: 30,
+                        gap: 5
+                    }}>
+                    <NavigationButton justifyContent={'initial'} width={'130px'}
+                                      displayComponent={exploreArrowButton} path={"/platform"}/>
+                </div>
                 <TextBaseGothic fontSize={'17px'}>
-                    {"The first page of the platform offers three choices: Sign in, Create a group, and View previous groups. Clicking on the MANY logo at the bottom of the page will always return you to the platform's opening menu page.\n"}
-                    {"\n"}
-                    {"Click on the Create a group menu item to see how an entry is constructed, using the forward/backward icons at the bottom of the page to move through the creation flow. On the final page, click video to see a sample entry being created.\n"}
-                    {"\n"}
-                    {"Click on View Previous groups to explore the various matches made between the 100 representative entries. In general, groups who want to travel are on top, and groups in need of travelers are on the bottom. Single click on any group on the bottom and scroll through possible matches on the top. Double click on any group at the top and scroll through possible matches on the bottom. For any group, swipe up or down to read a short explanation of the need. On these pages, you may be prompted to click on an additional description that contextualizes the entry.\n"}
+                    {"The first page of the platform offers three choices: Sign in, Create a group, and View previous groups. \n" +
+                    "\n" +
+                    "Clicking on the MANY logo at the bottom of the page will always return to you to this opening page.\n" +
+                    "\n" +
+                    "Click on Create a Group to see how an entry is constructed by using the forward/backward icons at the bottom of the page. On the final page, click video to see a sample entry being created."}
+                </TextBaseGothic>
+                <a href="https://drive.google.com/file/d/1zAeHReFnim_o4hJ26VoG9uj9KYLl21We/view?usp=sharing">Video Sample</a>
+                <TextBaseGothic fontSize={'17px'}>
+                    {"\n\nClick on View Previous Groups to explore the various matches made between the 100 representative entries. In general, groups who want to travel are on top, and groups in need of travelers are on the bottom. Single click on any group on the bottom and scroll through possible matches on the top. Double click on any group at the top and scroll through possible matches on the bottom. For any group, swipe up or down to read a short explanation of the need. On these pages, you may be prompted to click on an additional description that contextualizes the entry.\n"}
                 </TextBaseGothic>
             </div>
             <div style={{
