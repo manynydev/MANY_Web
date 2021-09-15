@@ -249,7 +249,7 @@ const Matching = () => {
                                 {topUsersSnapItems}
                             </SnapList>
                         </div>
-                        <div style={{position: 'relative', width: 275,bottom:50}}>
+                        <div style={{position: 'relative', width: 275,bottom:58}}>
                         <SnapList ref={snapList1} direction="horizontal"
                                   width={275} height={675}>
                             {bottomUsersSnapItems}
