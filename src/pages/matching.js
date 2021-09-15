@@ -40,7 +40,6 @@ const topUsers = [
         zIndex: 5
     },
 ]
-
 const bottomUsers = {
     0: [
         {
@@ -140,7 +139,6 @@ const Matching = () => {
     //     }
     // )
 
-
     const snapList = useRef(null);
     useDragToScroll(
         {
@@ -148,7 +146,6 @@ const Matching = () => {
                 false
         }
     );
-
     const snapListVertical = useRef(null);
     useDragToScroll(
         {
@@ -156,7 +153,6 @@ const Matching = () => {
                 false
         }
     );
-
     const snapList1 = useRef(null);
     useDragToScroll(
         {
@@ -164,7 +160,6 @@ const Matching = () => {
                 false
         }
     );
-
     const goToProfiles = useScroll(
         {
             ref: snapListVertical
@@ -175,63 +170,59 @@ const Matching = () => {
         setActiveUserId(userId);
         // setTopUserZIndex(zIndex ? zIndex : 2);
     }
-
     const createTopUsers = (topUsers) => {
         let topUsersSnapItems = []
         topUsers.forEach((user => {
             topUsersSnapItems.push(
-                <SnapItem margin={{left: 14, right: 14}} width="100%" height={900}
+                <SnapItem width={275} height={675}
                           snapAlign="center">
                     <ButtonBase disableRipple={true} style={{
-                        position: 'relative',
                         cursor: 'initial',
-                        right: 120,
-                        top: 330,
-                        zIndex: user?.zIndex
+                        zIndex: user?.zIndex,
+                        height: 675
                     }}
                                 onClick={() => {
                                     handleClick(user.id, user?.zIndex)
                                 }}>
                         <img draggable='false' style={{
                             objectFit: 'contain',
-                            height: 400,
-                            bottom: 560,
-                            right: 40,
+                            height: 450,
                             position: 'relative',
                         }}
                              src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>
+                        <div style={{position: 'relative', top: 205,left:10, objectFit: 'contain'}}>
                             <Profile src={user.profile}/>
+                        </div>
                     </ButtonBase>
                 </SnapItem>
             )
-        }))
+        }));
         return topUsersSnapItems;
     }
     const createBottomUsers = (activeUserId) => {
         let activeUsersBottomMatches = bottomUsers[activeUserId];
-        let bottomUsersSnapItems = []
+        let bottomUsersSnapItems = [];
         activeUsersBottomMatches.forEach((match => {
-            bottomUsersSnapItems.push(
-                <SnapItem className={'transparentBg'} margin={{left: 14, right: 14}} width="100%" height={900} snapAlign="center">
-                    <div style={{whiteSpace:'nowrap',zIndex:100,top: 10, right: 5, position: 'relative'}}>
-                        <div style={{position: 'relative', bottom:40,right:17}}>
+            bottomUsersSnapItems.push (
+                <SnapItem height={675} width="100%" snapAlign="center">
+                    <div style={{objectFit: 'contain', height: 675}}>
+                        <div style={{position:'relative',top:-40,right:10}}>
                             <Profile src={match.profile}/>
                         </div>
                         <img draggable='false' style={{
                             objectFit: 'contain',
-                            height: 400,
+                            height: 450,
                             position: 'relative',
-                            top: 275,
+                            top: 0,
                             left: 10,
                         }}
                              src={match.paragraph} alt={"paragraph"}/>
                     </div>
                 </SnapItem>
             )
-        }))
+        }));
         return bottomUsersSnapItems;
     }
-
     let topUsersSnapItems = createTopUsers(topUsers);
     let bottomUsersSnapItems = createBottomUsers(activeUserId);
     React.useEffect(() => {
@@ -241,27 +232,27 @@ const Matching = () => {
     return (
         <MainContainer>
             {/*<IphoneScreen>*/}
-            <SnapList direction="vertical" width={"100%"} scrollPadding={{top:470}} ref={snapListVertical}>
-                <SnapItem  snapAlign={"center"} height={200}/>
-                <SnapItem  height={'250%'} margin={{bottom: '100px', top: '0px'}} snapAlign="center">
+            <SnapList direction="vertical" width={"100%"} scrollPadding={{top: 0}} ref={snapListVertical}>
+                <SnapItem snapAlign={"center"} height={0}/>
+                <SnapItem height={1350} snapAlign="center">
                     <div>
-                        <div style={{position: 'relative', width: "100%", bottom: 200}}>
-                            <SnapList margin={{top: '0px'}} ref={snapList} direction="horizontal" width={260}>
+                        <div style={{ position: 'relative', width: 275, height: 675,top:55}}>
+                            <SnapList ref={snapList} direction="horizontal" height={675} width={275}>
                                 {topUsersSnapItems}
                             </SnapList>
                         </div>
-                        <div style={{position: 'relative', width: '100%', bottom: 290,left:13,zIndex:50}}>
-                            <SnapList ref={snapList1} direction="horizontal"
-                                      width={260}>
-                                {bottomUsersSnapItems}
-                            </SnapList>
+                        <div style={{position: 'relative', width: 275,bottom:50}}>
+                        <SnapList ref={snapList1} direction="horizontal"
+                                  width={275} height={675}>
+                            {bottomUsersSnapItems}
+                        </SnapList>
                         </div>
                     </div>
                     <div style={{
                         zIndex: 100,
-                        right:170,
-                        top:855,
-                        height:10,
+                        right: 185,
+                        top: 865,
+                        height: 10,
                         display: 'flex',
                         flexDirection: 'row',
                         position: 'relative',
@@ -269,7 +260,7 @@ const Matching = () => {
                         <ManyHomeButton path={'/home'}/>
                     </div>
                 </SnapItem>
-                <SnapItem className={'purple'} snapAlign={"center"} height={50}/>
+                <SnapItem snapAlign={"center"} height={0}/>
             </SnapList>
             {/*</IphoneScreen>*/}
         </MainContainer>
