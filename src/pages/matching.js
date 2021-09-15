@@ -14,7 +14,6 @@ const topUsers = [
     {
         id: 0,
         profile: require("../assets/topUsers/39.3.png").default,
-        paragraph: require("../assets/paragraphs/0014_para.png").default
     },
     {
         id: 1,
@@ -160,9 +159,14 @@ const Matching = () => {
                 false
         }
     );
-    const goToProfiles = useScroll(
+    const goToProfilesVertical = useScroll(
         {
             ref: snapListVertical
+        }
+    );
+    const goToProfilesTop = useScroll(
+        {
+            ref: snapList
         }
     );
 
@@ -179,7 +183,10 @@ const Matching = () => {
                     <ButtonBase disableRipple={true} style={{
                         cursor: 'initial',
                         zIndex: user?.zIndex,
-                        height: 675
+                        height: 675,
+                        width:275,
+                        position:'relative',
+                        right:150
                     }}
                                 onClick={() => {
                                     handleClick(user.id, user?.zIndex)
@@ -187,6 +194,8 @@ const Matching = () => {
                         <img draggable='false' style={{
                             objectFit: 'contain',
                             height: 450,
+                            bottom:130,
+                            left:275,
                             position: 'relative',
                         }}
                              src={require("../assets/paragraphs/0014_para.png").default} alt={"paragraph"}/>
@@ -213,8 +222,7 @@ const Matching = () => {
                             objectFit: 'contain',
                             height: 450,
                             position: 'relative',
-                            top: 0,
-                            left: 10,
+                            top: -10,
                         }}
                              src={match.paragraph} alt={"paragraph"}/>
                     </div>
@@ -226,7 +234,7 @@ const Matching = () => {
     let topUsersSnapItems = createTopUsers(topUsers);
     let bottomUsersSnapItems = createBottomUsers(activeUserId);
     React.useEffect(() => {
-        goToProfiles(1, {animationEnabled: false});
+        goToProfilesVertical(1, {animationEnabled: true});
     }, []);
 
     return (

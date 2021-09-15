@@ -84,8 +84,6 @@ function RootExplore() {
                                   displayComponent={aboutText}/>
                 <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/explore'}
                                   displayComponent={exploreText}/>
-                <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/platform'}
-                                  displayComponent={platformText}/>
                 <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/aboutVideo'}
                                   displayComponent={videoText}/>
             </div>
