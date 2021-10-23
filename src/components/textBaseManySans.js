@@ -5,6 +5,8 @@ const TextBaseManySans = styled.text`
   font-size: ${props => props.fontSize ? props.fontSize : '24px'};
   font-weight: normal;
   text-transform: initial;
+  text-underline-offset: 3px;
+  text-decoration: ${props => props.underline? 'underline' : 'none'};
   font-family: ManySans, sans-serif;
   color: ${props => props.color ? props.color : '#151515'};
   justify-content: center;

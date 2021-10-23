@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const TextBaseGothic = styled.text`
 {
   font-size: ${props => props.fontSize ? props.fontSize : '24px'};
-  font-weight: normal;
+  font-weight: ${props => props.fontWeight ? props.fontWeight : 'normal'};
   text-transform: initial;
   margin-top: 5px;
   font-family: MSGothicThesis, sans-serif;

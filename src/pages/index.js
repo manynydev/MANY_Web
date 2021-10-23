@@ -12,10 +12,16 @@ import Platform from "./platform";
 import RootHome from "./rootHome";
 import RootVideo from "./rootVideo";
 import RootAbout from "./rootAbout";
+import Jobs from "./jobs";
+import Offers from "./offers";
+import RootExplore from "./rootExplore";
+import RootAboutVideo from "./rootAboutVideo";
 
 export {
     Home,
     Splash,
+    Jobs,
+    Offers,
     WhoGroup,
     WhatDuration,
     WhatDurationMonths,
@@ -27,5 +33,7 @@ export {
     Platform,
     RootHome,
     RootVideo,
-    RootAbout
+    RootAbout,
+    RootExplore,
+    RootAboutVideo
 }

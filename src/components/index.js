@@ -18,8 +18,10 @@ import NavButtonsContainer from "./navButtonsContainer";
 import SnapItemContainer from "./snapItemContainer";
 import Logo from "./logo"
 import Location from "./location";
+import Profile from "./profile";
 
 export {
+    Profile,
     NavigationButton,
     PageGrid,
     PageContainer,

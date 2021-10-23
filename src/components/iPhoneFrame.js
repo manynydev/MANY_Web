@@ -8,6 +8,7 @@ const IphoneFrameStyled = styled.img`
   margin: auto;
   max-height: 620px;
   min-height: 620px;
+  //overflow: hidden;
   -webkit-user-drag: none;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

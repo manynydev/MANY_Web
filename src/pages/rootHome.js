@@ -5,8 +5,9 @@ import MANYLogoLarge from "../assets/many/MANY_Home_Logo.png";
 
 function RootHome() {
 
-    const aboutText = <TextBaseManySans color='white' fontSize='30px'> About </TextBaseManySans>
-    const platformText = <TextBaseManySans color='white' fontSize='30px'> Platform </TextBaseManySans>
+    const aboutText = <TextBaseManySans color='white' fontSize={'30px'}> About </TextBaseManySans>
+    const homeText = <TextBaseManySans color='white' fontSize='30px'> Home </TextBaseManySans>
+    const exploreText = <TextBaseManySans color='white' fontSize='30px'> Explore </TextBaseManySans>
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
     return (
@@ -15,7 +16,6 @@ function RootHome() {
                 <div style={{margin: 'auto', width: '100%'}}>
                     <img alt="logo" style={{width: '95%'}} src={MANYLogoLarge}/>
                 </div>
-
             </div>
             <div style={{
                 height:40,
@@ -27,21 +27,16 @@ function RootHome() {
                 margin: 'auto',
                 gap:150,
                 position:'absolute',
-                backgroundColor:'#0c0c0c'
+                backgroundColor:'#1d1d1d'
             }}>
-                <div style={{position:'relative',right:0}}>
-                    <NavigationButton hoverBorder={true} width={'165px'} height={'40px'} path={'/about'}
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/'}
+                                      displayComponent={homeText}/>
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/about'}
                                       displayComponent={aboutText}/>
-                </div>
-                <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'255px'} height={'40px'} path={'/platform'}
-                                      displayComponent={platformText}/>
-                </div>
-                <div style={{position:'relative',left:0}}>
-                    <NavigationButton hoverBorder={true} width={'165' +
-                    'px'} height={'40px'} path={'/video'}
+                    <NavigationButton hoverBorder={false} width={'255px'} height={'40px'} path={'/explore'}
+                                      displayComponent={exploreText}/>
+                    <NavigationButton hoverBorder={false} width={'165px'} height={'40px'} path={'/aboutVideo'}
                                       displayComponent={videoText}/>
-                </div>
             </div>
         </MainContainer>
     )

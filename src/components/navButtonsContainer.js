@@ -11,7 +11,7 @@ const NavButtonContainer = (props) => {
             position: 'absolute',
             width: '270px',
             bottom: 15,
-            left: 0,
+            left: 10,
             gap: 30,
         }}>
             {props.children}

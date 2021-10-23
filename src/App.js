@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import {RootAbout,RootVideo,RootHome,Platform,Home, Splash, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
+import {RootExplore,RootAbout,RootVideo,RootHome,Platform,Home,RootAboutVideo,Splash,Jobs,Offers, WhoGroup, WhatDuration,WhatDurationMonths,Matching,WhereGroup,WhatMore,WhatExchange,WhatGlyph} from './pages/index.js'
 import {Route,useLocation,Switch} from "react-router-dom";
 import { useTransition, animated } from 'react-spring'
 
 function App(props) {
     const location = useLocation()
+
 
     const siteTransitions = useTransition(location, {
         config:{ friction: 25 },
@@ -14,24 +15,13 @@ function App(props) {
         enter: { opacity: 1 },
         leave: { opacity: 0 },
     })
-    // const platformTransitions = useTransition(location, {
-    //     key: location.pathname,
-    //     from: { opacity: 0, transform: location.goBack ? 'translate3d(0,100%,0)' : 'translate3d(100%,0,0)' },
-    //     enter: { opacity: 1, transform: location.goBack ? 'translate3d(0,0,0)'  : 'translate3d(0%,0,0)' },
-    //     leave: { opacity: 0, transform: location.goBack ? 'translate3d(0,50%,0)': 'translate3d(-50%,0,0)' },
-    // })
+
     const platformTransitions = useTransition(location, {
         key: location.pathname,
         from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)'   },
         leave: { opacity: 0, transform: 'translate3d(0,100%,0)'},
     })
-    // const platformTransitions = useTransition(location, {
-    //     key: location.pathname,
-    //     from: { opacity: 0, transform:  'translate3d(100%,0,0)' },
-    //     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-    //     leave: { opacity: 0, transform:  'translate3d(-50%,0,0)' },
-    // })
 
     const JSXSiteTransitions = siteTransitions((style, item, t, key) =>
         <animated.div key={key} style={style}>
@@ -39,14 +29,17 @@ function App(props) {
                 <Route exact path="/">
                     <RootHome/>
                 </Route>
+                <Route exact path="/aboutVideo">
+                    <RootAboutVideo/>
+                </Route>
                 <Route exact path="/video">
                     <RootVideo/>
                 </Route>
                 <Route exact path="/about">
                     <RootAbout/>
                 </Route>
-                <Route exact path="/platformSplash">
-                    <Splash/>
+                <Route exact path="/explore">
+                    <RootExplore/>
                 </Route>
                 <Route exact path="/platform">
                     <Platform/>
@@ -78,6 +71,12 @@ function App(props) {
                 </Route>
                 <Route exact path="/whatDurationMonths">
                     <WhatDurationMonths/>
+                </Route>
+                <Route exact path="/jobs">
+                    <Jobs/>
+                </Route>
+                <Route exact path="/offers">
+                    <Offers/>
                 </Route>
                 <Route exact path="/whatGlyph">
                     <WhatGlyph/>
