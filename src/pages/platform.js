@@ -43,12 +43,12 @@ function Platform() {
                     setFrame1Loading(false)
                 }}
                         style={{scrolling: 'no', height: 444, width: 250,marginBottom:55, border: 'none', overflow: 'hidden'}}
-                        src={'http://localhost:3000/home'}/>
+                        src={'https://manyny.net/home'}/>
                 <iframe id={"frame2"}  loading={'lazy'} onLoad={() => {
                     setFrame2Loading(false)
                 }}
                         style={{scrolling: 'no', height: 443, width: 250, border: 'none', overflow: 'hidden'}}
-                        src={'http://localhost:3000/matching'}/>
+                        src={'https://manyny.net/matching'}/>
             </div>
             <div style={{
                 height:40,
