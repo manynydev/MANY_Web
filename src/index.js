@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
@@ -10,9 +10,9 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router basename={process.env.PUBLIC_URL + '/'}>
+        <BrowserRouter basename={"/"}>
             <App/>
-        </Router>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
