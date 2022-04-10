@@ -66,22 +66,21 @@ function RootAbout() {
                                           path={"/aboutVideo"}/>
                     </div>
                     <TextBaseGothic fontSize={'17px'}>
-                        {"MANY is a global commons that facilitates migration and cooperation through an exchange of needs.\n" +
+                        {"MANY experiments with ways to facilitate a global commons through an exchange of needs.\n" +
                         " \n" +
-                        "Global infrastructure space has streamlined the movements of billions of products and tens of millions of tourists and cheap laborers, but at a time when over 80 million people in the world are displaced, there are still so few ways to handle political, economic, or environmental migrations. The nation-state has a dumb on-off button to grant or deny citizenship/asylum. And the NGOcracy offers as its best idea storage in a refugee camp—a form of detention lasting on average 17 years.\n" +
-                        " \n" +
-                        "Upstream from the violence of the refugee camp, MANY considers a global form of matchmaking between the sidelined talents of migrating individuals and a multitude of endeavors and opportunities around the world. The platform more robustly networks existing organizations to create short term, project-based journeys and cooperative exchanges organized around intervals of time or seasons of a life.\n" +
+                        "Universities and other educational networks have long been the means to organize short term cosmopolitan mobility.\n" +
+                        "Now research institutions are also sharing crucial information about the state of the planet." +
+                        "The wealthiest people in the world can send their children to university to provide another fork in the road as well as time away at a crucial moment. MANY suggests a much broader, more accessible, form of knowledge exchange and training that is organized around intervals of time, seasons of a life, and planetary cooperation at a moment of climate crisis. \n" +
                         "\n" +
-                        "To outwit xenophobic opposition to migration, MANY speaks for those who might say, “We don’t want your victimhood, your citizenship, your racism, or your bad jobs. We don’t want to stay.” It serves those who want to resettle but also those who want to keep traveling—who never wanted the citizenship or asylum that the nation withholds or reluctantly bestows. \n" +
+                        "The platform only more robustly networks existing exchange networks in education, agriculture, medicine, and other industries. While conceived at a moment of digital ubiquity, the real object of the design is a heavy information system (not a sunny one-world sharing app). MANY exists to build spatial networks and cosmopolitan mobility. Users can build many scenarios within the pool of 100 representative entries. Most demonstrate ways that cities can bargain with their underexploited spaces to attract talent and resources—matching their needs to the needs of mobile people to generate mutual benefits?\n" +
                         "\n" +
-                        "While conceived at a moment of digital ubiquity, the real object of the design is a heavy information system (not a sunny one-world sharing app). MANY exists to build spatial networks and cosmopolitan mobility. Cities can bargain with their underexploited spaces to attract talent and resources—matching their needs to the needs of mobile people to generate mutual benefits?\n" +
+                        "There are no haves or have-nots and no solutions, only needs and problems to be linked in non-market exchanges. Secure and resourceful group-to-group connections form something like a “no-tech blockchain” to build trust and overcome national obstructions. Still even this aggregate of secure platforms lands in currents of migration that are fraught with danger.\n" +
                         "\n" +
-                        "There are no haves or have-nots and no solutions, only needs and problems to be linked in non-market exchanges. Persistent and resourceful group-to-group connections form something like a “no-tech blockchain” to increase security and overcome national obstructions. \n" +
+                        "Global infrastructure space has streamlined the movements of billions of products and tens of millions of tourists and cheap laborers, but at a time when over 80 million people in the world are displaced, there are still so few ways to handle political, economic, or environmental migrations. The nation-state has a dumb on-off button to grant or deny citizenship/asylum. And the NGOcracy offers as its best idea storage in a refugee camp.\n" +
                         "\n" +
-                        "Far from excluded or marginalized, can this mobile population acquires special skills and credentials for global leadership? Can these sorts of exchanges among activists also develop global solidarities with the capacity to address planetary crises?\n" +
+                        "Upstream from the violence of the refugee camp, MANY potentially also offer a global form of matchmaking between the sidelined talents of migrating individuals and a multitude of endeavors and opportunities around the world. \n" +
                         "\n" +
-                        "MANY currently assembles almost 100 representative entries for the platform. Each of entry is a projected scenario in which existing exchanges in education, agriculture, medicine, and other industries are strengthened with spatial variables.\n" +
-                        "\n" +
+                        "To outwit xenophobic opposition to migration, MANY speaks for those who might say, “We don’t want your victimhood, your citizenship, your racism, or your bad jobs. We don’t want to stay.” It serves those who want to resettle but also those who want to keep traveling—who never wanted the citizenship or asylum that the nation withholds or reluctantly bestows.  \n" +
                         "\n"}
                     </TextBaseGothic>
                     <TextBaseGothic

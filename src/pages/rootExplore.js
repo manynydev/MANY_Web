@@ -55,15 +55,30 @@ function RootExplore() {
                                       displayComponent={exploreArrowButton} path={"/platform"}/>
                 </div>
                 <TextBaseGothic fontSize={'17px'}>
-                    {"The first page of the platform offers three choices: Sign in, Create a group, and View previous groups. \n" +
-                    "\n" +
-                    "Clicking on the MANY logo at the bottom of the page will always return to you to this opening page.\n" +
-                    "\n" +
-                    "Click on Create a Group to see how an entry is constructed by using the forward/backward icons at the bottom of the page. On the final page, click video to see a sample entry being created."}
+                    {"The first page of the platform offers three choices: "}
                 </TextBaseGothic>
-                <a href="https://drive.google.com/file/d/1zAeHReFnim_o4hJ26VoG9uj9KYLl21We/view?usp=sharing">Video Sample</a>
+                <TextBaseGothic fontStyle={'italic'} fontSize={'17px'}>
+                    {"Sign in, Create a group, and View previous groups.\n \n"}
+                </TextBaseGothic>
                 <TextBaseGothic fontSize={'17px'}>
-                    {"\n\nClick on View Previous Groups to explore the various matches made between the 100 representative entries. In general, groups who want to travel are on top, and groups in need of travelers are on the bottom. Single click on any group on the bottom and scroll through possible matches on the top. Double click on any group at the top and scroll through possible matches on the bottom. For any group, swipe up or down to read a short explanation of the need. On these pages, you may be prompted to click on an additional description that contextualizes the entry.\n"}
+                    {"Click on "}
+                </TextBaseGothic>
+                <TextBaseGothic fontStyle={'italic'} fontSize={'17px'}>
+                    {"Create a Group "}
+                </TextBaseGothic>
+                <TextBaseGothic fontSize={'17px'}>
+                    {"to see how an entry might be constructed, or see a sample entry "}
+                </TextBaseGothic>
+                <a href="https://drive.google.com/file/d/1zAeHReFnim_o4hJ26VoG9uj9KYLl21We/view?usp=sharing">here.</a>
+                <TextBaseGothic fontSize={'17px'}>
+                    {"\n\nClick on" }
+                </TextBaseGothic>
+                 <TextBaseGothic fontStyle ={'italic'} fontSize={'17px'}>
+                     {" View Previous Groups "}
+                </TextBaseGothic>
+                <TextBaseGothic fontSize={'17px'}>
+                    {"to explore the various matches made between the 100 representative entries. In general, groups who want to travel are on top, and groups in need of travelers are on the bottom. Single click on any group on the bottom and scroll through possible matches on the top. Double click on any group at the top and scroll through possible matches on the bottom. For any group, swipe up or down to read a short explanation of the need. On these pages, you may be prompted to click on an additional description that contextualizes the entry.\n"
+                        + "\nClicking on the MANY logo at the bottom of the page will always return to you to the opening page.\n"}
                 </TextBaseGothic>
             </div>
             <div style={{
