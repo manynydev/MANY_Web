@@ -354,6 +354,7 @@ const Matching = () => {
                             bottom: 130,
                             left: 275,
                             position: 'relative',
+                            imageRendering: '-webkit-optimize-contrast'
                         }}
                              src={user.paragraph} alt={"paragraph"}/>
                         <div style={{position: 'relative', top: 205, left: 10, objectFit: 'contain'}}>
@@ -380,6 +381,7 @@ const Matching = () => {
                             height: 450,
                             position: 'relative',
                             top: -10,
+                            imageRendering: '-webkit-optimize-contrast'
                         }}
                              src={match.paragraph} alt={"paragraph"}/>
                     </div>
@@ -395,8 +397,7 @@ const Matching = () => {
     }, []);
 
     return (
-        <MainContainer>
-            {/*<IphoneScreen>*/}
+        <MainContainer style={{backgroundColor: '#f8f8f8'}}>
             <SnapList direction="vertical" width={"100%"} scrollPadding={{top: 0}} ref={snapListVertical}>
                 <SnapItem snapAlign={"center"} height={0}/>
                 <SnapItem height={1350} snapAlign="center">
@@ -427,7 +428,6 @@ const Matching = () => {
                 </SnapItem>
                 <SnapItem snapAlign={"center"} height={0}/>
             </SnapList>
-            {/*</IphoneScreen>*/}
         </MainContainer>
     )
 }

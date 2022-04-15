@@ -22,7 +22,7 @@ function RootExplore() {
         position: 'relative',
         bottom: 3
     }}>
-        <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
+        <img style={{height: 20, position: "relative", top: 3,imageRendering: '-webkit-optimize-contrast'}} alt="rightBlackArrow" src={rightBlackArrow}/>
         <TextBaseGothic fontSize='24px'>{"Explore"}</TextBaseGothic>
     </div>
 

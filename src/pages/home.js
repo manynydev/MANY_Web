@@ -15,9 +15,9 @@ function Home (){
             return p.toString() === "[object SafariRemoteNotification]";
         })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 
-        const signInButtonDisplayComponent = <TextBaseCush>Sign in</TextBaseCush>
-        const createGroupButtonDisplayComponent = <TextBaseCush>Create a group</TextBaseCush>
-        const viewPrevGroupsButtonDisplayComponent = <TextBaseCush>View previous groups</TextBaseCush>
+        const signInButtonDisplayComponent = <TextBaseCush fontSize={'20px'}>Sign in</TextBaseCush>
+        const createGroupButtonDisplayComponent = <TextBaseCush fontSize={'20px'}>Create a group</TextBaseCush>
+        const viewPrevGroupsButtonDisplayComponent = <TextBaseCush fontSize={'20px'}>View previous groups</TextBaseCush>
         return (
             <MainContainer>
                 <>
@@ -28,7 +28,7 @@ function Home (){
                         flexDirection: 'column',
                         alignItems: 'center',
                         gap: '90px',
-                        marginTop: '150px'
+                        marginTop: '150px',
                     }}>
                         <NavigationButton height='70px' width='170px' path={'/home'} displayComponent=<ManyLogo/>/>
                         <div

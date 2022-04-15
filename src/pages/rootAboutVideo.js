@@ -11,7 +11,7 @@ function RootAboutVideo() {
     const videoText = <TextBaseManySans color='white' fontSize='30px'> Video </TextBaseManySans>
 
 
-    const videoArrowButton = <div style={{display: 'flex', flexDirection: 'row', width: 40, alignItems: 'center'}}>
+    const videoArrowButton = <div style={{display: 'flex', flexDirection: 'row', width: 40, alignItems: 'center',imageRendering: '-webkit-optimize-contrast'}}>
         <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
         <TextBaseGothic>{"Video"}</TextBaseGothic>
     </div>

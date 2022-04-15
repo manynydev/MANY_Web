@@ -17,7 +17,8 @@ function RootAbout() {
         width: 40,
         alignItems: 'center',
         position: 'relative',
-        bottom: 3
+        bottom: 3,
+        imageRendering: '-webkit-optimize-contrast'
     }}>
         <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
         <TextBaseGothic fontSize='24px'>{"Explore"}</TextBaseGothic>
@@ -29,7 +30,8 @@ function RootAbout() {
         width: 40,
         alignItems: 'center',
         position: 'relative',
-        bottom: 3
+        bottom: 3,
+        imageRendering: '-webkit-optimize-contrast'
     }}>
         <img style={{height: 20, position: "relative", top: 3}} alt="rightBlackArrow" src={rightBlackArrow}/>
         <TextBaseGothic fontSize='24px'>{"Video"}</TextBaseGothic>

@@ -13,6 +13,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: rgb(248,249,250);
   min-height: 100vh;
@@ -72,6 +74,17 @@
 
 .snapItemInvisible {
   opacity: 0;
+}
+
+
+.profileSelect.profileSelect{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 @keyframes App-logo-spin {

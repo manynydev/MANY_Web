@@ -14,7 +14,7 @@ const StyledProfile = styled.img`{
 
 const Profile = (props) => {
     return (
-        <StyledProfile src={props.src}/>
+        <StyledProfile className={"profileSelect"} src={props.src}/>
     )
 }
 
