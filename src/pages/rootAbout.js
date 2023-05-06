@@ -89,7 +89,6 @@ function RootAbout() {
                     <TextBaseGothic fontSize={'17px'}>
                         {"The curators of the U.S. pavilion at the 2018 Venice Biennale—Niall Atkinson, Ann Lui, Mimi Zeiger, and Iker Gil—established a framework exhibition titled “The Dimensions of Citizenship” that explored seven scales of citizenship: Citizen, Civitas, Region, Nation, Globe, Network, and Cosmos. The curators commissioned MANY to address the network scale. A small cohort of Yale students from architecture, computer science, and graphic design constructed the platform and assembled the representative entries.\n" +
                         "\n" +
-
                             "Ten iPhones in the exhibition allowed users to experience the platform, the many matches between entries, and the stories attached to these journeys. A video essay inspired by the collages of Hong Kong artist Ha Bik Chuen and narrated in eleven different languages featured twelve topical episodes that reflect on the wealth of existing and possible exchanges.\n" +
                             "\n" +
                         "The platform developed a visual language designed to engender trust. Each group adopts a multi-glyph expression inspired by things like the work of Fluxus member Jurgis Maciunas (Spell your name with these objects), Paul Elliman’s typographies, hobo code, or cuneiform. The graphic language seems to say: The lumpier or more heterogeneous the expression, the sturdier the exchange.\n" +
