@@ -81,17 +81,20 @@ const topUsers = [
     {
         id: 12,
         profile: require("../assets/top_lowres/61.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 13,
         profile: require("../assets/top_lowres/67.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 14,
         profile: require("../assets/top_lowres/73.1.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     // {
     //     id: 15,
@@ -101,47 +104,56 @@ const topUsers = [
     {
         id: 16,
         profile: require("../assets/top_lowres/74.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 17,
         profile: require("../assets/top_lowres/77.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 18,
         profile: require("../assets/top_lowres/78.2.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 19,
         profile: require("../assets/top_lowres/80.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 20,
         profile: require("../assets/top_lowres/81.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 21,
         profile: require("../assets/top_lowres/85.1.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 22,
         profile: require("../assets/top_lowres/86.1.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 23,
         profile: require("../assets/top_lowres/88.1.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
     {
         id: 24,
         profile: require("../assets/top_lowres/89.png").default,
-        zIndex: 5
+        zIndex: 5,
+        right: 20
     },
 ]
 
@@ -705,7 +717,7 @@ const Matching = () => {
         let topUsersSnapItems = []
         topUsers.forEach((user => {
             topUsersSnapItems.push(
-                <SnapItem width={275} height={675}
+                <SnapItem width={'275'} height={'675'}
                           snapAlign="center">
                     <ButtonBase disableRipple={true} style={{
                         cursor: 'initial',
@@ -713,7 +725,7 @@ const Matching = () => {
                         height: 675,
                         width: 278,
                         position: 'relative',
-                        right: 150
+                        right: user?.right ?? 150
                     }}
                                 onClick={() => {
                                     handleClick(user.id, user?.zIndex)
