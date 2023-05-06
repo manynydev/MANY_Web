@@ -16,16 +16,16 @@ const topUsers = [
         profile: require("../assets/top_lowres/39.1.png").default,
         paragraph: require("../assets/paragraphs_lowres/0039_para.png").default
     },
-    {
-        id: 1,
-        profile: require("../assets/top_lowres/39.2.png").default,
-        paragraph: require("../assets/paragraphs_lowres/0039_para.png").default
-    },
-    {
-        id: 2,
-        profile: require("../assets/top_lowres/39.3.png").default,
-        paragraph: require("../assets/paragraphs_lowres/0039_para.png").default
-    },
+    // {
+    //     id: 1,
+    //     profile: require("../assets/top_lowres/39.2.png").default,
+    //     paragraph: require("../assets/paragraphs_lowres/0039_para.png").default
+    // },
+    // {
+    //     id: 2,
+    //     profile: require("../assets/top_lowres/39.3.png").default,
+    //     paragraph: require("../assets/paragraphs_lowres/0039_para.png").default
+    // },
     {
         id: 3,
         profile: require("../assets/top_lowres/22.png").default,
@@ -48,12 +48,12 @@ const topUsers = [
         paragraph: require("../assets/paragraphs_lowres/0046_para.png").default,
         zIndex: 5
     },
-    {
-        id: 7,
-        profile: require("../assets/top_lowres/46.2.png").default,
-        paragraph: require("../assets/paragraphs_lowres/0046_para.png").default,
-        zIndex: 5
-    },
+    // {
+    //     id: 7,
+    //     profile: require("../assets/top_lowres/46.2.png").default,
+    //     paragraph: require("../assets/paragraphs_lowres/0046_para.png").default,
+    //     zIndex: 5
+    // },
     {
         id: 8,
         profile: require("../assets/top_lowres/49.1.png").default,
@@ -78,41 +78,71 @@ const topUsers = [
     //     paragraph: require("../assets/paragraphs_lowres/0050_para.png").default,
     //     zIndex: 5
     // },
-    // {
-    //     id: 12,
-    //     profile: require("../assets/top_lowres/61.png").default,
-    //     zIndex: 5
-    // },
-    // {
-    //     id: 13,
-    //     profile: require("../assets/top_lowres/67.png").default,
-    //     zIndex: 5
-    // },
-    // {
-    //     id: 14,
-    //     profile: require("../assets/top_lowres/73.1.png").default,
-    //     zIndex: 5
-    // },
+    {
+        id: 12,
+        profile: require("../assets/top_lowres/61.png").default,
+        zIndex: 5
+    },
+    {
+        id: 13,
+        profile: require("../assets/top_lowres/67.png").default,
+        zIndex: 5
+    },
+    {
+        id: 14,
+        profile: require("../assets/top_lowres/73.1.png").default,
+        zIndex: 5
+    },
     // {
     //     id: 15,
     //     profile: require("../assets/top_lowres/73.2.png").default,
     //     zIndex: 5
     // },
-    // {
-    //     id: 16,
-    //     profile: require("../assets/top_lowres/74.png").default,
-    //     zIndex: 5
-    // },
-    // {
-    //     id: 17,
-    //     profile: require("../assets/top_lowres/77.png").default,
-    //     zIndex: 5
-    // },
-    // {
-    //     id: 18,
-    //     profile: require("../assets/top_lowres/78.2.png").default,
-    //     zIndex: 5
-    // },
+    {
+        id: 16,
+        profile: require("../assets/top_lowres/74.png").default,
+        zIndex: 5
+    },
+    {
+        id: 17,
+        profile: require("../assets/top_lowres/77.png").default,
+        zIndex: 5
+    },
+    {
+        id: 18,
+        profile: require("../assets/top_lowres/78.2.png").default,
+        zIndex: 5
+    },
+    {
+        id: 19,
+        profile: require("../assets/top_lowres/80.png").default,
+        zIndex: 5
+    },
+    {
+        id: 20,
+        profile: require("../assets/top_lowres/81.png").default,
+        zIndex: 5
+    },
+    {
+        id: 21,
+        profile: require("../assets/top_lowres/85.1.png").default,
+        zIndex: 5
+    },
+    {
+        id: 22,
+        profile: require("../assets/top_lowres/86.1.png").default,
+        zIndex: 5
+    },
+    {
+        id: 23,
+        profile: require("../assets/top_lowres/88.1.png").default,
+        zIndex: 5
+    },
+    {
+        id: 24,
+        profile: require("../assets/top_lowres/89.png").default,
+        zIndex: 5
+    },
 ]
 
 const bottomUsers = {
@@ -120,7 +150,23 @@ const bottomUsers = {
         {
             profile: require("../assets/bott_lowres/14.png").default,
             paragraph: require("../assets/paragraphs_lowres/0014_para.png").default
-        }
+        },
+        {
+            profile: require("../assets/bott_lowres/16.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0016_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/37.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0037_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/47.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0047_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/95.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0095_para.png").default
+        },
     ],
     1: [
         {
@@ -156,26 +202,26 @@ const bottomUsers = {
             profile: require("../assets/bott_lowres/21.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0021_para.png").default
         },
-        {
-            profile: require("../assets/bott_lowres/21.2.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0021_para.png").default
-        },
+        // {
+        //     profile: require("../assets/bott_lowres/21.2.png").default,
+        //     paragraph: require("../assets/paragraphs_lowres/0021_para.png").default
+        // },
         {
             profile: require("../assets/bott_lowres/23.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0023_para.png").default
         },
-        {
-            profile: require("../assets/bott_lowres/23.2.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0023_para.png").default
-        },
+        // {
+        //     profile: require("../assets/bott_lowres/23.2.png").default,
+        //     paragraph: require("../assets/paragraphs_lowres/0023_para.png").default
+        // },
         {
             profile: require("../assets/bott_lowres/55.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0055_para.png").default
         },
-        {
-            profile: require("../assets/bott_lowres/55.2.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0055_para.png").default
-        }
+        // {
+        //     profile: require("../assets/bott_lowres/55.2.png").default,
+        //     paragraph: require("../assets/paragraphs_lowres/0055_para.png").default
+        // }
     ],
     4:[
         {
@@ -186,10 +232,10 @@ const bottomUsers = {
             profile: require("../assets/bott_lowres/17.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0017_para.png").default
         },
-        {
-            profile: require("../assets/bott_lowres/17.2.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0017_para.png").default
-        },
+        // {
+        //     profile: require("../assets/bott_lowres/17.2.png").default,
+        //     paragraph: require("../assets/paragraphs_lowres/0017_para.png").default
+        // },
         {
             profile: require("../assets/bott_lowres/18.png").default,
             paragraph: require("../assets/paragraphs_lowres/0018_para.png").default
@@ -206,26 +252,70 @@ const bottomUsers = {
             profile: require("../assets/bott_lowres/38.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0038_para.png").default
         },
+        // {
+        //     profile: require("../assets/bott_lowres/38.2.png").default,
+        //     paragraph: require("../assets/paragraphs_lowres/0038_para.png").default
+        // },
         {
-            profile: require("../assets/bott_lowres/38.2.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0038_para.png").default
+            profile: require("../assets/bott_lowres/92.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0092_para.png").default
         },
         {
-            profile: require("../assets/bott_lowres/38.3.png").default,
-            paragraph: require("../assets/paragraphs_lowres/0038_para.png").default
-        }
+            profile: require("../assets/bott_lowres/93.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0093_para.png").default
+        },
     ],
     5:[
         {
+            profile: require("../assets/bott_lowres/14.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0014_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/16.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0016_para.png").default
+        },
+        {
             profile: require("../assets/bott_lowres/37.png").default,
             paragraph: require("../assets/paragraphs_lowres/0037_para.png").default
-        }
+        },
+        {
+            profile: require("../assets/bott_lowres/47.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0047_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/95.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0095_para.png").default
+        },
     ],
     6:[
         {
             profile: require("../assets/bott_lowres/28.png").default,
             paragraph: require("../assets/paragraphs_lowres/0028_para.png").default
-        }
+        },
+        {
+            profile: require("../assets/bott_lowres/29.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0029_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/31.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0031_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/64.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0064_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/69.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0069_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/70.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0070_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/94.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0094_para.png").default
+        },
     ],
     7:[
         {
@@ -273,8 +363,30 @@ const bottomUsers = {
         {
             profile: require("../assets/bott_lowres/51.1.png").default,
             paragraph: require("../assets/paragraphs_lowres/0050_para.png").default
-        }
-    ]
+        },
+    ],
+    12:[
+        {
+            profile: require("../assets/bott_lowres/56.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0056_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/57.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0057_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/58.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0058_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/59.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0059_para.png").default
+        },
+        {
+            profile: require("../assets/bott_lowres/60.1.png").default,
+            paragraph: require("../assets/paragraphs_lowres/0060_para.png").default
+        },
+    ],
 }
 
 const Matching = () => {
@@ -341,8 +453,8 @@ const Matching = () => {
                         cursor: 'initial',
                         zIndex: user?.zIndex,
                         height: 675,
-                        width: 275,
-                        position: 'relative',
+                        width: 278,
+                        // position: 'relative',
                         right: 150
                     }}
                                 onClick={() => {
