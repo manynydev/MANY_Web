@@ -77,8 +77,13 @@ function RootExplore() {
                      {" View Previous Groups "}
                 </TextBaseGothic>
                 <TextBaseGothic fontSize={'17px'}>
-                    {"to explore the various matches made between the 100 representative entries. In general, groups who want to travel are on top, and groups in need of travelers are on the bottom. Single click on any group on the bottom and scroll through possible matches on the top. Double click on any group at the top and scroll through possible matches on the bottom. For any group, swipe up or down to read a short explanation of the need. On these pages, you may be prompted to click on an additional description that contextualizes the entry.\n"
-                        + "\nClicking on the MANY logo at the bottom of the page will always return to you to the opening page.\n"}
+                    {"to explore the various matches made between the\n" +
+                        "representative entries. In general, groups who want to travel or collaborate are on top,\n" +
+                        "and groups in need of travelers or collaborators are on the bottom. Single click on any\n" +
+                        "group on the top and scroll through possible matches on the bottom. For any group,\n" +
+                        "swipe up or down to read a short explanation of the need. On these pages, you may be\n" +
+                        "prompted to click on an additional description that contextualizes the entry.\n"
+                        + "\nClicking on the MANY logo at the bottom of the page returns you to the opening page.\n"}
                 </TextBaseGothic>
             </div>
             <div style={{
